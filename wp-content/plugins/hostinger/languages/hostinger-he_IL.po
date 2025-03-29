@@ -1,0 +1,289 @@
+# Copyright (C) 2024 Hostinger
+# This file is distributed under the GPL v3.
+msgid ""
+msgstr ""
+"Project-Id-Version: Hostinger Tools 3.0.6\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/hostinger\n"
+"Last-Translator: \n"
+"Language-Team: Hebrew\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-07-30T12:00:12+00:00\n"
+"PO-Revision-Date: 2025-02-07 13:19+0000\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Domain: hostinger\n"
+"Language: he_IL\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Loco-Version: 2.6.11; wp-6.4.5"
+
+#: includes/Admin/Assets.php:145
+msgid ""
+" Turning on XML-RPC might make your site less secure. Do you want to proceed?"
+msgstr ""
+"הפעלת XML-RPC עלולה להוביל להפחתת האבטחה של האתר שלכם. האם ברצונכם להמשיך?"
+
+#: includes/Errors.php:16
+msgid "Action Failed. Try again or contact support. Apologies."
+msgstr "הפעולה נכשלה. נסו שנית או צרו קשר עם התמיכה. סליחה."
+
+#: includes/Errors.php:19
+msgid "An unexpected error occurred. Please try again or contact support."
+msgstr "אירעה שגיאה בלתי-צפויה. אנא נסו שנית או צרו קשר עם התמיכה."
+
+#. translators: %s: PHP version
+#: hostinger.php:84
+msgid "Attention:"
+msgstr "שימו לב:"
+
+#: includes/Admin/Assets.php:141
+msgid "Bypass link"
+msgstr "קישור מעקף"
+
+#: includes/Admin/Assets.php:149
+msgid "Bypass link reset"
+msgstr "איפוס קישור מעקף"
+
+#: includes/Admin/Assets.php:147 includes/Admin/Assets.php:151
+msgid "Cancel"
+msgstr "ביטול"
+
+#: includes/Views/ComingSoon.php:6 includes/Views/ComingSoon.php:24
+msgid "Coming Soon"
+msgstr "בקרוב"
+
+#: includes/Admin/Assets.php:121
+msgid "Disable application passwords"
+msgstr ""
+
+#: includes/Admin/Assets.php:116
+msgid ""
+"Disable public access to the site (WordPress admins will still be able to "
+"access)"
+msgstr "השבתת גישה ציבורית לאתר (למנהלי WordPress עדיין תהיה גישה)"
+
+#: includes/Admin/Assets.php:119
+msgid "Disable XML-RPC"
+msgstr "השבתת XML-RPC"
+
+#: includes/Admin/Assets.php:146
+msgid "Disclaimer"
+msgstr "גילוי נאות"
+
+#: includes/Admin/Assets.php:135
+msgid "For improved security, ensure you use the latest version of WordPress"
+msgstr "בשביל אבטחה משופרת, ודאו שאתם משתמשים בגרסה העדכנית ביותר של WordPress"
+
+#: includes/Admin/Assets.php:124
+msgid "Force HTTPS"
+msgstr "כפה HTTPS"
+
+#: includes/Admin/Assets.php:126
+msgid "Force WWW"
+msgstr "כפה WWW"
+
+#: includes/Admin/Assets.php:144 includes/Admin/Hooks.php:55
+msgid "Got it"
+msgstr "הבנתי"
+
+#. Author of the plugin
+#: hostinger.php
+msgid "Hostinger"
+msgstr "Hostinger"
+
+#: includes/Admin/Hooks.php:53
+msgid "Hostinger Easy Onboarding"
+msgstr "הדרכה קלה של Hostinger"
+
+#: includes/Admin/Hooks.php:49
+msgid "Hostinger plugin updates"
+msgstr "עדכוני תוספים של Hostinger"
+
+#. Plugin Name of the plugin
+#: hostinger.php includes/Admin/Hooks.php:52
+msgid "Hostinger Tools"
+msgstr "כלי Hostinger"
+
+#: includes/Admin/Assets.php:143
+msgid ""
+"Hostinger Tools will offer new tools to simplify your site management. And "
+"Hostinger Easy Onboarding will guide you through the steps of building a "
+"website."
+msgstr ""
+"כלי Hostinger יספקו כלים חדשים כדי להפוך את ניהול האתר שלכם לפשוט יותר. "
+"וההדרכה הקלה של Hostinger תדריך אתכם בצעדים של בניית אתר."
+
+#. Description of the plugin
+#: hostinger.php
+msgid "Hostinger WordPress plugin."
+msgstr "תוסף WordPress של Hostinger."
+
+#. Plugin URI of the plugin
+#: hostinger.php
+msgid "https://hostinger.com"
+msgstr "https://hostinger.co.il"
+
+#. Author URI of the plugin
+#: hostinger.php
+msgid "https://www.hostinger.com"
+msgstr "https://www.hostinger.co.il"
+
+#: includes/Admin/Assets.php:134
+msgid "is recommended"
+msgstr "מומלץ"
+
+#: includes/Admin/Assets.php:153
+msgid "Link has been reset"
+msgstr "הקישור אופס"
+
+#: includes/Admin/Assets.php:136
+msgid "Maintenance"
+msgstr "תחזוקה"
+
+#: includes/Admin/Assets.php:140
+msgid "Maintenance mode"
+msgstr "מצב תחזוקה"
+
+#: includes/Views/ComingSoon.php:27
+msgid "New WordPress website is being built and will be published soon"
+msgstr "אתר WordPress חדש נמצא בבנייה ויושק בקרוב"
+
+#: includes/Admin/Hooks.php:52
+msgid "offers a toolkit for easier site maintenance."
+msgstr "מציע ארגז כלים בשביל תחזוקת אתר קלה יותר."
+
+#: includes/Admin/Views/Partials/RateUs.php:38
+msgid ""
+"on <a href=\"https://wordpress.org/support/plugin/hostinger/reviews/#new-"
+"post\" target=\"_blank\" rel=\"noopener noreferrer\">WordPress.org</a>"
+msgstr ""
+"ב-<a href=\"https://wordpress.org/support/plugin/hostinger/reviews/#new-"
+"post\" target=\"_blank\" rel=\"noopener noreferrer\">WordPress.org</a>"
+
+#: includes/Admin/Assets.php:115
+msgid "Open guide"
+msgstr ""
+
+#: includes/Admin/Assets.php:129
+msgid "PHP version"
+msgstr "גרסת PHP"
+
+#: includes/Admin/Assets.php:137
+msgid "Preview my website"
+msgstr "הצג תצוגה-מקדימה לאתר שלי"
+
+#: includes/Admin/Assets.php:148
+msgid "Proceed anyway"
+msgstr "המשך בכל מקרה"
+
+#: includes/Admin/Hooks.php:53
+msgid ""
+"provides guidance and learning resources for beginners to get started with "
+"building a site using WordPress."
+msgstr ""
+"מספק הדרכה ומשאבי לימוד למתחילים בשביל להתחיל בבניית אתר בעזרת WordPress."
+
+#: includes/Admin/Views/Partials/RateUs.php:2
+msgid "Rate this plugin"
+msgstr "דרגו את התוסף הזה"
+
+#: includes/Admin/Assets.php:139
+msgid "Redirects"
+msgstr "מפנה מחדש"
+
+#: includes/Admin/Assets.php:125
+msgid "Redirects all HTTP URLs to HTTPS sites"
+msgstr "מפנה מחדש את כל ה-URL של HTTP לכאלה של HTTPS"
+
+#: includes/Admin/Assets.php:127
+msgid "Redirects all WWW URLs to non-WWW ones"
+msgstr "מפנה מחדש את כל ה-URL של WWW לכאלה שאינם WWW"
+
+#: includes/Admin/Assets.php:118 includes/Admin/Assets.php:152
+msgid "Reset link"
+msgstr "קישור לאיפוס"
+
+#: includes/Admin/Assets.php:132
+msgid "Running the latest version"
+msgstr "מריץ את הגרסה העדכנית ביותר"
+
+#: includes/Admin/Assets.php:138
+msgid "Security"
+msgstr "אבטחה"
+
+#: includes/Admin/Assets.php:117
+msgid "Skip-link that bypasses the maintenance mode"
+msgstr "קישור-דילוג שעוקף את מצב התחזוקה"
+
+#: includes/Admin/Hooks.php:50
+msgid "The Hostinger plugin has been split into two different plugins:"
+msgstr "התוסף של Hostinger פוצל לשני תוספים נפרדים:"
+
+#: includes/Admin/Assets.php:150
+msgid ""
+"This will invalidate the currently generated link in use. This action cannot "
+"be undone, are you sure you want to proceed?"
+msgstr ""
+"הקישור בשימוש נוכחי יאבד את תוקפו. לא ניתן לבטל את פעולה זו, האם אתם בטוחים "
+"שברצונכם להמשיך?"
+
+#: includes/Admin/Assets.php:114 includes/Admin/Menu.php:22
+#: includes/Admin/Menu.php:31 includes/Admin/Menu.php:32
+msgid "Tools"
+msgstr "כלים"
+
+#: includes/Errors.php:38
+msgid "Unknown error code."
+msgstr "קוד שגיאה לא ידועה."
+
+#: includes/Admin/Assets.php:133
+msgid "Update to"
+msgstr "עדכן ל"
+
+#: includes/Admin/Assets.php:131
+msgid "Various updates and fixes available in the newest version."
+msgstr "עדכונים ותיקונים שונים זמינים בגרסה העדכנית ביותר."
+
+#: includes/Errors.php:22
+msgid ""
+"We apologize for the inconvenience. The AI content generation process "
+"encountered a server error. Please try again later, and if the issue "
+"persists, kindly contact our support team for assistance."
+msgstr ""
+"אנחנו מתנצלים על חוסר הנוחות. הליך יצירת תוכן ה-AI נתקל בשגיאת שרת. אנא נסו "
+"שנית מאוחר יותר, ואם הבעיה נמשכת, צרו קשר עם צוות התמיכה שלנו ונשמח לעזור "
+"לכם."
+
+#: includes/Admin/Assets.php:142
+msgid ""
+"We’re splitting Hostinger plugin into two: Hostinger Tools and Hostinger "
+"Easy Onboarding"
+msgstr ""
+"אנחנו מפצלים את התוסף של Hostinger לשניים: כלי Hostinger והדרכה קלה של "
+"Hostinger"
+
+#: includes/Admin/Assets.php:122
+msgid ""
+"WordPress application passwords allow users to authenticate API requests "
+"without using their main login credentials, allowing for third-party "
+"integrations."
+msgstr ""
+
+#: includes/Admin/Assets.php:130
+msgid "WordPress version"
+msgstr "גרסת WordPress"
+
+#: includes/Admin/Assets.php:128
+msgid ""
+"WWW and non-WWW domain records are not pointing to the same host. Redirect "
+"not possible."
+msgstr ""
+"רישומי דומיין WWW ושאינם-WWW לא מפנים לאותו מאחסן. הפניה מחדש לא אפשרית."
+
+#: includes/Admin/Assets.php:120
+msgid ""
+"XML-RPC allows apps to connect to your WordPress site, but might expose your "
+"site's security. Disable this feature if you don't need it"
+msgstr ""
+"XML-RPC מאפשר ליישומים להתחבר לאתר ה-WordPress שלכם, אבל עלול לחשוף את אבטחת "
+"האתר שלכם. השביתו את הפיצ'ר הזה אם אינכם זקוקים לו"

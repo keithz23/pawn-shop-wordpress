@@ -1,0 +1,64 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Hostinger WordPress Menu management package\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: Portuguese (Brazil)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-04-30T07:45:18+00:00\n"
+"PO-Revision-Date: 2025-02-21 06:17+0000\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Domain: hostinger-wp-menu-package\n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Loco-Version: 2.6.7; wp-6.4.4"
+
+#: src/Menus.php:224
+#, fuzzy
+msgid "Action Required:"
+msgstr "Ação necessária:"
+
+#: src/Menus.php:241
+#, fuzzy
+msgid "Affected plugins:"
+msgstr "Plugins afetados:"
+
+#: src/Menus.php:221
+#, fuzzy
+msgid "Attention! Outdated Plugins Detected"
+msgstr "Atenção! Detectados plug-ins desatualizados"
+
+#: src/templates/menu.php:80
+#, fuzzy
+msgid "Go to Hostinger"
+msgstr "Ir para Hostinger"
+
+#: src/Menus.php:63 src/Menus.php:117 src/Menus.php:118
+msgid "Hostinger"
+msgstr "Hostinger"
+
+#: src/Menus.php:233
+#, fuzzy
+msgid "Outdated plugins:"
+msgstr "Plugins desatualizados:"
+
+#: src/templates/menu.php:73
+#, fuzzy
+msgid "Preview website"
+msgstr "Site de visualização"
+
+#: src/Menus.php:250
+#, fuzzy
+msgid "Update plugins"
+msgstr "Atualizar plug-ins"
+
+#: src/Menus.php:224
+#, fuzzy
+msgid ""
+"Your website has some outdated plugins that might prevent new features from "
+"working properly."
+msgstr ""
+"Seu site tem alguns plug-ins desatualizados que podem impedir que novos "
+"recursos funcionem corretamente."

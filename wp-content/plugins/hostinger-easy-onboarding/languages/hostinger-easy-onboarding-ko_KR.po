@@ -1,0 +1,1572 @@
+# Copyright (C) 2024 Hostinger
+# This file is distributed under the GPL v3.
+msgid ""
+msgstr ""
+"Project-Id-Version: Hostinger Easy Onboarding 2.0.45\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/hostinger-easy-"
+"onboarding\n"
+"Last-Translator: \n"
+"Language-Team: Korean\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-12-03T07:13:05+00:00\n"
+"PO-Revision-Date: 2025-03-26 12:33+0000\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Domain: hostinger-easy-onboarding\n"
+"Language: ko_KR\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Loco-Version: 2.7.1; wp-6.7.2"
+
+#: includes/Admin/Assets.php:184
+msgid ""
+" Learn how to connect your domain to Hostinger by watching this tutorial on "
+"YouTube for a step-by-step guide:"
+msgstr " 단계별 가이드가 담긴 유튜브 튜토리얼을 통해 도메인을 호스팅어에 연결하는 방법을 알아보세요:"
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/DeletePageButton.js:66
+msgid " Please refresh the page and try again."
+msgstr " 페이지를 새로고침하고 다시 시도하세요."
+
+#. translators: %s plugin slug
+#: includes/Rest/StepRoutes.php:152
+msgid "%s is already active"
+msgstr "%s가 이미 활성화되었습니다"
+
+#. translators: %s field name that is missing
+#: includes/Rest/StepRoutes.php:63 includes/Rest/StepRoutes.php:67
+#: includes/Rest/StepRoutes.php:144 includes/Rest/StepRoutes.php:205
+#: includes/Rest/WooRoutes.php:41 includes/Rest/WooRoutes.php:112
+msgid "%s missing or empty"
+msgstr "누락되었거나 비어있는 %s"
+
+#: includes/Admin/Assets.php:275
+#, fuzzy
+msgid "(Credit/Debit card)"
+msgstr "(신용/직불 카드)"
+
+#: includes/Admin/Assets.php:218
+msgid ""
+"<strong>Almost there!</strong> Just a few more steps to get your site ready "
+"for online success."
+msgstr ""
+"<strong>거의 다 왔습니다! </strong> 이제 몇 단계만 더 거치면 온라인에서 성공할 수 있는 사이트를 준비할 수 있습니다."
+
+#: includes/Admin/Assets.php:290
+msgid ""
+"<strong>Use built-in payment methods</strong> - no extra plugins needed."
+msgstr "<strong>기본 제공 결제 수단 사용</strong> - 추가 플러그인이 필요 없습니다."
+
+#: includes/Admin/Assets.php:289
+msgid ""
+"<strong>Use built-in shipping methods</strong> - no extra plugins needed."
+msgstr "<strong>기본 제공 배송 방법 사용</strong> - 추가 플러그인이 필요하지 않습니다."
+
+#: includes/Admin/Onboarding/PluginManager.php:32
+msgid "Accept payments via credit card. Manage transactions within WordPress."
+msgstr "신용카드를 통한 결제 수락. 워드프레스 내에서 거래를 관리합니다."
+
+#: includes/Admin/Assets.php:249
+msgid "Access site identity and edit title"
+msgstr "사이트 ID 액세스 및 제목 편집"
+
+#: includes/Errors.php:14
+msgid "Action Failed. Try again or contact support. Apologies."
+msgstr "작업이 실패했습니다. 다시 시도하거나 지원팀에 문의하세요. 죄송합니다."
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/PagesList.js:44
+msgid "Actions"
+msgstr "작업"
+
+#: includes/Admin/Assets.php:264
+msgid "Activate"
+msgstr "활성화"
+
+#: includes/Admin/Assets.php:253
+#, fuzzy
+msgid "Add"
+msgstr "추가"
+
+#: includes/Admin/Onboarding/Onboarding.php:196
+#, fuzzy
+msgid "Add a domain"
+msgstr "도메인 추가"
+
+#: includes/Admin/Assets.php:201 includes/Admin/Assets.php:251
+msgid "Add a new page"
+msgstr "새 페이지 추가"
+
+#: includes/Admin/Assets.php:266
+msgid "Add a title"
+msgstr "제목 추가"
+
+#: includes/Admin/Assets.php:292
+msgid "Add content"
+msgstr "콘텐츠 추가"
+
+#: includes/Admin/Onboarding/Onboarding.php:198
+#, fuzzy
+msgid "Add domain"
+msgstr "도메인 추가"
+
+#: includes/Admin/Assets.php:252
+msgid "Add plugin"
+msgstr "플러그인 추가"
+
+#: includes/Admin/Onboarding/Onboarding.php:333
+msgid "Add product"
+msgstr "제품 추가"
+
+#: includes/Admin/Assets.php:284
+msgid "Add shipping method"
+msgstr "배송 방법 추가"
+
+#: includes/Admin/Onboarding/Onboarding.php:304
+#, fuzzy
+msgid "Add store details"
+msgstr "스토어 세부 정보 추가"
+
+#: includes/Admin/Assets.php:291
+msgid ""
+"Add the title of the page, for example, About. Click the Add Title text to "
+"open the text box where you will add your title. The title of your page "
+"should be descriptive of the information the page will have."
+msgstr ""
+"페이지의 제목을 추가합니다(예: 소개). 제목 텍스트 추가를 클릭하여 제목을 추가할 텍스트 상자를 엽니다. 페이지 제목은 페이지에 포함될 "
+"정보를 설명할 수 있어야 합니다."
+
+#: includes/Admin/Assets.php:173
+msgid "Add your first product"
+msgstr "첫 번째 제품 추가"
+
+#: includes/Admin/Assets.php:174 includes/Admin/Onboarding/Onboarding.php:329
+msgid "Add your first product or service"
+msgstr "첫 번째 제품 또는 서비스 추가"
+
+#: includes/Admin/Assets.php:254
+msgid "Added"
+msgstr "추가됨"
+
+#: includes/Admin/Assets.php:190
+msgid ""
+"Adding a logo is a great way to personalize a website or add branding "
+"information. You can use your existing logo or create a new one using the <a "
+"href=\"https://logo.hostinger.com/?ref=wordpress-onboarding\" style=\"text-"
+"decoration:none; font-weight:bold; color:#673de6\">AI Logo Maker.</a>"
+msgstr ""
+"로고를 추가하는 것은 웹사이트를 개인화하거나 브랜딩 정보를 추가할 수 있는 좋은 방법입니다. 기존 로고를 사용하거나 <a "
+"href=\"https://logo.hostinger.com/?ref=wordpress-onboarding\" style=\"text-"
+"decoration:none; font-weight:굵게; color:#673de6\">AI 로고 메이커를 사용하여 새 로고를 만들 수 "
+"있습니다.\"</a>"
+
+#: includes/Admin/Onboarding/PluginManager.php:60
+msgid "Adds Correios shipping methods to your WooCommerce store."
+msgstr "우커머스 스토어에 Correios 배송 방법을 추가합니다."
+
+#: includes/Admin/Onboarding/PluginManager.php:50
+msgid ""
+"Adiciona PagSeguro como meio de pagamento (com desconto nas taxas oficiais)."
+msgstr "PagSeguro를 결제 수단으로 추가합니다(사무실 세금에서 제외됨)."
+
+#: includes/Admin/Onboarding/PluginManager.php:41
+msgid ""
+"Amazon Pay is embedded directly into your existing web site, and all the "
+"buyer interactions with Amazon Pay and Login with Amazon take place in "
+"embedded widgets so that the buyer never leaves your site. "
+msgstr ""
+"Amazon Pay는 기존 웹사이트에 직접 임베드되며, 구매자가 사이트를 떠나지 않도록 임베드된 위젯에서 Amazon Pay 및 "
+"Login with Amazon과의 모든 구매자와의 상호 작용이 이루어집니다."
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/DeletePageButton.js:106
+msgid "An error occurred while deleting the page."
+msgstr "페이지를 삭제하는 동안 오류가 발생했습니다."
+
+#: includes/Errors.php:17
+msgid "An unexpected error occurred. Please try again or contact support."
+msgstr "예기치 않은 오류가 발생했습니다. 다시 시도하거나 지원팀에 문의하세요."
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/DeletePageButton.js:76
+msgid "An unexpected error occurred. Please try again."
+msgstr "예기치 않은 오류가 발생했습니다. 다시 시도해 주세요."
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/DeletePageButton.js:31
+msgid "Are you sure you want to delete this page?"
+msgstr "이 페이지를 삭제하시겠습니까?"
+
+#: includes/Admin/Assets.php:300
+msgid "Are you sure?"
+msgstr "정말 진행할까요?"
+
+#. translators: %s php version
+#: hostinger-easy-onboarding.php:74
+msgid "Attention:"
+msgstr "주의:"
+
+#: includes/Admin/Assets.php:144
+msgid ""
+"Automated reports, monitoring tools, site presets, and 1-click ownership "
+"transfers – manage all of your projects quickly and easily."
+msgstr "자동화된 보고서, 모니터링 도구, 사이트 사전 설정, 원클릭 소유권 이전 등 모든 프로젝트를 빠르고 쉽게 관리할 수 있습니다."
+
+#: includes/Admin/Assets.php:267
+msgid "Back"
+msgstr "뒤로"
+
+#: includes/Admin/Assets.php:302
+msgid ""
+"Before publishing, you can preview your created page by clicking on the "
+"Preview button. If you are happy with the result, click the Publish button."
+msgstr "게시하기 전에 미리보기 버튼을 클릭하여 생성한 페이지를 미리 볼 수 있습니다. 결과가 마음에 들면 게시 버튼을 클릭합니다."
+
+#: includes/Admin/Onboarding/Onboarding.php:610
+#, fuzzy
+msgid ""
+"Build a custom-designed site in minutes with professional templates. You’ll "
+"be ready to go live in a few clicks."
+msgstr "전문 템플릿을 사용하여 몇 분 안에 맞춤형 디자인 사이트를 구축하세요. 몇 번의 클릭만으로 바로 시작할 수 있습니다."
+
+#: includes/Admin/Onboarding/Onboarding.php:602
+#, fuzzy
+msgid ""
+"Build a professional, custom-designed site in moments. Choose from 140+ "
+"templates or use AI."
+msgstr "전문적인 맞춤형 디자인 사이트를 순식간에 구축하세요. 140개 이상의 템플릿 중에서 선택하거나 AI를 사용하세요."
+
+#: includes/Admin/Onboarding/Onboarding.php:506
+msgid ""
+"Build a professional, custom-designed site in moments. Just a few clicks and "
+"AI handles the rest."
+msgstr "전문적인 맞춤형 디자인 사이트를 순식간에 구축하세요. 몇 번의 클릭만으로 나머지는 AI가 알아서 처리합니다."
+
+#: includes/Admin/Assets.php:200 gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/PageForm.js:70
+msgid "Cancel"
+msgstr "취소"
+
+#: includes/Admin/Assets.php:279
+#, fuzzy
+msgid "Cash on delivery"
+msgstr "현금 결제"
+
+#: includes/Rest/WelcomeRoutes.php:65
+msgid "Choice parameter missing or empty"
+msgstr "선택 매개변수 누락 또는 비어 있음"
+
+#: includes/Rest/WelcomeRoutes.php:99
+msgid "Choice parameter missing or invalid"
+msgstr "선택 매개변수 누락 또는 유효하지 않음"
+
+#: includes/Admin/Onboarding/Onboarding.php:583
+#, fuzzy
+msgid "Choose a template"
+msgstr "템플릿 선택"
+
+#: includes/Admin/Onboarding/Onboarding.php:549
+#, fuzzy
+msgid "Choose another template"
+msgstr "다른 템플릿 선택"
+
+#: includes/Admin/Onboarding/Onboarding.php:611
+#, fuzzy
+msgid "Choose template"
+msgstr "템플릿 선택"
+
+#: includes/Admin/Assets.php:166 includes/Admin/Onboarding/Onboarding.php:380
+msgid ""
+"Choose the ways you'd like to ship orders to customers. You can always add "
+"others later."
+msgstr "고객에게 주문을 배송할 방법을 선택합니다. 나중에 언제든지 다른 방법을 추가할 수 있습니다."
+
+#: includes/Admin/Assets.php:213
+msgid "Complete"
+msgstr "완료"
+
+#: includes/Admin/Assets.php:219
+msgid "Completed steps"
+msgstr "완료된 단계"
+
+#: includes/Admin/Assets.php:255
+msgid "Configure"
+msgstr "구성"
+
+#: includes/Admin/Onboarding/PluginManager.php:35
+msgid ""
+"Configure the payment options and accept payments with cards, ticket and "
+"money of Mercado Pago account."
+msgstr "결제 옵션을 구성하고 카드, 티켓, 메르카도 파고 계정의 현금으로 결제를 수락합니다."
+
+#: includes/Admin/Hooks.php:494
+msgid "Congrats, you have connected WooPayments!"
+msgstr "축하합니다, WooPayments를 연결하셨습니다!"
+
+#: includes/Admin/Assets.php:215 includes/Admin/Hooks.php:487
+msgid "Congrats, you’re ready to show off your site!"
+msgstr "축하합니다, 사이트를 자랑할 준비가 되었습니다!"
+
+#: includes/Admin/Assets.php:256
+msgid "Connect"
+msgstr "연결"
+
+#: includes/Admin/Onboarding/Onboarding.php:262
+msgid "Connect Amazon to site"
+msgstr "Amazon을 사이트에 연결"
+
+#: includes/Admin/Assets.php:233
+msgid "Connect domain now"
+msgstr "지금 도메인 연결"
+
+#: includes/Admin/Onboarding/Onboarding.php:202
+#: includes/Admin/Onboarding/Onboarding.php:215
+msgid "Connect on hPanel"
+msgstr "hPanel에서 연결"
+
+#: includes/Admin/Assets.php:263 includes/Admin/Onboarding/WelcomeCards.php:29
+msgid ""
+"Connect your <strong>Amazon Associate</strong> account to fetch API details."
+msgstr "Amazon Associate 계정을 연결하여 API 세부 정보를 가져옵니다."
+
+#: includes/Admin/Onboarding/Onboarding.php:254
+msgid "Connect your Amazon account to the site"
+msgstr "사이트에 Amazon 계정 연결"
+
+#: includes/Admin/Assets.php:202
+msgid "Connect your domain"
+msgstr "도메인 연결"
+
+#: includes/Admin/Assets.php:301 includes/Admin/Onboarding/Onboarding.php:425
+msgid "Connect your domain first"
+msgstr "먼저 도메인 연결"
+
+#: includes/Admin/Assets.php:179 includes/Admin/Assets.php:182
+#: includes/Admin/Assets.php:305
+msgid "Connect your domain to Hostinger"
+msgstr "도메인을 호스팅어에 연결"
+
+#: includes/Admin/Onboarding/Onboarding.php:220
+#: includes/Admin/Onboarding/Onboarding.php:508
+msgid "Connected a domain"
+msgstr "도메인 연결"
+
+#: includes/Admin/Onboarding/Onboarding.php:257
+msgid "Connected your Amazon account"
+msgstr "아마존 계정 연결"
+
+#: includes/Admin/Assets.php:293
+msgid ""
+"Content can be anything you wish, for example, text, images, videos, tables, "
+"and lots more. Click on a plus sign and choose any block you want to add to "
+"the page."
+msgstr ""
+"콘텐츠는 텍스트, 이미지, 동영상, 표 등 원하는 모든 것이 될 수 있습니다. 더하기 기호를 클릭하고 페이지에 추가할 블록을 선택합니다."
+
+#: includes/Admin/Assets.php:154
+msgid "Continue"
+msgstr "계속"
+
+#: includes/Admin/Assets.php:297 includes/Admin/Hooks.php:484
+#: includes/Admin/Hooks.php:497
+msgid "Continue setup"
+msgstr "설정 계속"
+
+#: includes/Admin/Assets.php:203
+msgid "Create a logo"
+msgstr "로고 생성"
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/CreatePageButton.js:23
+msgid "Create a new Page"
+msgstr "새 페이지 생성"
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/CreatePageButton.js:26
+msgid "Create a new page"
+msgstr "새 페이지 생성"
+
+#: includes/Admin/Onboarding/Onboarding.php:505
+msgid "Create a site with AI"
+msgstr "AI로 사이트 생성"
+
+#: includes/Admin/Assets.php:272
+#, fuzzy
+msgid "Create a website with AI"
+msgstr "AI로 웹사이트 만들기"
+
+#: includes/Admin/Onboarding/PluginManager.php:57
+msgid ""
+"Create additional shipment methods in WooCommerce and enable pricing based "
+"on cart weight or total."
+msgstr "WooCommerce에서 추가 배송 방법을 생성하고 카트 무게 또는 총액을 기준으로 가격을 책정할 수 있습니다."
+
+#: includes/Admin/Onboarding/PluginManager.php:69
+msgid "Create Chronopost & Mondial relay shipping labels and send them easily."
+msgstr "크로노포스트 및 몬디알 릴레이 배송 라벨을 생성하여 간편하게 발송하세요."
+
+#: includes/Admin/Onboarding/Onboarding.php:524
+#: includes/Admin/Onboarding/Onboarding.php:575
+msgid "Create new site"
+msgstr "새 사이트 생성"
+
+#: includes/Admin/Onboarding/Onboarding.php:603
+#, fuzzy
+msgid "Create site"
+msgstr "사이트 만들기"
+
+#: includes/Admin/Onboarding/Onboarding.php:510
+msgid "Create site with AI"
+msgstr "AI로 사이트 생성"
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/PagesList.js:59
+msgid "Current page"
+msgstr "현재 페이지"
+
+#: includes/Admin/Assets.php:216
+msgid "Customize the way your site looks and start welcoming visitors."
+msgstr "사이트 디자인을 맞춤화하고 방문자를 맞이하세요."
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/DeletePageButton.js:123
+#: gutenberg/edit-pages-panel/src/components/DeletePageButton.js:125
+msgid "Delete page"
+msgstr "페이지 삭제"
+
+#: includes/Admin/Assets.php:280
+#, fuzzy
+msgid "Direct bank transfer"
+msgstr "은행 직접 송금"
+
+#: includes/Admin/Assets.php:142
+msgid "Discover add-ons"
+msgstr "애드온 알아보기"
+
+#: includes/Admin/Assets.php:226 includes/Admin/Assets.php:257
+msgid "Dismiss"
+msgstr "해지"
+
+#: includes/Admin/Surveys.php:48
+msgid "Do you have any comments/suggestions to improve our AI tools?"
+msgstr "AI 도구를 개선하기 위한 의견이나 제안이 있으신가요?"
+
+#: includes/Admin/Surveys.php:34
+msgid ""
+"Do you have any comments/suggestions to improve our WooCommerce onboarding?"
+msgstr "우커머스 온보딩을 개선하기 위한 의견이나 제안이 있으신가요?"
+
+#: includes/Admin/Assets.php:307
+msgid ""
+"Domain propagation can take up to 24 hours. Your domain will propagate "
+"automatically, and you don't need to take any action during this time."
+msgstr ""
+"도메인 전파에는 최대 24시간이 걸릴 수 있습니다. 도메인은 자동으로 전파되며 이 기간 동안에는 아무런 조치를 취할 필요가 없습니다."
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/PagesList.js:19
+msgid "Edit"
+msgstr "편집"
+
+#: includes/Admin/Assets.php:245
+msgid "Edit an image"
+msgstr "이미지 편집"
+
+#: includes/Admin/Assets.php:239
+msgid "Edit description"
+msgstr "설명 수정"
+
+#: includes/Hooks.php:265
+msgid "Edit Home Page"
+msgstr "홈페이지 편집"
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/PagesList.js:12
+#: gutenberg/edit-pages-panel/src/components/PagesList.js:14
+msgid "Edit Page"
+msgstr "페이지 편집"
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/index.js:100
+#: gutenberg/edit-pages-panel/src/index.js:106
+msgid "Edit Pages"
+msgstr "페이지 편집"
+
+#: includes/Admin/Assets.php:237
+msgid "Edit post"
+msgstr "게시물 수정"
+
+#: includes/Admin/Assets.php:197
+msgid "Edit post description"
+msgstr "게시물 설명 수정"
+
+#: includes/Admin/Assets.php:225
+msgid "Edit site"
+msgstr "사이트 편집"
+
+#: includes/Admin/Assets.php:199
+msgid "Edit site title"
+msgstr "사이트 제목 편집"
+
+#: includes/Admin/Assets.php:143
+msgid "Efficient site management with WordPress add-ons"
+msgstr "워드프레스 애드온으로 효율적인 사이트 관리"
+
+#: includes/Admin/Assets.php:211
+msgid ""
+"Enter your store details so we can help you set up your online store faster."
+msgstr "스토어 세부 정보를 입력하면 온라인 스토어를 더 빠르게 설정할 수 있도록 도와드립니다."
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/PageForm.js:46
+msgid "Error:"
+msgstr "오류:"
+
+#: includes/Admin/Onboarding/Onboarding.php:224
+msgid ""
+"Every website needs a domain that makes it easy to access and remember. Get "
+"yours in just a few clicks."
+msgstr "모든 웹사이트에는 쉽게 액세스하고 기억할 수 있는 도메인이 필요합니다. 클릭 몇 번으로 도메인을 확보하세요."
+
+#: includes/Admin/Assets.php:158
+msgid ""
+"Expand your audience with the help of Omnisend. Create email campaigns that "
+"drive sales."
+msgstr "옴니센드의 도움으로 잠재고객을 확장하세요. 판매를 촉진하는 이메일 캠페인을 생성하세요."
+
+#: includes/Admin/Onboarding/PluginManager.php:47
+msgid "Extends WooCommerce with a RedSys gateway."
+msgstr "RedSys 게이트웨이로 WooCommerce를 확장합니다."
+
+#: includes/Admin/Assets.php:316
+msgid "Find the answers you need in our Knowledge Base"
+msgstr "기술 자료에서 필요한 답변을 찾아보세요"
+
+#: includes/Admin/Assets.php:241
+msgid "Find the Media page"
+msgstr "미디어 페이지 찾기"
+
+#: includes/Admin/Assets.php:326
+msgid "Follow these steps to complete your setup"
+msgstr "설정을 완료하려면 다음 단계를 따르세요"
+
+#: includes/Admin/Assets.php:258
+msgid "Generate content"
+msgstr "콘텐츠 생성"
+
+#: includes/Admin/Assets.php:260 includes/Admin/Onboarding/WelcomeCards.php:37
+msgid "Generate content with AI"
+msgstr "AI로 콘텐츠 생성"
+
+#: includes/Admin/Assets.php:303
+msgid "Get a domain"
+msgstr "도메인 확보"
+
+#: includes/Admin/Assets.php:141
+msgid "Get deal"
+msgstr "혜택 받기"
+
+#: includes/Admin/Hooks.php:337
+msgid "Get Discount"
+msgstr "할인 받기"
+
+#: includes/Admin/Onboarding/Onboarding.php:406
+msgid "Get found on Google"
+msgstr "구글에서 검색하기"
+
+#: includes/Admin/Assets.php:261
+msgid ""
+"Get images, text, and SEO keywords created for you instantly – try <strong>"
+"AI Content Creator</strong>."
+msgstr "이미지, 텍스트, SEO 키워드를 즉시 생성해 주는 <strong>AI 콘텐츠 크리에이터</strong>를 사용해 보세요."
+
+#: includes/Admin/Onboarding/WelcomeCards.php:39
+msgid "Get images, text, and SEO keywords created for you instantly."
+msgstr "이미지, 텍스트, SEO 키워드를 즉시 생성할 수 있습니다."
+
+#: includes/Admin/Assets.php:324
+msgid "Get in touch with our live specialists"
+msgstr "라이브 전문가에게 문의하기"
+
+#: includes/Admin/Assets.php:172
+msgid ""
+"Get ready to accept customer payments. Let them pay for your products and "
+"services with ease."
+msgstr "고객 결제를 받을 준비를 하세요. 고객이 손쉽게 제품과 서비스를 결제할 수 있도록 하세요."
+
+#: includes/Admin/Onboarding/Onboarding.php:357
+#, fuzzy
+msgid ""
+"Get ready to sell online. Add your first product, then set up payments and "
+"shipping."
+msgstr "온라인 판매를 준비합니다. 첫 번째 제품을 추가한 다음 결제 및 배송을 설정합니다."
+
+#: includes/Admin/Onboarding/Onboarding.php:281
+msgid ""
+"Get ready to sell online. Add your first product, then set up shipping and "
+"payments."
+msgstr "온라인 판매를 준비합니다. 첫 번째 제품을 추가한 다음 배송 및 결제를 설정합니다."
+
+#: includes/Admin/Onboarding/Onboarding.php:283
+#: includes/Admin/Onboarding/Onboarding.php:308
+msgid "Get started"
+msgstr "시작하기"
+
+#: includes/Admin/Assets.php:208
+msgid "Get started!"
+msgstr "바로 시작하세요!"
+
+#: includes/Admin/Assets.php:167
+msgid "Getting your features ready"
+msgstr "기능 준비하기"
+
+#: includes/Admin/Assets.php:235
+msgid "Go to Posts"
+msgstr "게시물로 이동"
+
+#: includes/Admin/Assets.php:204 includes/Admin/Assets.php:247
+msgid "Go to the Customize page"
+msgstr "사용자 지정 페이지로 이동합니다"
+
+#: includes/Admin/Assets.php:299
+msgid ""
+"Google Site Kit is an essential plugin that makes sure that potential "
+"visitors can find your site on Google."
+msgstr "Google 사이트 키트는 잠재 방문자가 Google에서 사이트를 찾을 수 있도록 하는 필수 플러그인입니다."
+
+#: includes/Admin/Assets.php:234
+msgid "Got it!"
+msgstr "알겠습니다!"
+
+#: includes/Admin/Assets.php:317
+msgid "Help Center"
+msgstr "지원 센터"
+
+#: includes/Admin/Assets.php:232
+msgid "Hide completed"
+msgstr "완료 숨기기"
+
+#: includes/Admin/Assets.php:224
+msgid "Hide list"
+msgstr "목록 숨기기"
+
+#: includes/Admin/Onboarding/PluginManager.php:54
+msgid ""
+"Hosted services for WooCommerce: automated tax calculation, shipping label "
+"printing, and smoother payment setup."
+msgstr "우커머스용 호스팅 서비스: 자동 세금 계산, 배송 라벨 인쇄, 원활한 결제 설정."
+
+#. Author of the plugin
+msgid "Hostinger"
+msgstr "호스팅어"
+
+#: includes/Admin/Assets.php:320
+msgid "Hostinger Academy"
+msgstr "호스팅어 아카데미"
+
+#. Plugin Name of the plugin
+msgid "Hostinger Easy Onboarding"
+msgstr "호스팅어 간편한 온보딩"
+
+#. Description of the plugin
+msgid "Hostinger Easy Onboarding WordPress plugin."
+msgstr "호스팅어 간편한 온보딩 워드프레스 플러그인."
+
+#: includes/Admin/Assets.php:238
+msgid ""
+"Hover over the chosen post to see the options menu. Click on the Edit button "
+"to open the post editor."
+msgstr "선택한 글 위로 마우스를 가져가면 옵션 메뉴가 표시됩니다. 편집 버튼을 클릭하여 글 편집기를 엽니다."
+
+#: includes/Admin/Surveys.php:41
+msgid "How could we make it easier to create a new WordPress website?"
+msgstr "새 워드프레스 웹사이트를 더 쉽게 만들려면 어떻게 해야 할까요?"
+
+#: includes/Admin/Assets.php:312
+msgid "How to Back Up a WordPress Site"
+msgstr "워드프레스 사이트 백업하는 방법"
+
+#: includes/Admin/Assets.php:304
+msgid "How to Build an EFFECTIVE Landing Page with WordPress (2024)"
+msgstr "워드프레스로 효과적인 랜딩 페이지를 구축하는 방법 (2024)"
+
+#: includes/Admin/Assets.php:308
+msgid "How to Create a WordPress Contact Us Page"
+msgstr "워드프레스 문의 페이지 만드는 방법"
+
+#: includes/Admin/Assets.php:310
+msgid "How to Create Your Coming Soon Page in WordPress (2024)"
+msgstr "워드프레스에서 출시 예정 페이지를 만드는 방법 (2024)"
+
+#: includes/Admin/Assets.php:313
+msgid "How to Import Images Into WordPress Website"
+msgstr "워드프레스 웹사이트로 이미지를 가져오는 방법"
+
+#: includes/Admin/Assets.php:306
+msgid "How to Make a Website (2024): Simple, Quick, & Easy Tutorial"
+msgstr "웹사이트 만드는 방법 (2024): 간단하고 빠르고 쉬운 튜토리얼"
+
+#: includes/Admin/Assets.php:185
+msgid "How to Point Domain Name to Web Hosting"
+msgstr "도메인 네임을 웹 호스팅으로 가리키는 방법"
+
+#: includes/Admin/Assets.php:314
+msgid "How to Set Up WordPress SMTP"
+msgstr "워드프레스 SMTP 설정 방법"
+
+#: includes/Admin/Surveys.php:40
+msgid ""
+"How would you rate your experience building a website based on a pre-built "
+"template? (Score 1-10)"
+msgstr "사전 제작된 템플릿을 기반으로 웹 사이트를 구축한 경험에 대해 어떻게 평가하시겠습니까? (1~10점)"
+
+#: includes/Admin/Surveys.php:33
+msgid ""
+"How would you rate your experience setting up a WooCommerce site on our "
+"hosting?"
+msgstr "호스팅에서 우커머스 사이트를 설정한 경험에 대해 어떻게 평가하시나요?"
+
+#: includes/Admin/Surveys.php:47
+msgid ""
+"How would you rate your experience using our AI content generation tools in "
+"onboarding? (Scale 1-10)"
+msgstr "온보딩에서 AI 콘텐츠 생성 도구를 사용한 경험에 대해 어떻게 평가하시겠습니까? (1~10점 기준)"
+
+#: includes/Admin/Menu.php:69
+msgid "hPanel - Billing"
+msgstr "hPanel - 청구"
+
+#: includes/Admin/Menu.php:51
+msgid "hPanel - Home"
+msgstr "hPanel - 홈"
+
+#: includes/Admin/Menu.php:60
+msgid "hPanel - Websites"
+msgstr "hPanel - 웹사이트"
+
+#. Plugin URI of the plugin
+msgid "https://hostinger.com"
+msgstr "https://hostinger.com"
+
+#. Author URI of the plugin
+msgid "https://www.hostinger.com"
+msgstr "https://www.hostinger.com"
+
+#: includes/Admin/Assets.php:309
+msgid "I Bought a Domain, Now What?"
+msgstr "도메인을 구입했는데 이제 어떻게 하나요?"
+
+#: includes/Admin/Assets.php:246
+msgid ""
+"If you wish to edit the image, click on the chosen image and click the Edit "
+"Image button. You can now crop, rotate, flip or scale the selected image."
+msgstr ""
+"이미지를 수정하려면 선택한 이미지를 클릭하고 이미지 수정 버튼을 클릭합니다. 이제 선택한 이미지를 자르고, 회전하고, 뒤집거나, 크기를 "
+"조정할 수 있습니다."
+
+#: includes/Admin/Assets.php:196 includes/Admin/Assets.php:248
+msgid ""
+"In the left sidebar, click Appearance to expand the menu. In the Appearance "
+"section, click Customize. The Customize page will open."
+msgstr "왼쪽 사이드바에서 모양을 클릭하여 메뉴를 펼칩니다. 모양 섹션에서 사용자 지정을 클릭합니다. 사용자 지정 페이지가 열립니다."
+
+#: includes/Admin/Assets.php:250
+msgid "In the left sidebar, click Site Identity and edit your site title."
+msgstr "왼쪽 사이드바에서 사이트 ID를 클릭하고 사이트 제목을 편집합니다."
+
+#: includes/Admin/Assets.php:206
+msgid ""
+"In the left sidebar, click Site Identity, then click on the Select Site Icon "
+"button. Here, you can upload your brand logo."
+msgstr ""
+"왼쪽 사이드바에서 사이트 아이덴티티를 클릭한 다음 사이트 아이콘 선택 버튼을 클릭합니다. 여기에서 브랜드 로고를 업로드할 수 있습니다."
+
+#: includes/Admin/Assets.php:242
+msgid ""
+"In the left sidebar, find the Media button. Click on the Library button to "
+"see all the images you have uploaded to your website."
+msgstr "왼쪽 사이드바에서 미디어 버튼을 찾습니다. 라이브러리 버튼을 클릭하면 웹사이트에 업로드한 모든 이미지를 볼 수 있습니다."
+
+#: includes/Admin/Assets.php:265
+msgid ""
+"In the left sidebar, find the Pages menu and click on Add New button. You "
+"will see the WordPress page editor. Each paragraph, image, or video in the "
+"WordPress editor is presented as a “block” of content."
+msgstr ""
+"왼쪽 사이드바에서 페이지 메뉴를 찾아 새로 추가 버튼을 클릭합니다. 워드프레스 페이지 편집기가 표시됩니다. 워드프레스 편집기의 각 단락, "
+"이미지 또는 동영상은 콘텐츠의 '블록'으로 표시됩니다."
+
+#: includes/Admin/Assets.php:236
+msgid ""
+"In the left sidebar, find the Posts button. Click on the All Posts button "
+"and find the post for which you want to change the description."
+msgstr "왼쪽 사이드바에서 글 버튼을 찾습니다. 모든 글 버튼을 클릭하고 설명을 변경하려는 글을 찾습니다."
+
+#: includes/Admin/Assets.php:177
+msgid ""
+"Increase your sites visibility by enabling its discoverability in the Google "
+"search engine."
+msgstr "구글 검색 엔진에서 검색 기능을 활성화하여 사이트 가시성을 높이세요."
+
+#: includes/Admin/Assets.php:126
+#, fuzzy
+msgid "Installation failed"
+msgstr "설치 실패"
+
+#: includes/Admin/Assets.php:227 includes/Admin/Assets.php:259
+msgid "Installed"
+msgstr "설치됨"
+
+#: includes/Admin/Assets.php:188
+#: includes/Admin/Views/Partials/PromotionalBanner.php:5
+msgid "Invite a Friend, Earn Up to $100"
+msgstr "친구 초대, 최대 $100 적립하기"
+
+#: includes/Admin/Onboarding/PluginManager.php:44
+msgid ""
+"It enables a WooCommerce site to accept payments through UPI apps like BHIM, "
+"Google Pay, Paytm, PhonePe or any Banking UPI app. Avoid payment gateway "
+"charges."
+msgstr ""
+"이를 통해 WooCommerce 사이트에서 BHIM, Google Pay, Paytm, PhonePe 또는 모든 뱅킹 UPI 앱과 같은 "
+"UPI 앱을 통해 결제를 수락할 수 있습니다. 결제 게이트웨이 수수료를 피하세요."
+
+#: includes/Admin/Hooks.php:481
+msgid "Just a few more steps to launch your online store"
+msgstr "온라인 스토어를 시작하기 위한 몇 단계만 더 거치면 됩니다"
+
+#: includes/Admin/Onboarding/Onboarding.php:520
+#: includes/Admin/Onboarding/Onboarding.php:544
+#: includes/Admin/Onboarding/Onboarding.php:573
+#: includes/Admin/Onboarding/Onboarding.php:581
+msgid "Keep current site"
+msgstr "현재 사이트 유지"
+
+#: includes/Admin/Assets.php:223 includes/Admin/Assets.php:315
+msgid "Knowledge Base"
+msgstr "도움말"
+
+#: includes/Admin/Assets.php:319
+msgid "Learn WordPress"
+msgstr "워드프레스 배우기"
+
+#: includes/Admin/Onboarding/Onboarding.php:260
+msgid ""
+"Link your Amazon Associates account to your website, start promoting "
+"products, and earn rewards. No API key required."
+msgstr ""
+"Amazon 계정을 웹사이트에 연결하고, 제품을 홍보하며 보상을 받으세요. API 키가 필요하지 않습니다.\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+
+#: includes/Admin/Assets.php:311
+msgid "LiteSpeed Cache: How to Get 100% WordPress Optimization"
+msgstr "라이트스피드 캐시: 100% 워드프레스 최적화를 얻는 방법"
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/PagesList.js:27
+msgid "Loading..."
+msgstr "로드 중..."
+
+#: includes/Admin/Onboarding/Onboarding.php:408
+msgid ""
+"Make sure that your website shows up when visitors are looking for your "
+"business on Google."
+msgstr "방문자가 Google에서 비즈니스를 검색할 때 웹사이트가 표시되도록 하세요."
+
+#: includes/Admin/Onboarding/Onboarding.php:415
+msgid "Manage"
+msgstr "관리"
+
+#: includes/Admin/Assets.php:156 includes/Admin/Onboarding/Onboarding.php:378
+msgid "Manage shipping"
+msgstr "배송 관리"
+
+#: includes/Admin/Assets.php:155
+msgid "Market your business"
+msgstr "비즈니스 마케팅"
+
+#: includes/Admin/Assets.php:181
+msgid "Nameserver"
+msgstr "네임서버"
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/PagesList.js:33
+msgid "No pages found."
+msgstr "페이지를 찾을 수 없습니다."
+
+#: includes/Helper.php:359
+msgid "No PHP files found in plugin directory"
+msgstr "플러그인 디렉토리에 PHP 파일이 없습니다"
+
+#: includes/Admin/Assets.php:140
+msgid "Not interested"
+msgstr "관심 없음"
+
+#: includes/Admin/Onboarding/Onboarding.php:388
+#: includes/Admin/Onboarding/Onboarding.php:420
+msgid "Not needed"
+msgstr "필요 없음"
+
+#: includes/Admin/Onboarding/Onboarding.php:337
+#: includes/Admin/Onboarding/Onboarding.php:514
+#: includes/Admin/Onboarding/Onboarding.php:605
+#: includes/Admin/Onboarding/Onboarding.php:614
+msgid "Not now"
+msgstr "지금은 아닙니다"
+
+#: includes/Admin/Assets.php:228
+msgid "Now <strong>finish setting up</strong> the plugins you’ve installed."
+msgstr "이제 설치한 플러그인 설정을 <strong>완료합니다."
+
+#: includes/Admin/Views/Partials/RateUs.php:38
+msgid ""
+"on <a href=\"https://wordpress.org/support/plugin/hostinger/reviews/#new-"
+"post\" target=\"_blank\" rel=\"noopener noreferrer\">WordPress.org</a>"
+msgstr ""
+"<a href=\"https://wordpress.org/support/plugin/hostinger/reviews/#new-post\" "
+"target=\"_blank\" rel=\"noopener noreferrer\">WordPress.org</a>"
+
+#: includes/Admin/Assets.php:220 includes/Admin/Menu.php:28
+#: includes/Admin/Menu.php:86 includes/Admin/Menu.php:87
+msgid "Onboarding"
+msgstr "온보딩"
+
+#: includes/Admin/Assets.php:152 includes/Admin/Onboarding/Onboarding.php:76
+msgid "Online store setup"
+msgstr "온라인 스토어 설정"
+
+#: includes/Admin/Assets.php:321
+msgid ""
+"Opt-in to receive tips, discounts, and recommendations from the WooCommerce "
+"team directly in your inbox."
+msgstr "옵트인하여 받은 편지함에서 우커머스 팀의 팁, 할인, 추천을 직접 받아보세요."
+
+#: includes/Admin/Assets.php:287
+msgid "Or use payment plugins"
+msgstr "또는 결제 플러그인 사용"
+
+#: includes/Admin/Assets.php:288
+msgid "Or use shipping plugins"
+msgstr "또는 배송 플러그인 사용"
+
+#: includes/Admin/Assets.php:277
+msgid "Other"
+msgstr "기타"
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/PageForm.js:41
+msgid "Page title:"
+msgstr "페이지 제목:"
+
+#: includes/Admin/Assets.php:268
+#, fuzzy
+msgid "Payment methods"
+msgstr "결제 방법"
+
+#: includes/Admin/Assets.php:269
+msgid "Payment plugins"
+msgstr "결제 플러그인"
+
+#: includes/Admin/Assets.php:273
+msgid "Payment settings"
+msgstr "결제 설정"
+
+#: includes/Admin/Onboarding/PluginManager.php:29
+msgid ""
+"PayPal's latest complete payments processing solution. Accept PayPal, Pay "
+"Later, credit/debit cards, alternative digital wallets local payment types "
+"and bank accounts."
+msgstr ""
+"PayPal의 최신 종합 결제 처리 솔루션입니다. PayPal, 나중에 결제, 신용/직불 카드, 대체 디지털 지갑 현지 결제 유형 및 "
+"은행 계좌를 수락합니다."
+
+#: includes/Admin/Assets.php:186
+msgid "Play on YouTube"
+msgstr "유튜브에서 재생"
+
+#: includes/Admin/Assets.php:139
+#, fuzzy
+msgid "Plugin activation failed"
+msgstr "플러그인 활성화 실패"
+
+#: includes/Helper.php:354
+msgid "Plugin directory not found"
+msgstr "플러그인 디렉토리를 찾을 수 없습니다"
+
+#: includes/Admin/Assets.php:135
+#, fuzzy
+msgid "Plugin has been succesfully installed and activated"
+msgstr "플러그인이 성공적으로 설치 및 활성화되었습니다"
+
+#: includes/Admin/Assets.php:137
+#, fuzzy
+msgid "Plugin installation failed"
+msgstr "플러그인 설치 실패"
+
+#: includes/Helper.php:369
+msgid "Plugin main file not found"
+msgstr "플러그인 메인 파일을 찾을 수 없습니다"
+
+#: includes/Admin/Assets.php:134
+#, fuzzy
+msgid "Plugin sucessfully activated"
+msgstr "플러그인이 성공적으로 활성화되었습니다"
+
+#: includes/Admin/Assets.php:132
+#, fuzzy
+msgid "Plugin sucessfully installed"
+msgstr "플러그인이 성공적으로 설치되었습니다"
+
+#: includes/Admin/Assets.php:278
+#, fuzzy
+msgid "Pre-built websites and themes"
+msgstr "사전 구축된 웹사이트 및 테마"
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/PreviewPageButton.js:46
+msgid "Preview"
+msgstr "미리 보기"
+
+#: includes/Admin/Assets.php:153
+msgid "Preview website"
+msgstr "웹사이트 미리보기"
+
+#: includes/Admin/Assets.php:294
+msgid "Publish the page"
+msgstr "페이지 게시"
+
+#: includes/Admin/Views/Partials/RateUs.php:2
+msgid "Rate this plugin"
+msgstr "이 플러그인 평가하기"
+
+#: includes/Admin/Assets.php:276
+msgid "Recommended for you"
+msgstr "추천 상품"
+
+#: includes/Admin/Assets.php:262 includes/Admin/Onboarding/WelcomeCards.php:27
+msgid "Run an Amazon Affiliate site"
+msgstr "아마존 제휴 사이트 운영"
+
+#: includes/Admin/Assets.php:157
+msgid "Run email marketing campaigns"
+msgstr "이메일 마케팅 캠페인 실행"
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/PageForm.js:62
+msgid "Save"
+msgstr "저장"
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/PageForm.js:59
+msgid "Saving"
+msgstr "저장"
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/SearchBar.js:7
+#: gutenberg/edit-pages-panel/src/components/SearchBar.js:8
+msgid "Search pages"
+msgstr "검색 페이지"
+
+#: includes/Admin/Onboarding/PluginManager.php:38
+msgid ""
+"Securely accept payments, synchronize sales, and seamlessly manage inventory "
+"and product data between WooCommerce and Square POS."
+msgstr ""
+"결제를 안전하게 수락하고, 판매를 동기화하며, 우커머스와 Square POS 간에 재고 및 제품 데이터를 원활하게 관리할 수 있습니다."
+
+#: includes/Admin/Onboarding/Onboarding.php:331
+msgid ""
+"Sell products, services and digital downloads. Set up and customize each "
+"item to fit your business needs."
+msgstr "제품, 서비스 및 디지털 다운로드를 판매하세요. 비즈니스 요구에 맞게 각 항목을 설정하고 사용자 지정하세요."
+
+#: includes/Admin/Assets.php:175
+msgid ""
+"Sell products, services, and digital downloads. Set up and customize each "
+"item to fit your business needs."
+msgstr "제품, 서비스, 디지털 다운로드를 판매하세요. 비즈니스 요구에 맞게 각 항목을 설정하고 사용자 지정하세요."
+
+#: includes/Admin/Assets.php:170
+msgid "Set up a payment method"
+msgstr "결제 방법 설정"
+
+#: includes/Admin/Onboarding/WelcomeCards.php:17
+msgid "Set up an online store"
+msgstr "온라인 스토어 설정"
+
+#: includes/Admin/Onboarding/Onboarding.php:410
+msgid "Set up Google Site Kit"
+msgstr "구글 사이트 키트 설정"
+
+#: includes/Admin/Assets.php:171 includes/Admin/Onboarding/Onboarding.php:359
+msgid "Set up payment method"
+msgstr "결제 방법 설정"
+
+#: includes/Admin/Assets.php:274 includes/Admin/Onboarding/Onboarding.php:355
+msgid "Set up payments"
+msgstr "결제 설정"
+
+#: includes/Admin/Assets.php:296
+msgid "Set up shipping"
+msgstr "배송 설정"
+
+#: includes/Admin/Onboarding/Onboarding.php:382
+#, fuzzy
+msgid "Set up shipping method"
+msgstr "배송 방법 설정"
+
+#: includes/Admin/Assets.php:295
+msgid "Set up Site Kit"
+msgstr "사이트 키트 설정"
+
+#: includes/Admin/Onboarding/Onboarding.php:279
+msgid "Set up your online store"
+msgstr "온라인 스토어 설정"
+
+#: includes/Admin/Assets.php:285
+#, fuzzy
+msgid "Set up your site"
+msgstr "사이트 설정"
+
+#: includes/Admin/Assets.php:130
+#, fuzzy
+msgid "Setting up..."
+msgstr "설정..."
+
+#: includes/Admin/Onboarding/WelcomeCards.php:19
+msgid ""
+"Setup <strong>WooCommerce</strong>, add products or services, and start "
+"selling today."
+msgstr "<strong>우커머스</strong>를 설정하고 제품이나 서비스를 추가한 후 지금 바로 판매를 시작하세요."
+
+#: includes/Admin/Assets.php:176
+msgid "Setup Google Site Kit"
+msgstr "구글 사이트 키트 설정"
+
+#: includes/Admin/Assets.php:169 includes/Admin/Assets.php:210
+msgid "Setup my online store"
+msgstr "내 온라인 스토어 설정"
+
+#: includes/Admin/Assets.php:217
+msgid "Setup website"
+msgstr "설정 웹사이트"
+
+#: includes/Admin/Views/Partials/PromotionalBanner.php:9
+msgid ""
+"Share your referral link with friends and family and <b>receive 20% "
+"commission</b> for every successful referral."
+msgstr "추천 링크를 친구 및 가족과 공유하고 추천이 성공할 때마다 20%의 수수료를 받으세요."
+
+#: includes/Admin/Assets.php:187
+msgid ""
+"Share your referral link with friends and family and <strong>receive 20% "
+"commission</strong> for every successful referral."
+msgstr "친구 및 가족과 추천 링크를 공유하면 추천이 성공할 때마다 20%의 수수료를 <strong>받습니다."
+
+#: includes/Admin/Assets.php:159
+msgid "Ship products with ease"
+msgstr "간편하게 제품 배송"
+
+#: includes/Admin/Assets.php:160
+msgid "Shipping methods"
+msgstr "배송 방법"
+
+#: includes/Admin/Assets.php:270
+msgid "Shipping plugins"
+msgstr "배송 플러그인"
+
+#: includes/Admin/Assets.php:281
+msgid "Shipping settings"
+msgstr "배송 설정"
+
+#: includes/Rest/WooRoutes.php:47
+msgid "Shop locale is empty, please setup store first"
+msgstr "상점 정보가 비어있습니다. 먼저 스토어를 설정해주세요"
+
+#: includes/Admin/Assets.php:221
+msgid "Show list"
+msgstr "목록 표시"
+
+#: includes/Admin/Assets.php:209
+msgid "Skip"
+msgstr "건너뛰기"
+
+#: includes/Rest/StepRoutes.php:175
+msgid "Sorry, there are activation errors."
+msgstr "죄송합니다, 활성화 오류가 발생했습니다."
+
+#: includes/Rest/StepRoutes.php:73 includes/Rest/StepRoutes.php:162
+#: includes/Rest/StepRoutes.php:211 includes/Rest/StepRoutes.php:243
+#: includes/Rest/StepRoutes.php:259 includes/Rest/WooRoutes.php:53
+#: includes/Rest/WooRoutes.php:135
+msgid "Sorry, there are validation errors."
+msgstr "유효성 검사 오류가 발생했습니다."
+
+#: includes/Admin/Assets.php:271 includes/Admin/Onboarding/Onboarding.php:601
+#: includes/Admin/Onboarding/Onboarding.php:609
+#, fuzzy
+#| msgid "Started creating your site"
+msgid "Start creating your site"
+msgstr "사이트 만들기 시작"
+
+#: includes/Admin/Assets.php:178
+#: includes/Admin/Views/Partials/PromotionalBanner.php:24
+msgid "Start earning"
+msgstr "적립 시작"
+
+#: includes/Rest/StepRoutes.php:92
+msgid "Step category and/or step does not exist."
+msgstr "단계 카테고리 및/또는 단계가 존재하지 않습니다."
+
+#: includes/Rest/WooRoutes.php:129
+msgid "Store location locale not found"
+msgstr "상점 위치 정보를 찾을 수 없습니다"
+
+#: includes/Admin/Onboarding/PluginManager.php:26
+msgid "Take credit card payments on your store using Stripe."
+msgstr "Stripe을 사용하여 스토어에서 신용 카드 결제를 받습니다."
+
+#: includes/Admin/Assets.php:207
+msgid "Take me there"
+msgstr "바로가기"
+
+#: includes/Admin/Assets.php:322
+msgid "Tell us a bit about your business"
+msgstr "비즈니스에 대해 간단히 알려주세요"
+
+#: includes/Admin/Assets.php:149
+msgid ""
+"The biggest ever <span style=\"color: #8C85FF\">Amazing Friday</span> sale!"
+msgstr "역대 최대 규모의 <span style=\"color: #8C85FF\">놀라운 프라이데이</span> 세일!"
+
+#: includes/Admin/Assets.php:147
+msgid ""
+"The biggest ever <span style=\"color: #8C85FF\">Black Friday</span> sale!"
+msgstr "역대 최대 규모의 <span style=\"color: #8C85FF\">블랙 프라이데이</span> 세일!"
+
+#: includes/Admin/Assets.php:150
+msgid ""
+"The biggest ever <span style=\"color: #8C85FF\">Blessed Friday</span> sale!"
+msgstr "역대 최대 규모의 <span style=\"color: #8C85FF\">특별한 프라이데이</span> 세일!"
+
+#: includes/Admin/Assets.php:146
+msgid ""
+"The biggest ever <span style=\"color: #8C85FF\">Cyber Monday</span> sale!"
+msgstr "역대 최대 규모의 <span style=\"color: #8C85FF\">사이버 먼데이</span> 세일!"
+
+#: includes/Admin/Assets.php:151
+msgid ""
+"The biggest ever <span style=\"color: #8C85FF\">End of the year</span> sale!"
+msgstr "역대 최대 규모의 <span style=\"color: #8C85FF\">연말</span> 세일!"
+
+#: includes/Admin/Assets.php:148
+msgid ""
+"The biggest ever <span style=\"color: #8C85FF\">White Friday</span> sale!"
+msgstr "역대 최대 규모의 <span style=\"color: #8C85FF\">화이트 프라이데이</span> 세일!"
+
+#. translators: %s php version
+#: hostinger-easy-onboarding.php:74
+msgid ""
+"The Hostinger Easy Onboarding plugin requires minimum PHP version of <b>"
+"%s</b>. "
+msgstr "호스팅어 간편 온보딩 플러그인에는 최소 PHP 버전 <b>%s</b>가 필요합니다."
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/DeletePageButton.js:49
+msgid "The page was deleted!"
+msgstr "페이지가 삭제되었습니다!"
+
+#: includes/Admin/Onboarding/PluginManager.php:66
+msgid ""
+"The USPS Simple plugin calculates rates for domestic shipping dynamically "
+"using USPS API during checkout."
+msgstr "USPS Simple 플러그인은 결제 시 USPS API를 사용하여 국내 배송 요금을 동적으로 계산합니다."
+
+#: includes/Admin/Assets.php:138
+#, fuzzy
+msgid "Theme activation failed"
+msgstr "테마 활성화에 실패했습니다"
+
+#: includes/Admin/Assets.php:127
+#, fuzzy
+msgid "Theme has been succesfully activated"
+msgstr "테마가 성공적으로 활성화되었습니다"
+
+#: includes/Admin/Assets.php:128
+#, fuzzy
+msgid "Theme has been succesfully installed"
+msgstr "테마가 성공적으로 설치되었습니다"
+
+#: includes/Admin/Assets.php:129
+#, fuzzy
+msgid "Theme has been succesfully installed and activated"
+msgstr "테마가 성공적으로 설치 및 활성화되었습니다"
+
+#: includes/Admin/Assets.php:136
+#, fuzzy
+msgid "Theme installation failed"
+msgstr "테마 설치에 실패했습니다"
+
+#: includes/Admin/Assets.php:133
+#, fuzzy
+msgid "Theme sucessfully activated"
+msgstr "테마가 성공적으로 활성화되었습니다"
+
+#: includes/Admin/Assets.php:131
+#, fuzzy
+msgid "Theme sucessfully installed"
+msgstr "테마가 성공적으로 설치되었습니다"
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/DeletePageButton.js:62
+msgid "There was an error."
+msgstr "오류가 발생했습니다."
+
+#: includes/Admin/Onboarding/PluginManager.php:63
+msgid ""
+"This extension gives you the possibility to use the Colissimo shipping "
+"methods in WooCommerce"
+msgstr "이 확장 기능을 사용하면 우커머스에서 Colissimo 배송 방법을 사용할 수 있습니다"
+
+#: includes/Admin/Assets.php:327
+msgid "This field is required"
+msgstr "이 필드는 필수 입력 사항입니다"
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/PagesList.js:41
+msgid "Title"
+msgstr "제목"
+
+#: includes/Admin/Assets.php:244
+msgid ""
+"To upload a new image, click on Add New button on the Media Library page and "
+"select files."
+msgstr "새 이미지를 업로드하려면 미디어 라이브러리 페이지에서 새로 추가 버튼을 클릭하고 파일을 선택합니다."
+
+#: includes/Admin/Assets.php:161
+msgid "Try Omnisend"
+msgstr "Omnisend 체험하기"
+
+#: includes/Admin/Assets.php:222
+msgid "Tutorials"
+msgstr "튜토리얼"
+
+#: includes/Errors.php:31
+msgid "Unknown error code."
+msgstr "알 수 없는 오류 코드입니다."
+
+#: includes/Admin/Assets.php:198 includes/Admin/Assets.php:243
+msgid "Upload an image"
+msgstr "이미지 업로드"
+
+#: includes/Admin/Assets.php:191 includes/Admin/Assets.php:205
+msgid "Upload your logo"
+msgstr "로고 업로드"
+
+#: includes/Admin/Hooks.php:333
+msgid ""
+"Use the special discount code <b>ONLYHOSTINGER30</b> to get 30% off on "
+"Omnisend for 6 months when you upgrade."
+msgstr ""
+"특별 할인 코드 <b>ONLYHOSTINGER30</b>를 사용하면 업그레이드 시 6개월 동안 Omnisend를 30% 할인된 가격에 "
+"이용할 수 있습니다."
+
+#: includes/Admin/Hooks.php:490
+msgid "View checklist"
+msgstr "체크리스트 보기"
+
+#: includes/Admin/Assets.php:231
+msgid "View completed"
+msgstr "보기 완료"
+
+#: includes/Admin/Assets.php:283
+#, fuzzy
+msgid "View less"
+msgstr "적게 보기"
+
+#: includes/Admin/Onboarding/Onboarding.php:288
+msgid "View list"
+msgstr "목록 보기"
+
+#: includes/Admin/Assets.php:282
+#, fuzzy
+msgid "View more"
+msgstr "자세히 보기"
+
+#: includes/Admin/Assets.php:229
+msgid "View plugins"
+msgstr "플러그인 보기"
+
+#: includes/Admin/Onboarding/Onboarding.php:206
+msgid ""
+"Visit hPanel and connect a real domain. If you already did this, please wait "
+"up to 24h until the domain fully connects"
+msgstr "hPanel을 방문하여 실제 도메인을 연결합니다. 이미 연결한 경우 도메인이 완전히 연결될 때까지 최대 24시간 기다려 주세요"
+
+#: includes/Admin/Assets.php:180
+msgid "Wait for domain propagation"
+msgstr "도메인 전파 대기"
+
+#: includes/Admin/Onboarding/Onboarding.php:516
+msgid "Want to create a new AI site?"
+msgstr "새로운 AI 사이트를 만들고 싶으신가요?"
+
+#: includes/Admin/Onboarding/Onboarding.php:539
+#, fuzzy
+msgid "Want to create a new site on a different template?"
+msgstr "다른 템플릿으로 새 사이트를 만들고 싶으신가요?"
+
+#: includes/Admin/Onboarding/Onboarding.php:579
+#, fuzzy
+msgid "Want to create a new site on a pre-built template?"
+msgstr "미리 빌드된 템플릿으로 새 사이트를 만들고 싶으신가요?"
+
+#: includes/Admin/Onboarding/Onboarding.php:571
+#, fuzzy
+msgid "Want to create a new site?"
+msgstr "새 사이트를 만들고 싶으신가요?"
+
+#: includes/Errors.php:20
+msgid ""
+"We apologize for the inconvenience. The AI content generation process "
+"encountered a server error. Please try again later, and if the issue "
+"persists, kindly contact our support team for assistance."
+msgstr ""
+"불편을 드려 죄송합니다. AI 콘텐츠 생성 과정에서 서버 오류가 발생했습니다. 잠시 후 다시 시도해 보시고 문제가 지속되면 지원팀에 "
+"문의해 주세요."
+
+#: includes/Admin/Assets.php:323 includes/Admin/Onboarding/Onboarding.php:306
+msgid "We'll use this information to help you set up your store faster."
+msgstr "이 정보를 사용하여 스토어를 더 빠르게 설정할 수 있도록 도와드리겠습니다."
+
+#: gutenberg/edit-pages-panel/src/components/StoreSetupButton.js:29
+msgid "Website Setup"
+msgstr "웹사이트 설정"
+
+#: includes/Admin/Assets.php:189 includes/Admin/Assets.php:214
+#: includes/Admin/Onboarding/Onboarding.php:48
+#: gutenberg/edit-pages-panel/build/index.js:1
+msgid "Website setup"
+msgstr "웹사이트 설정"
+
+#: includes/Admin/Assets.php:193
+msgid "Website URL"
+msgstr "웹사이트 URL"
+
+#: includes/Admin/Assets.php:325
+msgid "Welcome to WordPress!"
+msgstr "워드프레스에 오신 것을 환영합니다!"
+
+#: includes/Admin/Assets.php:165
+msgid "What type of products or services will you sell?"
+msgstr "어떤 유형의 제품이나 서비스를 판매할 예정인가요?"
+
+#: includes/Admin/Assets.php:164
+msgid "Where is your store located?"
+msgstr "스토어 위치는 어디인가요?"
+
+#: includes/Admin/Assets.php:318
+msgid "WordPress tutorials"
+msgstr "워드프레스 튜토리얼"
+
+#: includes/Admin/Assets.php:298
+msgid "Yes, skip step"
+msgstr "네, 단계 건너뛰기"
+
+#. translators: %s php version
+#: hostinger-easy-onboarding.php:78
+msgid "You are running <b>%s</b> PHP version."
+msgstr "<b>%s</b> PHP 버전을 실행 중입니다."
+
+#: includes/Admin/Assets.php:286
+msgid ""
+"You can also set up a shipping method without installing additional plugins."
+msgstr "추가 플러그인을 설치하지 않고도 배송 방법을 설정할 수도 있습니다."
+
+#: includes/Admin/Assets.php:183
+msgid ""
+"You can connect a domain to Hostinger by changing the nameservers. Different "
+"domain providers are have unique procedures for changing nameservers. Here "
+"are Hostinger's nameservers:"
+msgstr ""
+"네임서버를 변경하여 도메인을 호스팅어에 연결할 수 있습니다. 도메인 공급업체마다 네임서버를 변경하는 고유한 절차가 있습니다. 다음은 "
+"호스팅어의 네임서버입니다:"
+
+#: includes/Admin/Assets.php:240
+msgid ""
+"You can see the whole post in the editor. Find the description part and "
+"change it to your preferences."
+msgstr "편집기에서 전체 글을 볼 수 있습니다. 설명 부분을 찾아 원하는 대로 변경합니다."
+
+#: includes/Admin/Assets.php:195
+msgid ""
+"You need to purchase a domain for your website before the preview domain "
+"becomes inaccessible. Find a desired website name using a <a style=\"text-"
+"decoration:none; font-weight:bold; color:#673de6\" target=\"_blank\" "
+"href=\"https://hpanel.hostinger.com/domains/domain-checker\" >domain name "
+"searcher.</a >"
+msgstr ""
+"미리 보기 도메인에 액세스할 수 없게 되기 전에 웹사이트용 도메인을 구매해야 합니다. <a style=\"text-decoration:"
+"none; font-weight:굵게; color:#673de6\" target=\"_blank\" href=\"https:"
+"//hpanel.hostinger.com/domains/domain-checker\">도메인 이름 검색기를 사용하여 원하는 웹사이트 "
+"이름을 찾으세요.\"</a >"
+
+#: includes/Admin/Assets.php:163
+msgid "Your business email"
+msgstr "비즈니스 이메일"
+
+#: includes/Admin/Onboarding/Onboarding.php:572
+#, fuzzy
+msgid ""
+"Your new site will replace the current one. Choose from 140+ professional "
+"templates or use AI."
+msgstr "새 사이트가 현재 사이트를 대체합니다. 140개 이상의 전문 템플릿 중에서 선택하거나 AI를 사용하세요."
+
+#: includes/Admin/Onboarding/Onboarding.php:540
+#: includes/Admin/Onboarding/Onboarding.php:580
+#, fuzzy
+msgid ""
+"Your new site will replace the current one. Choose from 140+ professional "
+"templates."
+msgstr "새 사이트가 현재 사이트를 대체합니다. 140개 이상의 전문 템플릿 중에서 선택하세요."
+
+#: includes/Admin/Onboarding/Onboarding.php:517
+msgid ""
+"Your new site will replace the current one. Use the same description or "
+"change it."
+msgstr "새 사이트가 현재 사이트를 대체합니다. 동일한 설명을 사용하거나 변경하세요."
+
+#: includes/Admin/Assets.php:168 includes/Admin/Assets.php:212
+msgid "Your progress"
+msgstr "진행 상황"
+
+#: includes/Admin/Assets.php:162
+msgid "Your store name"
+msgstr "스토어 이름"
+
+#: includes/Admin/Assets.php:194
+msgid ""
+"Your website is already published and can be accessed using Hostinger free "
+"temporary subdomain right now. Here is the current URL of your website:"
+msgstr ""
+"웹사이트가 이미 게시되어 있으며 지금 바로 호스팅어 무료 임시 하위 도메인을 사용하여 액세스할 수 있습니다. 웹사이트의 현재 URL은 "
+"다음과 같습니다:"
+
+#: includes/Admin/Assets.php:145
+msgid "You’ll love these great deals that were handpicked just for you."
+msgstr "고객님을 위해 엄선한 특별한 혜택을 만나보세요."
+
+#: includes/Admin/Assets.php:230
+msgid "You’re done setting up your online store!"
+msgstr "온라인 스토어 설정이 완료되었습니다!"
+
+#: includes/Admin/Assets.php:192
+msgid "👋 Welcome to WordPress"
+msgstr "👋 워드프레스에 오신 것을 환영합니다"

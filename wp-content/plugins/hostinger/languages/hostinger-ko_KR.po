@@ -1,0 +1,284 @@
+# Copyright (C) 2024 Hostinger
+# This file is distributed under the GPL v3.
+msgid ""
+msgstr ""
+"Project-Id-Version: Hostinger Tools 3.0.6\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/hostinger\n"
+"Last-Translator: \n"
+"Language-Team: Korean\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-07-30T12:00:12+00:00\n"
+"PO-Revision-Date: 2025-02-07 13:20+0000\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Domain: hostinger\n"
+"Language: ko_KR\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Loco-Version: 2.6.14; wp-6.7.1"
+
+#: includes/Admin/Assets.php:145
+msgid ""
+" Turning on XML-RPC might make your site less secure. Do you want to proceed?"
+msgstr " XML-RPC를 켜면 사이트의 보안이 약해질 수 있습니다. 계속 진행하시겠습니까?"
+
+#: includes/Errors.php:16
+msgid "Action Failed. Try again or contact support. Apologies."
+msgstr "작업이 실패했습니다. 다시 시도하거나 지원팀에 문의하세요. 죄송합니다."
+
+#: includes/Errors.php:19
+msgid "An unexpected error occurred. Please try again or contact support."
+msgstr "예기치 않은 오류가 발생했습니다. 다시 시도하거나 지원팀에 문의하세요."
+
+#. translators: %s: PHP version
+#: hostinger.php:84
+msgid "Attention:"
+msgstr "주의:"
+
+#: includes/Admin/Assets.php:141
+msgid "Bypass link"
+msgstr "바이패스 링크"
+
+#: includes/Admin/Assets.php:149
+msgid "Bypass link reset"
+msgstr "링크 재설정 우회"
+
+#: includes/Admin/Assets.php:147 includes/Admin/Assets.php:151
+msgid "Cancel"
+msgstr "취소"
+
+#: includes/Views/ComingSoon.php:6 includes/Views/ComingSoon.php:24
+msgid "Coming Soon"
+msgstr "곧 출시 예정"
+
+#: includes/Admin/Assets.php:121
+#, fuzzy
+msgid "Disable application passwords"
+msgstr "애플리케이션 비밀번호 비활성화"
+
+#: includes/Admin/Assets.php:116
+msgid ""
+"Disable public access to the site (WordPress admins will still be able to "
+"access)"
+msgstr "사이트에 대한 공개 액세스를 비활성화합니다(워드프레스 관리자는 계속 액세스할 수 있음)"
+
+#: includes/Admin/Assets.php:119
+msgid "Disable XML-RPC"
+msgstr "XML-RPC 비활성화"
+
+#: includes/Admin/Assets.php:146
+msgid "Disclaimer"
+msgstr "고지 사항"
+
+#: includes/Admin/Assets.php:135
+msgid "For improved security, ensure you use the latest version of WordPress"
+msgstr "보안을 강화하려면 최신 버전의 워드프레스를 사용하세요"
+
+#: includes/Admin/Assets.php:124
+msgid "Force HTTPS"
+msgstr "HTTPS 강제 적용"
+
+#: includes/Admin/Assets.php:126
+msgid "Force WWW"
+msgstr "WWW 강제 적용"
+
+#: includes/Admin/Assets.php:144 includes/Admin/Hooks.php:55
+msgid "Got it"
+msgstr "알겠습니다"
+
+#. Author of the plugin
+#: hostinger.php
+msgid "Hostinger"
+msgstr "호스팅어"
+
+#: includes/Admin/Hooks.php:53
+msgid "Hostinger Easy Onboarding"
+msgstr "호스팅어 간편 온보딩"
+
+#: includes/Admin/Hooks.php:49
+msgid "Hostinger plugin updates"
+msgstr "호스팅어 플러그인 업데이트"
+
+#. Plugin Name of the plugin
+#: hostinger.php includes/Admin/Hooks.php:52
+msgid "Hostinger Tools"
+msgstr "호스팅어 도구"
+
+#: includes/Admin/Assets.php:143
+msgid ""
+"Hostinger Tools will offer new tools to simplify your site management. And "
+"Hostinger Easy Onboarding will guide you through the steps of building a "
+"website."
+msgstr "호스팅어 도구는 사이트 관리를 간소화하는 유용한 도구를 제공합니다. 호스팅어 간편 온보딩은 웹사이트 구축 단계를 안내합니다."
+
+#. Description of the plugin
+#: hostinger.php
+msgid "Hostinger WordPress plugin."
+msgstr "호스팅어 워드프레스 플러그인."
+
+#. Plugin URI of the plugin
+#: hostinger.php
+msgid "https://hostinger.com"
+msgstr "https://hostinger.com"
+
+#. Author URI of the plugin
+#: hostinger.php
+msgid "https://www.hostinger.com"
+msgstr "https://www.hostinger.com"
+
+#: includes/Admin/Assets.php:134
+msgid "is recommended"
+msgstr "추천됨"
+
+#: includes/Admin/Assets.php:153
+msgid "Link has been reset"
+msgstr "링크가 재설정되었습니다"
+
+#: includes/Admin/Assets.php:136
+msgid "Maintenance"
+msgstr "유지 보수"
+
+#: includes/Admin/Assets.php:140
+msgid "Maintenance mode"
+msgstr "유지 보수 모드"
+
+#: includes/Views/ComingSoon.php:27
+msgid "New WordPress website is being built and will be published soon"
+msgstr "새로운 워드프레스 웹사이트가 구축 중이며 곧 게시될 예정입니다"
+
+#: includes/Admin/Hooks.php:52
+msgid "offers a toolkit for easier site maintenance."
+msgstr "는 더 쉬운 사이트 유지 관리를 위한 툴킷을 제공합니다."
+
+#: includes/Admin/Views/Partials/RateUs.php:38
+msgid ""
+"on <a href=\"https://wordpress.org/support/plugin/hostinger/reviews/#new-"
+"post\" target=\"_blank\" rel=\"noopener noreferrer\">WordPress.org</a>"
+msgstr ""
+"<a href=\"https://wordpress.org/support/plugin/hostinger/reviews/#new-post\" "
+"target=\"_blank\" rel=\"noopener noreferrer\">WordPress.org</a>에서"
+
+#: includes/Admin/Assets.php:115
+#, fuzzy
+msgid "Open guide"
+msgstr "가이드 열기"
+
+#: includes/Admin/Assets.php:129
+msgid "PHP version"
+msgstr "PHP 버전"
+
+#: includes/Admin/Assets.php:137
+msgid "Preview my website"
+msgstr "내 웹사이트 미리보기"
+
+#: includes/Admin/Assets.php:148
+msgid "Proceed anyway"
+msgstr "계속 진행하기"
+
+#: includes/Admin/Hooks.php:53
+msgid ""
+"provides guidance and learning resources for beginners to get started with "
+"building a site using WordPress."
+msgstr "는 초보자가 워드프레스를 사용하여 사이트 구축을 시작할 수 있도록 안내와 학습 자료를 제공합니다."
+
+#: includes/Admin/Views/Partials/RateUs.php:2
+msgid "Rate this plugin"
+msgstr "이 플러그인 평가하기"
+
+#: includes/Admin/Assets.php:139
+msgid "Redirects"
+msgstr "리다이렉션"
+
+#: includes/Admin/Assets.php:125
+msgid "Redirects all HTTP URLs to HTTPS sites"
+msgstr "모든 HTTP URL을 HTTPS 사이트로 리디렉션합니다"
+
+#: includes/Admin/Assets.php:127
+msgid "Redirects all WWW URLs to non-WWW ones"
+msgstr "모든 WWW URL을 비WWW URL로 리디렉션합니다"
+
+#: includes/Admin/Assets.php:118 includes/Admin/Assets.php:152
+msgid "Reset link"
+msgstr "링크 재설정"
+
+#: includes/Admin/Assets.php:132
+msgid "Running the latest version"
+msgstr "최신 버전 실행"
+
+#: includes/Admin/Assets.php:138
+msgid "Security"
+msgstr "보안"
+
+#: includes/Admin/Assets.php:117
+msgid "Skip-link that bypasses the maintenance mode"
+msgstr "유지 관리 모드를 우회하는 스킵 링크"
+
+#: includes/Admin/Hooks.php:50
+msgid "The Hostinger plugin has been split into two different plugins:"
+msgstr "호스팅어 플러그인은 두 개의 다른 플러그인으로 분리되었습니다:"
+
+#: includes/Admin/Assets.php:150
+msgid ""
+"This will invalidate the currently generated link in use. This action cannot "
+"be undone, are you sure you want to proceed?"
+msgstr "그러면 현재 사용 중인 생성된 링크가 무효화됩니다. 이 작업은 취소할 수 없습니다. 계속 진행하시겠습니까?"
+
+#: includes/Admin/Assets.php:114 includes/Admin/Menu.php:22
+#: includes/Admin/Menu.php:31 includes/Admin/Menu.php:32
+msgid "Tools"
+msgstr "도구"
+
+#: includes/Errors.php:38
+msgid "Unknown error code."
+msgstr "알 수 없는 오류 코드입니다."
+
+#: includes/Admin/Assets.php:133
+msgid "Update to"
+msgstr "다음으로 업데이트"
+
+#: includes/Admin/Assets.php:131
+msgid "Various updates and fixes available in the newest version."
+msgstr "최신 버전에서는 다양한 업데이트와 수정 사항이 적용되었습니다."
+
+#: includes/Errors.php:22
+msgid ""
+"We apologize for the inconvenience. The AI content generation process "
+"encountered a server error. Please try again later, and if the issue "
+"persists, kindly contact our support team for assistance."
+msgstr ""
+"불편을 드려 죄송합니다. AI 콘텐츠 생성 과정에서 서버 오류가 발생했습니다. 나중에 다시 시도해 보시고 문제가 지속되면 지원팀에 "
+"문의하여 도움을 받으세요."
+
+#: includes/Admin/Assets.php:142
+msgid ""
+"We’re splitting Hostinger plugin into two: Hostinger Tools and Hostinger "
+"Easy Onboarding"
+msgstr "호스팅어 플러그인을 호스팅어 도구와 호스팅어 간편 온보딩의 두 가지로 분리합니다"
+
+#: includes/Admin/Assets.php:122
+#, fuzzy
+msgid ""
+"WordPress application passwords allow users to authenticate API requests "
+"without using their main login credentials, allowing for third-party "
+"integrations."
+msgstr ""
+"워드프레스 애플리케이션 비밀번호를 사용하면 기본 로그인 자격 증명을 사용하지 않고도 API 요청을 인증할 수 있으므로 타사 통합이 "
+"가능합니다."
+
+#: includes/Admin/Assets.php:130
+msgid "WordPress version"
+msgstr "워드프레스 버전"
+
+#: includes/Admin/Assets.php:128
+msgid ""
+"WWW and non-WWW domain records are not pointing to the same host. Redirect "
+"not possible."
+msgstr "WWW 및 비 WWW 도메인 레코드가 동일한 호스트를 가리키지 않습니다. 리다이렉션이 불가능합니다."
+
+#: includes/Admin/Assets.php:120
+msgid ""
+"XML-RPC allows apps to connect to your WordPress site, but might expose your "
+"site's security. Disable this feature if you don't need it"
+msgstr ""
+"XML-RPC를 사용하면 앱이 워드프레스 사이트에 연결할 수 있지만 사이트의 보안이 노출될 수 있습니다. 필요하지 않은 경우 이 기능을 "
+"비활성화하세요"

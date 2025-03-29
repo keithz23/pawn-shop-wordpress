@@ -1,0 +1,287 @@
+# Copyright (C) 2024 Hostinger
+# This file is distributed under the GPL v3.
+msgid ""
+msgstr ""
+"Project-Id-Version: Hostinger Tools 3.0.6\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/hostinger\n"
+"Last-Translator: \n"
+"Language-Team: Thai\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-07-30T12:00:12+00:00\n"
+"PO-Revision-Date: 2024-10-23 05:58+0000\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Domain: hostinger\n"
+"Language: th\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Loco-Version: 2.6.11; wp-6.4.5"
+
+#. Plugin Name of the plugin
+#: includes/Admin/Assets.php:113 includes/Admin/Hooks.php:51
+msgid "Hostinger Tools"
+msgstr "เครื่องมือ Hostinger"
+
+#. Plugin URI of the plugin
+msgid "https://hostinger.com"
+msgstr "https://hostinger.com"
+
+#. Description of the plugin
+msgid "Hostinger WordPress plugin."
+msgstr "ปลั๊กอิน Hostinger WordPress"
+
+#. Author of the plugin
+msgid "Hostinger"
+msgstr "Hostinger"
+
+#. Author URI of the plugin
+msgid "https://www.hostinger.com"
+msgstr "https://www.hostinger.com"
+
+#. translators: %s: PHP version
+#: hostinger.php:84
+msgid "Attention:"
+msgstr "ข้อควรระวัง:"
+
+#. translators: %s: PHP version
+#: hostinger.php:84
+msgid "The Hostinger plugin requires minimum PHP version of <b>%s</b>."
+msgstr "ปลั๊กอิน Hostinger ต้องใช้ PHP เวอร์ชันขั้นต่ำเป็น <b>%s</b>"
+
+#. translators: %s: PHP version
+#: hostinger.php:88
+msgid "You are running <b>%s</b> PHP version."
+msgstr "คุณกำลังใช้งาน PHP เวอร์ชัน <b>%s</b>"
+
+#: includes/Admin/Assets.php:114
+msgid ""
+"Disable public access to the site (WordPress admins will still be able to "
+"access)"
+msgstr ""
+"ปิดการใช้งานการเข้าถึงเว็บไซต์แบบสาธารณะ (ผู้ดูแลระบบ WordPress "
+"จะยังสามารถเข้าถึงได้)"
+
+#: includes/Admin/Assets.php:115
+msgid "Skip-link that bypasses the maintenance mode"
+msgstr "ข้ามลิงค์ที่เลี่ยงผ่านโหมดการบำรุงรักษา"
+
+#: includes/Admin/Assets.php:116 includes/Admin/Assets.php:147
+msgid "Reset link"
+msgstr "รีเซ็ตลิงค์"
+
+#: includes/Admin/Assets.php:117
+msgid "Disable XML-RPC"
+msgstr "ปิดการใช้งาน XML-RPC"
+
+#: includes/Admin/Assets.php:118
+msgid ""
+"XML-RPC allows apps to connect to your WordPress site, but might expose your "
+"site's security. Disable this feature if you don't need it"
+msgstr ""
+"XML-RPC อนุญาตให้แอปเชื่อมต่อกับไซต์ WordPress ของคุณได้ "
+"แต่ระบบอาจเปิดเผยความปลอดภัยของไซต์ของคุณได้ "
+"ปิดใช้งานฟีเจอร์นี้หากคุณไม่ต้องการ"
+
+#: includes/Admin/Assets.php:119
+msgid "Force HTTPS"
+msgstr "บังคับใช้ HTTPS"
+
+#: includes/Admin/Assets.php:120
+msgid "Redirects all HTTP URLs to HTTPS sites"
+msgstr "เปลี่ยนเส้นทาง URL HTTP ทั้งหมดไปยังไซต์ HTTPS"
+
+#: includes/Admin/Assets.php:121
+msgid "Force WWW"
+msgstr "บังคับใช้ WWW"
+
+#: includes/Admin/Assets.php:122
+msgid "Redirects all WWW URLs to non-WWW ones"
+msgstr "เปลี่ยนเส้นทาง URL WWW ทั้งหมดไปยัง URL ที่ไม่ใช่ WWW"
+
+#: includes/Admin/Assets.php:123
+msgid ""
+"WWW and non-WWW domain records are not pointing to the same host. Redirect "
+"not possible."
+msgstr ""
+"บันทึกโดเมน WWW และไม่ใช่ WWW ไม่ได้ชี้ไปที่โฮสต์เดียวกัน "
+"ไม่สามารถเปลี่ยนเส้นทางได้"
+
+#: includes/Admin/Assets.php:124
+msgid "PHP version"
+msgstr "เวอร์ชั่น PHP"
+
+#: includes/Admin/Assets.php:125
+msgid "WordPress version"
+msgstr "เวอร์ชั่น WordPress"
+
+#: includes/Admin/Assets.php:126
+msgid "Various updates and fixes available in the newest version."
+msgstr "มีการอัปเดตและการแก้ไขต่างๆ ในเวอร์ชันล่าสุด"
+
+#: includes/Admin/Assets.php:127
+msgid "Running the latest version"
+msgstr "กำลังใช้งานเวอร์ชั่นล่าสุด"
+
+#: includes/Admin/Assets.php:128
+msgid "Update to"
+msgstr "อัพเดตเป็น"
+
+#: includes/Admin/Assets.php:129
+msgid "is recommended"
+msgstr "ขอแนะนำ"
+
+#: includes/Admin/Assets.php:130
+msgid "For improved security, ensure you use the latest version of WordPress"
+msgstr "เพื่อความปลอดภัยที่ดีขึ้น โปรดใช้ WordPress เวอร์ชันล่าสุด"
+
+#: includes/Admin/Assets.php:131
+msgid "Maintenance"
+msgstr "การดูแลรักษา"
+
+#: includes/Admin/Assets.php:132
+msgid "Preview my website"
+msgstr "ดูตัวอย่างเว็บไซต์ของฉัน"
+
+#: includes/Admin/Assets.php:133
+msgid "Security"
+msgstr "ความปลอดภัย"
+
+#: includes/Admin/Assets.php:134
+msgid "Redirects"
+msgstr "เปลี่ยนเส้นทาง"
+
+#: includes/Admin/Assets.php:135
+msgid "Maintenance mode"
+msgstr "โหมดการดูแลรักษา"
+
+#: includes/Admin/Assets.php:136
+msgid "Bypass link"
+msgstr "ลิงค์บายพาส"
+
+#: includes/Admin/Assets.php:137
+msgid ""
+"We’re splitting Hostinger plugin into two: Hostinger Tools and Hostinger "
+"Easy Onboarding"
+msgstr ""
+"เรากำลังแยกปลั๊กอิน Hostinger ออกเป็นสองส่วน: Hostinger Tools และ Hostinger "
+"Easy Onboarding"
+
+#: includes/Admin/Assets.php:138
+msgid ""
+"Hostinger Tools will offer new tools to simplify your site management. And "
+"Hostinger Easy Onboarding will guide you through the steps of building a "
+"website."
+msgstr ""
+"เครื่องมือ Hostinger จะมอบเครื่องมือใหม่ๆ "
+"เพื่อให้จัดการเว็บไซต์ของคุณง่ายขึ้น และ Hostinger Easy Onboarding "
+"จะคอยแนะนำคุณตลอดขั้นตอนการสร้างเว็บไซต์"
+
+#: includes/Admin/Assets.php:139 includes/Admin/Hooks.php:54
+msgid "Got it"
+msgstr "เข้าใจแล้ว"
+
+#: includes/Admin/Assets.php:140
+msgid ""
+" Turning on XML-RPC might make your site less secure. Do you want to proceed?"
+msgstr ""
+"การเปิดใช้งาน XML-RPC อาจทำให้ไซต์ของคุณปลอดภัยน้อยลง "
+"คุณต้องการดำเนินการต่อหรือไม่?"
+
+#: includes/Admin/Assets.php:141
+msgid "Disclaimer"
+msgstr "การปฏิเสธความรับผิดชอบ"
+
+#: includes/Admin/Assets.php:142 includes/Admin/Assets.php:146
+msgid "Cancel"
+msgstr "ยกเลิก"
+
+#: includes/Admin/Assets.php:143
+msgid "Proceed anyway"
+msgstr "ดำเนินการต่อ"
+
+#: includes/Admin/Assets.php:144
+msgid "Bypass link reset"
+msgstr "รีเซ็ตลิงค์บายพาส"
+
+#: includes/Admin/Assets.php:145
+msgid ""
+"This will invalidate the currently generated link in use. This action cannot "
+"be undone, are you sure you want to proceed?"
+msgstr ""
+"การกระทำนี้จะทำให้ลิงก์ที่สร้างขึ้นในปัจจุบันใช้งานไม่ได้ "
+"การดำเนินการนี้ไม่สามารถยกเลิกได้ คุณแน่ใจหรือไม่ว่าต้องการดำเนินการต่อ"
+
+#: includes/Admin/Assets.php:148
+msgid "Link has been reset"
+msgstr "ลิงก์ถูกรีเซ็ตแล้ว"
+
+#: includes/Admin/Hooks.php:48
+msgid "Hostinger plugin updates"
+msgstr "อัพเดตปลั๊กอิน Hostinger"
+
+#: includes/Admin/Hooks.php:49
+msgid "The Hostinger plugin has been split into two different plugins:"
+msgstr "ปลั๊กอิน Hostinger ถูกแบ่งออกเป็นสองปลั๊กอินที่แตกต่างกัน:"
+
+#: includes/Admin/Hooks.php:51
+msgid "offers a toolkit for easier site maintenance."
+msgstr "เสนอชุดเครื่องมือเพื่อการบำรุงรักษาไซต์ที่ง่ายขึ้น"
+
+#: includes/Admin/Hooks.php:52
+msgid "Hostinger Easy Onboarding"
+msgstr "Hostinger Easy Onboarding"
+
+#: includes/Admin/Hooks.php:52
+msgid ""
+"provides guidance and learning resources for beginners to get started with "
+"building a site using WordPress."
+msgstr ""
+"ให้คำแนะนำและแหล่งข้อมูลการเรียนรู้สำหรับผู้เริ่มต้นเพื่อเริ่มต้นสร้างเว็บไซต์โดยใช้"
+" WordPress"
+
+#: includes/Admin/Menu.php:22 includes/Admin/Menu.php:31
+#: includes/Admin/Menu.php:32
+msgid "Tools"
+msgstr "เครื่องมือ"
+
+#: includes/Admin/Views/Partials/RateUs.php:2
+msgid "Rate this plugin"
+msgstr "จัดอันดับปลั๊กอินนี้"
+
+#: includes/Admin/Views/Partials/RateUs.php:38
+msgid ""
+"on <a href=\"https://wordpress.org/support/plugin/hostinger/reviews/#new-"
+"post\" target=\"_blank\" rel=\"noopener noreferrer\">WordPress.org</a>"
+msgstr ""
+"บน <a href=\"https://wordpress.org/support/plugin/hostinger/reviews/#new-"
+"post\" target=\"_blank\" rel=\"noopener noreferrer\">WordPress.org</a>"
+
+#: includes/Errors.php:16
+msgid "Action Failed. Try again or contact support. Apologies."
+msgstr "การดำเนินการล้มเหลว โปรดลองอีกครั้งหรือติดต่อฝ่ายสนับสนุน"
+
+#: includes/Errors.php:19
+msgid "An unexpected error occurred. Please try again or contact support."
+msgstr "เกิดข้อผิดพลาดที่ไม่คาดคิด โปรดลองอีกครั้งหรือติดต่อฝ่ายสนับสนุน"
+
+#: includes/Errors.php:22
+msgid ""
+"We apologize for the inconvenience. The AI content generation process "
+"encountered a server error. Please try again later, and if the issue "
+"persists, kindly contact our support team for assistance."
+msgstr ""
+"เราขออภัยในความไม่สะดวกที่เกิดขึ้น ขั้นตอนการสร้างเนื้อหา AI "
+"พบข้อผิดพลาดของเซิร์ฟเวอร์ โปรดลองอีกครั้งในภายหลัง และหากยังคงเกิดปัญหาอยู่ "
+"โปรดติดต่อทีมสนับสนุนของเราเพื่อขอความช่วยเหลือ"
+
+#: includes/Errors.php:38
+msgid "Unknown error code."
+msgstr "รหัสข้อผิดพลาดที่ไม่ทราบ"
+
+#: includes/Views/ComingSoon.php:6 includes/Views/ComingSoon.php:24
+msgid "Coming Soon"
+msgstr "เร็วๆ นี้"
+
+#: includes/Views/ComingSoon.php:27
+msgid "New WordPress website is being built and will be published soon"
+msgstr "เว็บไซต์ WordPress ใหม่กำลังถูกสร้างขึ้นและจะเผยแพร่เร็วๆ นี้"

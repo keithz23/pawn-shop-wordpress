@@ -1,0 +1,306 @@
+# Translation of Plugins - Hostinger Tools - Stable (latest release) in Ukrainian
+# This file is distributed under the same license as the Plugins - Hostinger Tools - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2025-02-07 13:21+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : ((n % "
+"10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);\n"
+"X-Generator: Loco https://localise.biz/\n"
+"Language: uk\n"
+"Project-Id-Version: Plugins - Hostinger Tools - Stable (latest release)\n"
+"Language-Team: Ukrainian\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-31 17:21+0000\n"
+"Last-Translator: Julia\n"
+"X-Loco-Version: 2.6.10; wp-6.4.5"
+
+#: includes/Admin/Assets.php:145
+msgid ""
+" Turning on XML-RPC might make your site less secure. Do you want to proceed?"
+msgstr ""
+"Якщо ви увімкнете XML-RPC, ваш сайт буде менш захищеним. Ви хочете "
+"продовжити?"
+
+#: includes/Errors.php:16
+msgid "Action Failed. Try again or contact support. Apologies."
+msgstr ""
+"Не вдалося виконати дію. Спробуйте ще раз або зверніться до команди "
+"підтримки."
+
+#: includes/Errors.php:19
+msgid "An unexpected error occurred. Please try again or contact support."
+msgstr ""
+"Виникла неочікувана помилка. Спробуйте ще раз або зверніться до команди "
+"підтримки."
+
+#. translators: %s: PHP version
+#: hostinger.php:84
+msgid "Attention:"
+msgstr "Увага:"
+
+#: includes/Admin/Assets.php:141
+msgid "Bypass link"
+msgstr "Обхідне посилання"
+
+#: includes/Admin/Assets.php:149
+msgid "Bypass link reset"
+msgstr "Скидання обхідного каналу"
+
+#: includes/Admin/Assets.php:147 includes/Admin/Assets.php:151
+msgid "Cancel"
+msgstr "Скасувати"
+
+#: includes/Views/ComingSoon.php:6 includes/Views/ComingSoon.php:24
+msgid "Coming Soon"
+msgstr "Незабаром"
+
+#: includes/Admin/Assets.php:121
+#, fuzzy
+msgid "Disable application passwords"
+msgstr "Вимкнути паролі додатків"
+
+#: includes/Admin/Assets.php:116
+msgid ""
+"Disable public access to the site (WordPress admins will still be able to "
+"access)"
+msgstr ""
+"Вимкнути публічний доступ до сайту (адміністратори WordPress матимуть доступ)"
+
+#: includes/Admin/Assets.php:119
+msgid "Disable XML-RPC"
+msgstr "Вимкнути XML-RPC"
+
+#: includes/Admin/Assets.php:146
+msgid "Disclaimer"
+msgstr "Відмова від відповідальності"
+
+#: includes/Admin/Assets.php:135
+msgid "For improved security, ensure you use the latest version of WordPress"
+msgstr ""
+"Для покращення безпеки переконайтеся, що ви використовуєте останню версію "
+"WordPress"
+
+#: includes/Admin/Assets.php:124
+msgid "Force HTTPS"
+msgstr "Направити на HHTTPS"
+
+#: includes/Admin/Assets.php:126
+msgid "Force WWW"
+msgstr "Направити на WWW"
+
+#: includes/Admin/Assets.php:144 includes/Admin/Hooks.php:55
+msgid "Got it"
+msgstr "Зрозуміло"
+
+#. Author of the plugin
+#: hostinger.php
+msgid "Hostinger"
+msgstr "Hostinger"
+
+#: includes/Admin/Hooks.php:53
+msgid "Hostinger Easy Onboarding"
+msgstr "Hostinger Easy Onboarding"
+
+#: includes/Admin/Hooks.php:49
+msgid "Hostinger plugin updates"
+msgstr "Оновлення плагіна Hostinger"
+
+#. Plugin Name of the plugin
+#: hostinger.php includes/Admin/Hooks.php:52
+msgid "Hostinger Tools"
+msgstr "Hostinger Tools"
+
+#: includes/Admin/Assets.php:143
+msgid ""
+"Hostinger Tools will offer new tools to simplify your site management. And "
+"Hostinger Easy Onboarding will guide you through the steps of building a "
+"website."
+msgstr ""
+"Плагін Hostinger Tools має нові інструменти, які допоможуть керувати сайтом. "
+"А Hostinger Easy Onboarding проведе вас через всі етапи створення сайту."
+
+#. Description of the plugin
+#: hostinger.php
+msgid "Hostinger WordPress plugin."
+msgstr "Плагін Hostinger WordPress."
+
+#. Plugin URI of the plugin
+#: hostinger.php
+msgid "https://hostinger.com"
+msgstr "https://hostinger.com"
+
+#. Author URI of the plugin
+#: hostinger.php
+msgid "https://www.hostinger.com"
+msgstr "https://www.hostinger.com"
+
+#: includes/Admin/Assets.php:134
+msgid "is recommended"
+msgstr "рекомендується"
+
+#: includes/Admin/Assets.php:153
+msgid "Link has been reset"
+msgstr "З'єднання скинуто"
+
+#: includes/Admin/Assets.php:136
+msgid "Maintenance"
+msgstr "Техобслуговування"
+
+#: includes/Admin/Assets.php:140
+msgid "Maintenance mode"
+msgstr "Режим техобслуговування"
+
+#: includes/Views/ComingSoon.php:27
+msgid "New WordPress website is being built and will be published soon"
+msgstr "Новий сайт WordPress створюється та незабаром буде опублікований"
+
+#: includes/Admin/Hooks.php:52
+msgid "offers a toolkit for easier site maintenance."
+msgstr "пропонує набір інструментів для полегшення обслуговування сайту."
+
+#: includes/Admin/Views/Partials/RateUs.php:38
+msgid ""
+"on <a href=\"https://wordpress.org/support/plugin/hostinger/reviews/#new-"
+"post\" target=\"_blank\" rel=\"noopener noreferrer\">WordPress.org</a>"
+msgstr ""
+"на <a href=\"https://wordpress.org/support/plugin/hostinger/reviews/#new-"
+"post\" target=\"_blank\" rel=\"noopener noreferrer\">WordPress.org</a>"
+
+#: includes/Admin/Assets.php:115
+#, fuzzy
+msgid "Open guide"
+msgstr "Відкритий путівник"
+
+#: includes/Admin/Assets.php:129
+msgid "PHP version"
+msgstr "Версія PHP"
+
+#: includes/Admin/Assets.php:137
+msgid "Preview my website"
+msgstr "Попередня версія мого сайту"
+
+#: includes/Admin/Assets.php:148
+msgid "Proceed anyway"
+msgstr "Продовжити"
+
+#: includes/Admin/Hooks.php:53
+msgid ""
+"provides guidance and learning resources for beginners to get started with "
+"building a site using WordPress."
+msgstr ""
+"містить інструкції та навчальні ресурси для початківців, які допоможуть їм "
+"розпочати роботу над створенням сайту за допомогою WordPress."
+
+#: includes/Admin/Views/Partials/RateUs.php:2
+msgid "Rate this plugin"
+msgstr "Оцінити цей плагін"
+
+#: includes/Admin/Assets.php:139
+msgid "Redirects"
+msgstr "Перенаправлення"
+
+#: includes/Admin/Assets.php:125
+msgid "Redirects all HTTP URLs to HTTPS sites"
+msgstr "Перенаправляє всі HTTP URL-адреси на HTTPS-сайти"
+
+#: includes/Admin/Assets.php:127
+msgid "Redirects all WWW URLs to non-WWW ones"
+msgstr "Перенаправляє всі WWW URL-адреси на адреси без WWW"
+
+#: includes/Admin/Assets.php:118 includes/Admin/Assets.php:152
+msgid "Reset link"
+msgstr "Скинути посилання"
+
+#: includes/Admin/Assets.php:132
+msgid "Running the latest version"
+msgstr "Запуск останньої версії"
+
+#: includes/Admin/Assets.php:138
+msgid "Security"
+msgstr "Безпека"
+
+#: includes/Admin/Assets.php:117
+msgid "Skip-link that bypasses the maintenance mode"
+msgstr "Перехід в обхід режиму технічного обслуговування"
+
+#: includes/Admin/Hooks.php:50
+msgid "The Hostinger plugin has been split into two different plugins:"
+msgstr "Плагін Hostinger розділено на два різних плагіни:"
+
+#: includes/Admin/Assets.php:150
+msgid ""
+"This will invalidate the currently generated link in use. This action cannot "
+"be undone, are you sure you want to proceed?"
+msgstr ""
+"Поточне посилання стане недійсним. Цю дію не можна скасувати, ви впевнені, "
+"що хочете продовжити?"
+
+#: includes/Admin/Assets.php:114 includes/Admin/Menu.php:22
+#: includes/Admin/Menu.php:31 includes/Admin/Menu.php:32
+msgid "Tools"
+msgstr "Інструменти"
+
+#: includes/Errors.php:38
+msgid "Unknown error code."
+msgstr "Невідомий код помилки."
+
+#: includes/Admin/Assets.php:133
+msgid "Update to"
+msgstr "Оновити до"
+
+#: includes/Admin/Assets.php:131
+msgid "Various updates and fixes available in the newest version."
+msgstr "У новій версії доступні різні оновлення та виправлення."
+
+#: includes/Errors.php:22
+msgid ""
+"We apologize for the inconvenience. The AI content generation process "
+"encountered a server error. Please try again later, and if the issue "
+"persists, kindly contact our support team for assistance."
+msgstr ""
+"Перепрошуємо за тимчасові незручності. Під час генерації ШІ-контенту виникла "
+"помилка сервера. Спробуйте пізніше або зверніться за допомогою до нашої "
+"команди підтримки, якщо проблема не зникне."
+
+#: includes/Admin/Assets.php:142
+msgid ""
+"We’re splitting Hostinger plugin into two: Hostinger Tools and Hostinger "
+"Easy Onboarding"
+msgstr ""
+"Ми розділили плагін Hostinger на два: Hostinger Tools і Hostinger Easy "
+"Onboarding"
+
+#: includes/Admin/Assets.php:122
+#, fuzzy
+msgid ""
+"WordPress application passwords allow users to authenticate API requests "
+"without using their main login credentials, allowing for third-party "
+"integrations."
+msgstr ""
+"Паролі додатків WordPress дозволяють користувачам автентифікувати запити API "
+"без використання своїх основних облікових даних для входу, що дає змогу "
+"використовувати сторонні інтеграції."
+
+#: includes/Admin/Assets.php:130
+msgid "WordPress version"
+msgstr "Версія WordPress"
+
+#: includes/Admin/Assets.php:128
+msgid ""
+"WWW and non-WWW domain records are not pointing to the same host. Redirect "
+"not possible."
+msgstr ""
+"Записи доменів WWW і не-WWW не направлені на один і той самий хост. "
+"Переадресація неможлива."
+
+#: includes/Admin/Assets.php:120
+msgid ""
+"XML-RPC allows apps to connect to your WordPress site, but might expose your "
+"site's security. Disable this feature if you don't need it"
+msgstr ""
+"XML-RPC дозволяє програмам підключатися до вашого сайту WordPress, але може "
+"негативно вплинути на його безпеку. Вимкніть цю функцію, якщо вона вам не "
+"потрібна"

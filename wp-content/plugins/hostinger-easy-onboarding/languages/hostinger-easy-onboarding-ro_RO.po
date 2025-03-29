@@ -1,0 +1,1720 @@
+# Copyright (C) 2024 Hostinger
+# This file is distributed under the GPL v3.
+msgid ""
+msgstr ""
+"Project-Id-Version: Hostinger Easy Onboarding 2.0.25\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/hostinger-easy-"
+"onboarding\n"
+"Last-Translator: \n"
+"Language-Team: Romanian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-08-19T08:23:05+00:00\n"
+"PO-Revision-Date: 2025-03-26 12:34+0000\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Domain: hostinger-easy-onboarding\n"
+"Language: ro_RO\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 :(((n%100>19)||(( n%100==0)&&(n!"
+"=0)))? 2 : 1));\n"
+"X-Loco-Version: 2.7.1; wp-6.7.2"
+
+#: includes/Admin/Assets.php:184
+msgid ""
+" Learn how to connect your domain to Hostinger by watching this tutorial on "
+"YouTube for a step-by-step guide:"
+msgstr ""
+" Urmărește acest tutorial pas-cu-pas și află cum să-ți conectezi domeniul la "
+"Hostinger:"
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/DeletePageButton.js:66
+msgid " Please refresh the page and try again."
+msgstr "Te rugăm să actualizezi pagina și să încerci din nou."
+
+#. translators: %s plugin slug
+#: includes/Rest/StepRoutes.php:152
+msgid "%s is already active"
+msgstr "%s este deja activ"
+
+#. translators: %s field name that is missing
+#: includes/Rest/StepRoutes.php:63 includes/Rest/StepRoutes.php:67
+#: includes/Rest/StepRoutes.php:144 includes/Rest/StepRoutes.php:205
+#: includes/Rest/WooRoutes.php:41 includes/Rest/WooRoutes.php:112
+msgid "%s missing or empty"
+msgstr "%s lipsesște sau e gol"
+
+#: includes/Admin/Assets.php:275
+#, fuzzy
+msgid "(Credit/Debit card)"
+msgstr "(Card de credit/debit)"
+
+#: includes/Admin/Assets.php:218
+msgid ""
+"<strong>Almost there!</strong> Just a few more steps to get your site ready "
+"for online success."
+msgstr ""
+"<strong>Aproape gata!</strong> Mai avem doar câțiva pași în pregătirea site-"
+"ul pentru succesul online."
+
+#: includes/Admin/Assets.php:290
+msgid ""
+"<strong>Use built-in payment methods</strong> - no extra plugins needed."
+msgstr ""
+"<strong>Utilizează metode de plată încorporate</strong> - nu sunt necesare "
+"plugin-uri suplimentare."
+
+#: includes/Admin/Assets.php:289
+msgid ""
+"<strong>Use built-in shipping methods</strong> - no extra plugins needed."
+msgstr ""
+"<strong>Utilizează metode de expediere încorporate</strong> - nu sunt "
+"necesare plugin-uri suplimentare."
+
+#: includes/Admin/Onboarding/PluginManager.php:32
+msgid "Accept payments via credit card. Manage transactions within WordPress."
+msgstr ""
+"Accepți plăți prin card de credit. Gestionezi tranzacțiile în WordPress."
+
+#: includes/Admin/Assets.php:249
+msgid "Access site identity and edit title"
+msgstr "Accesează identitatea site-ului și editează titlul"
+
+#: includes/Errors.php:14
+msgid "Action Failed. Try again or contact support. Apologies."
+msgstr ""
+"Acțiune eșuată. Încearcă din nou sau contactează asistența. Ne cerem scuze."
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/PagesList.js:44
+msgid "Actions"
+msgstr "Acțiuni"
+
+#: includes/Admin/Assets.php:264
+msgid "Activate"
+msgstr "Activează"
+
+#: includes/Admin/Assets.php:253
+#, fuzzy
+msgid "Add"
+msgstr "Adaugă"
+
+#: includes/Admin/Onboarding/Onboarding.php:196
+#, fuzzy
+msgid "Add a domain"
+msgstr "Adăugați un domeniu"
+
+#: includes/Admin/Assets.php:201 includes/Admin/Assets.php:251
+msgid "Add a new page"
+msgstr "Adaugă o pagină nouă"
+
+#: includes/Admin/Assets.php:266
+msgid "Add a title"
+msgstr "Adaugă un titlu"
+
+#: includes/Admin/Assets.php:292
+msgid "Add content"
+msgstr "Adaugă conținut"
+
+#: includes/Admin/Onboarding/Onboarding.php:198
+#, fuzzy
+msgid "Add domain"
+msgstr "Adăugați domeniul"
+
+#: includes/Admin/Assets.php:252
+msgid "Add plugin"
+msgstr "Adaugă un plugin"
+
+#: includes/Admin/Onboarding/Onboarding.php:333
+msgid "Add product"
+msgstr "Adaugă produs"
+
+#: includes/Admin/Assets.php:284
+msgid "Add shipping method"
+msgstr "Adaugă o metodă de expediere"
+
+#: includes/Admin/Onboarding/Onboarding.php:304
+#, fuzzy
+msgid "Add store details"
+msgstr "Adăugați detaliile magazinului"
+
+#: includes/Admin/Assets.php:291
+msgid ""
+"Add the title of the page, for example, About. Click the Add Title text to "
+"open the text box where you will add your title. The title of your page "
+"should be descriptive of the information the page will have."
+msgstr ""
+"Adaugă titlul paginii, de exemplu, Despre. Dă click pe textul Add Title "
+"(Adăugare titlu) pentru a deschide caseta de text în care vei adăuga titlul. "
+"Titlul paginii tale trebuie să fie descriptiv cu privire la informațiile pe "
+"care le va conține pagina."
+
+#: includes/Admin/Assets.php:173
+msgid "Add your first product"
+msgstr "Adaugă primul tău produs"
+
+#: includes/Admin/Assets.php:174 includes/Admin/Onboarding/Onboarding.php:329
+msgid "Add your first product or service"
+msgstr "Adaugă primul tău produs sau serviciu"
+
+#: includes/Admin/Assets.php:254
+msgid "Added"
+msgstr "Adăugat"
+
+#: includes/Admin/Assets.php:190
+msgid ""
+"Adding a logo is a great way to personalize a website or add branding "
+"information. You can use your existing logo or create a new one using the <a "
+"href=\"https://logo.hostinger.com/?ref=wordpress-onboarding\" style=\"text-"
+"decoration:none; font-weight:bold; color:#673de6\">AI Logo Maker.</a>"
+msgstr ""
+"Adăugarea unui logo este o modalitate excelentă de a personaliza un site web "
+"sau de a adăuga informații de branding. Poți utiliza logo-ul tău actual sau "
+"poți crea unul nou utilizând <a href=\"https://logo.hostinger.com/?"
+"ref=wordpress-onboarding\" style=\"text-decoration:none; font-weight:bold; "
+"color:#673de6\">Instrumentul AI de creare logo.</a>"
+
+#: includes/Admin/Onboarding/PluginManager.php:60
+msgid "Adds Correios shipping methods to your WooCommerce store."
+msgstr "Adaugă metodele de expediere Correios la magazinul tău WooCommerce."
+
+#: includes/Admin/Onboarding/PluginManager.php:50
+msgid ""
+"Adiciona PagSeguro como meio de pagamento (com desconto nas taxas oficiais)."
+msgstr ""
+"Adaugă PagSeguro ca metodă de plată (cu reducere la tarifele oficiale)."
+
+#: includes/Admin/Onboarding/PluginManager.php:41
+msgid ""
+"Amazon Pay is embedded directly into your existing web site, and all the "
+"buyer interactions with Amazon Pay and Login with Amazon take place in "
+"embedded widgets so that the buyer never leaves your site. "
+msgstr ""
+"Amazon Pay este încorporat direct în site-ul tău web actual, iar toate "
+"interacțiunile cumpărătorului cu Amazon Pay și Login cu Amazon au loc în "
+"widget-uri încorporate, astfel încât cumpărătorul să nu părăsească niciodată "
+"site-ul tău."
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/DeletePageButton.js:106
+msgid "An error occurred while deleting the page."
+msgstr "A apărut o eroare în timpul ștergerii paginii."
+
+#: includes/Errors.php:17
+msgid "An unexpected error occurred. Please try again or contact support."
+msgstr ""
+"A apărut o eroare neașteptată. Te rugăm să încerci din nou sau să contactezi "
+"serviciul de asistență."
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/DeletePageButton.js:76
+msgid "An unexpected error occurred. Please try again."
+msgstr "A apărut o eroare neașteptată. Te rugăm să încerci din nou."
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/DeletePageButton.js:31
+msgid "Are you sure you want to delete this page?"
+msgstr "Ești sigur că vrei să ștergi această pagină?"
+
+#: includes/Admin/Assets.php:300
+msgid "Are you sure?"
+msgstr "Ești sigur?"
+
+#. translators: %s php version
+#: hostinger-easy-onboarding.php:74
+msgid "Attention:"
+msgstr "Atenție:"
+
+#: includes/Admin/Assets.php:144
+msgid ""
+"Automated reports, monitoring tools, site presets, and 1-click ownership "
+"transfers – manage all of your projects quickly and easily."
+msgstr ""
+"Rapoarte automate, instrumente de monitorizare, presetări ale site-ului și "
+"transfer de proprietate cu 1 click - îți gestionezi toate proiectele rapid "
+"și ușor."
+
+#: includes/Admin/Assets.php:267
+msgid "Back"
+msgstr "Înapoi"
+
+#: includes/Admin/Assets.php:302
+msgid ""
+"Before publishing, you can preview your created page by clicking on the "
+"Preview button. If you are happy with the result, click the Publish button."
+msgstr ""
+"Înainte de publicare, poți previzualiza pagina creată, dând click pe butonul "
+"Previzualizare. Dacă ești mulțumit de rezultat, dă click pe butonul "
+"Publicare."
+
+#: includes/Admin/Onboarding/Onboarding.php:610
+#, fuzzy
+msgid ""
+"Build a custom-designed site in minutes with professional templates. You’ll "
+"be ready to go live in a few clicks."
+msgstr ""
+"Construiți un site cu design personalizat în câteva minute cu ajutorul "
+"șabloanelor profesionale. Veți fi gata să intrați în direct în câteva "
+"clicuri."
+
+#: includes/Admin/Onboarding/Onboarding.php:602
+#, fuzzy
+msgid ""
+"Build a professional, custom-designed site in moments. Choose from 140+ "
+"templates or use AI."
+msgstr ""
+"Construiți un site profesional, cu design personalizat, în câteva momente. "
+"Alegeți din peste 140 de șabloane sau utilizați AI."
+
+#: includes/Admin/Onboarding/Onboarding.php:506
+msgid ""
+"Build a professional, custom-designed site in moments. Just a few clicks and "
+"AI handles the rest."
+msgstr ""
+"Creează un site profesional, cu design personalizat, în câteva momente. Doar "
+"câteva click-uri și AI se ocupă de restul."
+
+#: includes/Admin/Assets.php:200 gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/PageForm.js:70
+msgid "Cancel"
+msgstr "Anulează"
+
+#: includes/Admin/Assets.php:279
+#, fuzzy
+msgid "Cash on delivery"
+msgstr "Plata la livrare"
+
+#: includes/Rest/WelcomeRoutes.php:65
+msgid "Choice parameter missing or empty"
+msgstr "Parametrul de alegere lipsește sau este gol"
+
+#: includes/Rest/WelcomeRoutes.php:99
+msgid "Choice parameter missing or invalid"
+msgstr "Parametrul de alegere lipsește sau este invalid"
+
+#: includes/Admin/Onboarding/Onboarding.php:583
+#, fuzzy
+msgid "Choose a template"
+msgstr "Alegeți un șablon"
+
+#: includes/Admin/Onboarding/Onboarding.php:549
+#, fuzzy
+msgid "Choose another template"
+msgstr "Alegeți un alt șablon"
+
+#: includes/Admin/Onboarding/Onboarding.php:611
+#, fuzzy
+msgid "Choose template"
+msgstr "Alegeți șablonul"
+
+#: includes/Admin/Assets.php:166 includes/Admin/Onboarding/Onboarding.php:380
+msgid ""
+"Choose the ways you'd like to ship orders to customers. You can always add "
+"others later."
+msgstr ""
+"Alege modalitățile prin care dorești să expediezi comenzile către clienți. "
+"Poți adăuga oricând altele mai târziu."
+
+#: includes/Admin/Assets.php:213
+msgid "Complete"
+msgstr "Completează"
+
+#: includes/Admin/Assets.php:219
+msgid "Completed steps"
+msgstr "Etape finalizate"
+
+#: includes/Admin/Assets.php:255
+msgid "Configure"
+msgstr "Configurare"
+
+#: includes/Admin/Onboarding/PluginManager.php:35
+msgid ""
+"Configure the payment options and accept payments with cards, ticket and "
+"money of Mercado Pago account."
+msgstr ""
+"Configurează opțiunile de plată și acceptă plăți cu carduri, bilete și bani "
+"din contul Mercado Pago."
+
+#: includes/Admin/Hooks.php:494
+msgid "Congrats, you have connected WooPayments!"
+msgstr "Felicitări, ai conectat WooPayments!"
+
+#: includes/Admin/Assets.php:215 includes/Admin/Hooks.php:487
+msgid "Congrats, you’re ready to show off your site!"
+msgstr "Felicitări, ești gata să-ți prezinți site-ul!"
+
+#: includes/Admin/Assets.php:256
+msgid "Connect"
+msgstr "Conectează-te"
+
+#: includes/Admin/Onboarding/Onboarding.php:262
+msgid "Connect Amazon to site"
+msgstr "Conectează Amazon la site"
+
+#: includes/Admin/Assets.php:233
+msgid "Connect domain now"
+msgstr "Conectează domeniul acum"
+
+#: includes/Admin/Onboarding/Onboarding.php:202
+#: includes/Admin/Onboarding/Onboarding.php:215
+msgid "Connect on hPanel"
+msgstr "Conectează-te pe hPanel"
+
+#: includes/Admin/Assets.php:263 includes/Admin/Onboarding/WelcomeCards.php:29
+msgid ""
+"Connect your <strong>Amazon Associate</strong> account to fetch API details."
+msgstr ""
+"Conectează-ți contul de <strong>Asociat Amazon</strong> pentru a obține "
+"detalii API."
+
+#: includes/Admin/Onboarding/Onboarding.php:254
+msgid "Connect your Amazon account to the site"
+msgstr "Conectează-ți contul Amazon la site"
+
+#: includes/Admin/Assets.php:202
+msgid "Connect your domain"
+msgstr "Conectează-ți domeniul"
+
+#: includes/Admin/Assets.php:301 includes/Admin/Onboarding/Onboarding.php:425
+msgid "Connect your domain first"
+msgstr "Conectează-ți mai întâi domeniul"
+
+#: includes/Admin/Assets.php:179 includes/Admin/Assets.php:182
+#: includes/Admin/Assets.php:305
+msgid "Connect your domain to Hostinger"
+msgstr "Conectează-ți domeniul la Hostinger"
+
+#: includes/Admin/Onboarding/Onboarding.php:220
+#: includes/Admin/Onboarding/Onboarding.php:508
+msgid "Connected a domain"
+msgstr "Domeniul a fost conectat"
+
+#: includes/Admin/Onboarding/Onboarding.php:257
+msgid "Connected your Amazon account"
+msgstr "Contul tău Amazon a fost conectat"
+
+#: includes/Admin/Assets.php:293
+msgid ""
+"Content can be anything you wish, for example, text, images, videos, tables, "
+"and lots more. Click on a plus sign and choose any block you want to add to "
+"the page."
+msgstr ""
+"Conținutul poate fi orice, de exemplu, text, imagini, videoclipuri, tabele "
+"și multe altele. Dă click pe semnul plus și alege orice bloc pe care dorești "
+"să-l adaugi pe pagină."
+
+#: includes/Admin/Assets.php:154
+msgid "Continue"
+msgstr "Continuă"
+
+#: includes/Admin/Assets.php:297 includes/Admin/Hooks.php:484
+#: includes/Admin/Hooks.php:497
+msgid "Continue setup"
+msgstr "Continuă configurarea"
+
+#: includes/Admin/Assets.php:203
+msgid "Create a logo"
+msgstr "Creează un logo"
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/CreatePageButton.js:23
+msgid "Create a new Page"
+msgstr "Creează o pagină nouă"
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/CreatePageButton.js:26
+msgid "Create a new page"
+msgstr "Creează o pagină nouă"
+
+#: includes/Admin/Onboarding/Onboarding.php:505
+msgid "Create a site with AI"
+msgstr "Creează un site cu AI"
+
+#: includes/Admin/Assets.php:272
+#, fuzzy
+msgid "Create a website with AI"
+msgstr "Creați un site web cu AI"
+
+#: includes/Admin/Onboarding/PluginManager.php:57
+msgid ""
+"Create additional shipment methods in WooCommerce and enable pricing based "
+"on cart weight or total."
+msgstr ""
+"Creează metode suplimentare de expediere în WooCommerce și activeazp "
+"prețurile în funcție de greutatea sau totalul coșului."
+
+#: includes/Admin/Onboarding/PluginManager.php:69
+msgid "Create Chronopost & Mondial relay shipping labels and send them easily."
+msgstr ""
+"Creează etichete de expediere Chronopost & Mondial relay și trimite-le rapid."
+
+#: includes/Admin/Onboarding/Onboarding.php:524
+#: includes/Admin/Onboarding/Onboarding.php:575
+msgid "Create new site"
+msgstr "Creează un site nou"
+
+#: includes/Admin/Onboarding/Onboarding.php:603
+#, fuzzy
+msgid "Create site"
+msgstr "Creați site-ul"
+
+#: includes/Admin/Onboarding/Onboarding.php:510
+msgid "Create site with AI"
+msgstr "Creează un site cu AI"
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/PagesList.js:59
+msgid "Current page"
+msgstr "Pagina curentă"
+
+#: includes/Admin/Assets.php:216
+msgid "Customize the way your site looks and start welcoming visitors."
+msgstr ""
+"Personalizează modul în care arată site-ul tău și începe să primești "
+"vizitatori."
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/DeletePageButton.js:123
+#: gutenberg/edit-pages-panel/src/components/DeletePageButton.js:125
+msgid "Delete page"
+msgstr "Șterge pagina"
+
+#: includes/Admin/Assets.php:280
+#, fuzzy
+msgid "Direct bank transfer"
+msgstr "Transfer bancar direct"
+
+#: includes/Admin/Assets.php:142
+msgid "Discover add-ons"
+msgstr "Descoperă add-ons-uri"
+
+#: includes/Admin/Assets.php:226 includes/Admin/Assets.php:257
+msgid "Dismiss"
+msgstr "Respinge"
+
+#: includes/Admin/Surveys.php:48
+msgid "Do you have any comments/suggestions to improve our AI tools?"
+msgstr "Ai comentarii/sugestii pentru a îmbunătăți instrumentele noastre AI?"
+
+#: includes/Admin/Surveys.php:34
+msgid ""
+"Do you have any comments/suggestions to improve our WooCommerce onboarding?"
+msgstr ""
+"Ai comentarii/sugestii pentru a îmbunătăți plugin-ul nostru de onboarding "
+"WooCommerce?"
+
+#: includes/Admin/Assets.php:307
+msgid ""
+"Domain propagation can take up to 24 hours. Your domain will propagate "
+"automatically, and you don't need to take any action during this time."
+msgstr ""
+"Propagarea domeniului poate dura până la 24 de ore. Domeniul tău se va "
+"propaga automat și nu trebuie să iei nicio măsură între timp."
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/PagesList.js:19
+msgid "Edit"
+msgstr "Editează"
+
+#: includes/Admin/Assets.php:245
+msgid "Edit an image"
+msgstr "Editează imaginea"
+
+#: includes/Admin/Assets.php:239
+msgid "Edit description"
+msgstr "Editează descrierea"
+
+#: includes/Hooks.php:265
+msgid "Edit Home Page"
+msgstr "Editează pagina de pornire"
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/PagesList.js:12
+#: gutenberg/edit-pages-panel/src/components/PagesList.js:14
+msgid "Edit Page"
+msgstr "Editează pagina"
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/index.js:100
+#: gutenberg/edit-pages-panel/src/index.js:106
+msgid "Edit Pages"
+msgstr "Editează paginile"
+
+#: includes/Admin/Assets.php:237
+msgid "Edit post"
+msgstr "Editează postarea"
+
+#: includes/Admin/Assets.php:197
+msgid "Edit post description"
+msgstr "Editează descrierea postării"
+
+#: includes/Admin/Assets.php:225
+msgid "Edit site"
+msgstr "Editează site-ul"
+
+#: includes/Admin/Assets.php:199
+msgid "Edit site title"
+msgstr "Editează titlul site-ului"
+
+#: includes/Admin/Assets.php:143
+msgid "Efficient site management with WordPress add-ons"
+msgstr "Gestionarea eficientă a site-ului cu WordPress add-ons"
+
+#: includes/Admin/Assets.php:211
+msgid ""
+"Enter your store details so we can help you set up your online store faster."
+msgstr ""
+"Introdu detaliile magazinului tău, astfel încât să te putem ajuta în "
+"configurarea rapidă a magazinului online."
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/PageForm.js:46
+msgid "Error:"
+msgstr "Eroare:"
+
+#: includes/Admin/Onboarding/Onboarding.php:224
+#| msgid ""
+#| "Every website needs a domain that makes it easy to access and remember. "
+#| "Get ours in just a few clicks."
+msgid ""
+"Every website needs a domain that makes it easy to access and remember. Get "
+"yours in just a few clicks."
+msgstr ""
+"Fiecare site web are nevoie de un domeniu care să fie ușor de accesat și de "
+"reținut. Obține un domeniu de la noi în doar câteva click-uri."
+
+#: includes/Admin/Assets.php:158
+msgid ""
+"Expand your audience with the help of Omnisend. Create email campaigns that "
+"drive sales."
+msgstr ""
+"Extinde-ți audiența cu ajutorul Omnisend. Creează campanii de email care "
+"generează vânzări."
+
+#: includes/Admin/Onboarding/PluginManager.php:47
+msgid "Extends WooCommerce with a RedSys gateway."
+msgstr "Extinde WooCommerce cu un gateway RedSys."
+
+#: includes/Admin/Assets.php:316
+msgid "Find the answers you need in our Knowledge Base"
+msgstr "Găsește răspunsurile de care ai nevoie în baza noastră de cunoștințe"
+
+#: includes/Admin/Assets.php:241
+msgid "Find the Media page"
+msgstr "Găsește pagina Media"
+
+#: includes/Admin/Assets.php:326
+msgid "Follow these steps to complete your setup"
+msgstr "Urmează acești pași pentru a finaliza configurarea"
+
+#: includes/Admin/Assets.php:258
+msgid "Generate content"
+msgstr "Generează conținut"
+
+#: includes/Admin/Assets.php:260 includes/Admin/Onboarding/WelcomeCards.php:37
+msgid "Generate content with AI"
+msgstr "Generează conținut cu ajutorul AI"
+
+#: includes/Admin/Assets.php:303
+msgid "Get a domain"
+msgstr "Obține un domeniu"
+
+#: includes/Admin/Assets.php:141
+msgid "Get deal"
+msgstr "Obține oferta"
+
+#: includes/Admin/Hooks.php:337
+msgid "Get Discount"
+msgstr "Obține reducerea"
+
+#: includes/Admin/Onboarding/Onboarding.php:406
+msgid "Get found on Google"
+msgstr "Afișează-te pe Google"
+
+#: includes/Admin/Assets.php:261
+msgid ""
+"Get images, text, and SEO keywords created for you instantly – try <strong>"
+"AI Content Creator</strong>."
+msgstr ""
+"Obține instantaneu imagini, text și cuvinte cheie SEO create pentru tine - "
+"încearcă <strong>Instrumentul AI pentru creare de conținut</strong>."
+
+#: includes/Admin/Onboarding/WelcomeCards.php:39
+msgid "Get images, text, and SEO keywords created for you instantly."
+msgstr ""
+"Obține instantaneu imagini, text și cuvinte cheie SEO create pentru tine."
+
+#: includes/Admin/Assets.php:324
+msgid "Get in touch with our live specialists"
+msgstr "Ia legătura cu specialiștii noștri live"
+
+#: includes/Admin/Assets.php:172
+msgid ""
+"Get ready to accept customer payments. Let them pay for your products and "
+"services with ease."
+msgstr ""
+"Pregătește-te să accepți plățile clienților. Permite-le să plătească pentru "
+"produsele și serviciile tale cu ușurință."
+
+#: includes/Admin/Onboarding/Onboarding.php:357
+#, fuzzy
+msgid ""
+"Get ready to sell online. Add your first product, then set up payments and "
+"shipping."
+msgstr ""
+"Pregătiți-vă să vindeți online. Adăugați primul dvs. produs, apoi "
+"configurați plățile și expedierea."
+
+#: includes/Admin/Onboarding/Onboarding.php:281
+msgid ""
+"Get ready to sell online. Add your first product, then set up shipping and "
+"payments."
+msgstr ""
+"Pregătește-te să vinzi online. Adaugă primul tău produs, apoi configurează "
+"expedierea și plățile."
+
+#: includes/Admin/Onboarding/Onboarding.php:283
+#: includes/Admin/Onboarding/Onboarding.php:308
+msgid "Get started"
+msgstr "Începe acum"
+
+#: includes/Admin/Assets.php:208
+msgid "Get started!"
+msgstr "Începe acum!"
+
+#: includes/Admin/Assets.php:167
+msgid "Getting your features ready"
+msgstr "Îți pregătim funcțiile"
+
+#: includes/Admin/Assets.php:235
+msgid "Go to Posts"
+msgstr "Mergi la postări"
+
+#: includes/Admin/Assets.php:204 includes/Admin/Assets.php:247
+msgid "Go to the Customize page"
+msgstr "Mergi la pagina Personalizare"
+
+#: includes/Admin/Assets.php:299
+msgid ""
+"Google Site Kit is an essential plugin that makes sure that potential "
+"visitors can find your site on Google."
+msgstr ""
+"Google Site Kit este un plugin esențial care se asigură că potențialii "
+"vizitatori îți pot găsi site-ul pe Google."
+
+#: includes/Admin/Assets.php:234
+msgid "Got it!"
+msgstr "Am reușit!"
+
+#: includes/Admin/Assets.php:317
+msgid "Help Center"
+msgstr "Centru de ajutor"
+
+#: includes/Admin/Assets.php:232
+msgid "Hide completed"
+msgstr "Ascunde acțiunile complete"
+
+#: includes/Admin/Assets.php:224
+msgid "Hide list"
+msgstr "Ascunde lista"
+
+#: includes/Admin/Onboarding/PluginManager.php:54
+msgid ""
+"Hosted services for WooCommerce: automated tax calculation, shipping label "
+"printing, and smoother payment setup."
+msgstr ""
+"Servicii găzduite pentru WooCommerce: calcul automat al taxelor, tipărire "
+"etichete de expediere și configurare mai ușoară a plăților."
+
+#. Author of the plugin
+msgid "Hostinger"
+msgstr "Hostinger"
+
+#: includes/Admin/Assets.php:320
+msgid "Hostinger Academy"
+msgstr "Academia Hostinger"
+
+#. Plugin Name of the plugin
+msgid "Hostinger Easy Onboarding"
+msgstr "Hostinger Easy Onboarding"
+
+#. Description of the plugin
+msgid "Hostinger Easy Onboarding WordPress plugin."
+msgstr "Plugin Hostinger Easy Onboarding pentru WordPress."
+
+#: includes/Admin/Assets.php:238
+msgid ""
+"Hover over the chosen post to see the options menu. Click on the Edit button "
+"to open the post editor."
+msgstr ""
+"Treci cursorul peste postarea aleasă pentru a vedea meniul de opțiuni. Dă "
+"click pe butonul Edit (Editare) pentru a deschide editorul de postări."
+
+#: includes/Admin/Surveys.php:41
+msgid "How could we make it easier to create a new WordPress website?"
+msgstr "Cum am putea face mai ușoară crearea unui nou site WordPress?"
+
+#: includes/Admin/Assets.php:312
+msgid "How to Back Up a WordPress Site"
+msgstr "Cum să faci backup la un site WordPress"
+
+#: includes/Admin/Assets.php:304
+msgid "How to Build an EFFECTIVE Landing Page with WordPress (2024)"
+msgstr "Cum să creezi un landing page o EFICIENT cu WordPress (2024)"
+
+#: includes/Admin/Assets.php:308
+msgid "How to Create a WordPress Contact Us Page"
+msgstr "Cum să creezi o pagină WordPress de Contact"
+
+#: includes/Admin/Assets.php:310
+msgid "How to Create Your Coming Soon Page in WordPress (2024)"
+msgstr "Cum să creezi pagina „În curând” în WordPress (2024)"
+
+#: includes/Admin/Assets.php:313
+msgid "How to Import Images Into WordPress Website"
+msgstr "Cum să imporți imagini în site-ul WordPress"
+
+#: includes/Admin/Assets.php:306
+msgid "How to Make a Website (2024): Simple, Quick, & Easy Tutorial"
+msgstr "Cum să faci un site web (2024): Tutorial simplu, rapid și ușor"
+
+#: includes/Admin/Assets.php:185
+msgid "How to Point Domain Name to Web Hosting"
+msgstr "Cum să direcțționezi numele de domeniu către găzduirea web"
+
+#: includes/Admin/Assets.php:314
+msgid "How to Set Up WordPress SMTP"
+msgstr "Cum să configurezi WordPress SMTP"
+
+#: includes/Admin/Surveys.php:40
+msgid ""
+"How would you rate your experience building a website based on a pre-built "
+"template? (Score 1-10)"
+msgstr ""
+"Cum ai evalua experiența ta în crearea unui site web pe baza unui șablon "
+"predefinit? (Pe o scară de la 1-10)"
+
+#: includes/Admin/Surveys.php:33
+msgid ""
+"How would you rate your experience setting up a WooCommerce site on our "
+"hosting?"
+msgstr ""
+"Cum ai evalua experiența ta în configurarea unui site WooCommerce pe "
+"găzduirea noastră?"
+
+#: includes/Admin/Surveys.php:47
+msgid ""
+"How would you rate your experience using our AI content generation tools in "
+"onboarding? (Scale 1-10)"
+msgstr ""
+"Cum ai evalua experiența ta de utilizare a instrumentelor noastre de "
+"generare de conținut AI în procesul de onboarding? (Pe o scară de la 1-10)"
+
+#: includes/Admin/Menu.php:69
+msgid "hPanel - Billing"
+msgstr "hPanel - Facturare"
+
+#: includes/Admin/Menu.php:51
+msgid "hPanel - Home"
+msgstr "hPanel - Acasă"
+
+#: includes/Admin/Menu.php:60
+msgid "hPanel - Websites"
+msgstr "hPanel - Site-uri web"
+
+#. Plugin URI of the plugin
+msgid "https://hostinger.com"
+msgstr "https://www.hostinger.com/ro"
+
+#. Author URI of the plugin
+msgid "https://www.hostinger.com"
+msgstr "https://www.hostinger.com/ro"
+
+#: includes/Admin/Assets.php:309
+msgid "I Bought a Domain, Now What?"
+msgstr "Am cumpărat un domeniu, ce urmează?"
+
+#: includes/Admin/Assets.php:246
+msgid ""
+"If you wish to edit the image, click on the chosen image and click the Edit "
+"Image button. You can now crop, rotate, flip or scale the selected image."
+msgstr ""
+"Dacă dorești să editezi imaginea, dă click pe imaginea aleasă și pe butonul "
+"Editare imagine. Acum poți tăia, roti, întoarce sau scala imaginea selectată."
+
+#: includes/Admin/Assets.php:196 includes/Admin/Assets.php:248
+msgid ""
+"In the left sidebar, click Appearance to expand the menu. In the Appearance "
+"section, click Customize. The Customize page will open."
+msgstr ""
+"În bara laterală din stânga, dă click pe Aspect pentru a extinde meniul. În "
+"secțiunea Appearance (Aspect), dă click pe Customize (Personalizare). Se va "
+"deschide pagina Personalizare."
+
+#: includes/Admin/Assets.php:250
+msgid "In the left sidebar, click Site Identity and edit your site title."
+msgstr ""
+"În bara laterală din stânga, dă click pe Identitatea site-ului și editează "
+"titlul site-ului."
+
+#: includes/Admin/Assets.php:206
+msgid ""
+"In the left sidebar, click Site Identity, then click on the Select Site Icon "
+"button. Here, you can upload your brand logo."
+msgstr ""
+"În bara laterală din stânga, dă click pe Identitatea site-ului, apoi pe "
+"butonul Selectează pictograma site-ului. Aici, poți încărca logo-ul "
+"brandului tău."
+
+#: includes/Admin/Assets.php:242
+msgid ""
+"In the left sidebar, find the Media button. Click on the Library button to "
+"see all the images you have uploaded to your website."
+msgstr ""
+"În bara laterală din stânga, găsești butonul Media. Dă click pe butonul "
+"Bibliotecă pentru a vedea toate imaginile pe care le-ai încărcat pe site-ul "
+"tău."
+
+#: includes/Admin/Assets.php:265
+msgid ""
+"In the left sidebar, find the Pages menu and click on Add New button. You "
+"will see the WordPress page editor. Each paragraph, image, or video in the "
+"WordPress editor is presented as a “block” of content."
+msgstr ""
+"În bara laterală din stânga, găsești meniul Pagini, unde poți da click pe "
+"butonul Adaugă nou. Vei vedea editorul de pagini WordPress. Fiecare paragraf,"
+" imagine sau videoclip din editorul WordPress este prezentat ca un „bloc” de "
+"conținut."
+
+#: includes/Admin/Assets.php:236
+msgid ""
+"In the left sidebar, find the Posts button. Click on the All Posts button "
+"and find the post for which you want to change the description."
+msgstr ""
+"În bara laterală din stânga, găsești butonul Postări. Dă click pe butonul "
+"Toate postările și găsești postarea pe care dorești să o modifici."
+
+#: includes/Admin/Assets.php:177
+msgid ""
+"Increase your sites visibility by enabling its discoverability in the Google "
+"search engine."
+msgstr ""
+"Crește vizibilitatea site-urilor tale prin facilitarea descoperirii acestora "
+"în motorul de căutare Google."
+
+#: includes/Admin/Assets.php:126
+#, fuzzy
+msgid "Installation failed"
+msgstr "Instalarea a eșuat"
+
+#: includes/Admin/Assets.php:227 includes/Admin/Assets.php:259
+msgid "Installed"
+msgstr "Instalat"
+
+#: includes/Admin/Assets.php:188
+#: includes/Admin/Views/Partials/PromotionalBanner.php:5
+msgid "Invite a Friend, Earn Up to $100"
+msgstr "Invită un prieten, câștigă până la 100 $"
+
+#: includes/Admin/Onboarding/PluginManager.php:44
+msgid ""
+"It enables a WooCommerce site to accept payments through UPI apps like BHIM, "
+"Google Pay, Paytm, PhonePe or any Banking UPI app. Avoid payment gateway "
+"charges."
+msgstr ""
+"Permite unui site WooCommerce să accepte plăți prin aplicații UPI precum "
+"BHIM, Google Pay, Paytm, PhonePe sau orice aplicație bancară UPI. Evită "
+"comisioanele gateway-ului de plată."
+
+#: includes/Admin/Hooks.php:481
+msgid "Just a few more steps to launch your online store"
+msgstr "Mai sunt doar câțiva pași pentru a-ți lansa magazinul online"
+
+#: includes/Admin/Onboarding/Onboarding.php:520
+#: includes/Admin/Onboarding/Onboarding.php:544
+#: includes/Admin/Onboarding/Onboarding.php:573
+#: includes/Admin/Onboarding/Onboarding.php:581
+msgid "Keep current site"
+msgstr "Păstrează-ți site-ul actual"
+
+#: includes/Admin/Assets.php:223 includes/Admin/Assets.php:315
+msgid "Knowledge Base"
+msgstr "Bază de cunoștințe"
+
+#: includes/Admin/Assets.php:319
+msgid "Learn WordPress"
+msgstr "Învață WordPress"
+
+#: includes/Admin/Onboarding/Onboarding.php:260
+msgid ""
+"Link your Amazon Associates account to your website, start promoting "
+"products, and earn rewards. No API key required."
+msgstr ""
+"Conectează-ți contul de Amazon Associates la site-ul tău web, începe să "
+"promovezi produse și câștigă recompense. Nu este necesară o cheie API."
+
+#: includes/Admin/Assets.php:311
+msgid "LiteSpeed Cache: How to Get 100% WordPress Optimization"
+msgstr "LiteSpeed Cache: Cum să obții 100% optimizare WordPress"
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/PagesList.js:27
+msgid "Loading..."
+msgstr "Se încarcă..."
+
+#: includes/Admin/Onboarding/Onboarding.php:408
+msgid ""
+"Make sure that your website shows up when visitors are looking for your "
+"business on Google."
+msgstr ""
+"Asigură-te că site-ul tău apare atunci când vizitatorii caută afacerea ta pe "
+"Google."
+
+#: includes/Admin/Onboarding/Onboarding.php:415
+msgid "Manage"
+msgstr "Gestionează"
+
+#: includes/Admin/Assets.php:156 includes/Admin/Onboarding/Onboarding.php:378
+msgid "Manage shipping"
+msgstr "Gestionează expedierea"
+
+#: includes/Admin/Assets.php:155
+msgid "Market your business"
+msgstr "Pune-ți afacerea pe piață"
+
+#: includes/Admin/Assets.php:181
+msgid "Nameserver"
+msgstr "Server de nume"
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/PagesList.js:33
+msgid "No pages found."
+msgstr "Nu s-au găsit pagini."
+
+#: includes/Helper.php:359
+msgid "No PHP files found in plugin directory"
+msgstr "Nu s-au găsit fișiere PHP în directorul pluginului"
+
+#: includes/Admin/Assets.php:140
+msgid "Not interested"
+msgstr "Nu sunt interesat"
+
+#: includes/Admin/Onboarding/Onboarding.php:388
+#: includes/Admin/Onboarding/Onboarding.php:420
+msgid "Not needed"
+msgstr "Nu este necesar"
+
+#: includes/Admin/Onboarding/Onboarding.php:337
+#: includes/Admin/Onboarding/Onboarding.php:514
+#: includes/Admin/Onboarding/Onboarding.php:605
+#: includes/Admin/Onboarding/Onboarding.php:614
+msgid "Not now"
+msgstr "Nu acum"
+
+#: includes/Admin/Assets.php:228
+msgid "Now <strong>finish setting up</strong> the plugins you’ve installed."
+msgstr ""
+"Acum <strong>finalizează configurarea</strong> pluginurilor pe care le-ai "
+"instalat."
+
+#: includes/Admin/Views/Partials/RateUs.php:38
+msgid ""
+"on <a href=\"https://wordpress.org/support/plugin/hostinger/reviews/#new-"
+"post\" target=\"_blank\" rel=\"noopener noreferrer\">WordPress.org</a>"
+msgstr ""
+"pe <a href=\"https://wordpress.org/support/plugin/hostinger/reviews/#new-"
+"post\" target=\"_blank\" rel=\"noopener noreferrer\">WordPress.org</a>"
+
+#: includes/Admin/Assets.php:220 includes/Admin/Menu.php:28
+#: includes/Admin/Menu.php:86 includes/Admin/Menu.php:87
+msgid "Onboarding"
+msgstr "Onboarding"
+
+#: includes/Admin/Assets.php:152 includes/Admin/Onboarding/Onboarding.php:76
+msgid "Online store setup"
+msgstr "Configurarea magazinului online"
+
+#: includes/Admin/Assets.php:321
+msgid ""
+"Opt-in to receive tips, discounts, and recommendations from the WooCommerce "
+"team directly in your inbox."
+msgstr ""
+"Înscrie-te pentru a primi sfaturi, reduceri și recomandări de la echipa "
+"WooCommerce direct în mesagerie."
+
+#: includes/Admin/Assets.php:287
+msgid "Or use payment plugins"
+msgstr "Sau utilizează pluginuri de plată"
+
+#: includes/Admin/Assets.php:288
+msgid "Or use shipping plugins"
+msgstr "Sau utlizează pluginuri de expediere"
+
+#: includes/Admin/Assets.php:277
+msgid "Other"
+msgstr "Altele"
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/PageForm.js:41
+msgid "Page title:"
+msgstr "Titlul paginii:"
+
+#: includes/Admin/Assets.php:268
+#, fuzzy
+msgid "Payment methods"
+msgstr "Metode de plată"
+
+#: includes/Admin/Assets.php:269
+msgid "Payment plugins"
+msgstr "Plugin-uri de plată"
+
+#: includes/Admin/Assets.php:273
+msgid "Payment settings"
+msgstr "Setări de plată"
+
+#: includes/Admin/Onboarding/PluginManager.php:29
+msgid ""
+"PayPal's latest complete payments processing solution. Accept PayPal, Pay "
+"Later, credit/debit cards, alternative digital wallets local payment types "
+"and bank accounts."
+msgstr ""
+"Cea mai recentă soluție completă de procesare a plăților PayPal. Acceptă "
+"PayPal, Pay Later, carduri de credit/debit, portofele digitale alternative, "
+"tipuri de plăți locale și conturi bancare."
+
+#: includes/Admin/Assets.php:186
+msgid "Play on YouTube"
+msgstr "Redare pe YouTube"
+
+#: includes/Admin/Assets.php:139
+#, fuzzy
+msgid "Plugin activation failed"
+msgstr "Activarea pluginului a eșuat"
+
+#: includes/Helper.php:354
+msgid "Plugin directory not found"
+msgstr "Fișierul pluginului nu a fost găsit"
+
+#: includes/Admin/Assets.php:135
+#, fuzzy
+msgid "Plugin has been succesfully installed and activated"
+msgstr "Plugin-ul a fost instalat și activat cu succes"
+
+#: includes/Admin/Assets.php:137
+#, fuzzy
+msgid "Plugin installation failed"
+msgstr "Instalarea pluginului a eșuat"
+
+#: includes/Helper.php:369
+msgid "Plugin main file not found"
+msgstr "Fișierul principal al pluginului nu a fost găsit"
+
+#: includes/Admin/Assets.php:134
+#, fuzzy
+msgid "Plugin sucessfully activated"
+msgstr "Plugin activat cu succes"
+
+#: includes/Admin/Assets.php:132
+#, fuzzy
+msgid "Plugin sucessfully installed"
+msgstr "Plugin instalat cu succes"
+
+#: includes/Admin/Assets.php:278
+#, fuzzy
+msgid "Pre-built websites and themes"
+msgstr "Site-uri și teme pre-construite"
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/PreviewPageButton.js:46
+msgid "Preview"
+msgstr "Previzualizare"
+
+#: includes/Admin/Assets.php:153
+msgid "Preview website"
+msgstr "Previzualizează site-ul web"
+
+#: includes/Admin/Assets.php:294
+msgid "Publish the page"
+msgstr "Publică pagina"
+
+#: includes/Admin/Views/Partials/RateUs.php:2
+msgid "Rate this plugin"
+msgstr "Evaluează acest plugin"
+
+#: includes/Admin/Assets.php:276
+msgid "Recommended for you"
+msgstr "Recomandat pentru tine"
+
+#: includes/Admin/Assets.php:262 includes/Admin/Onboarding/WelcomeCards.php:27
+msgid "Run an Amazon Affiliate site"
+msgstr "Gestionează un site de Afiliat Amazon"
+
+#: includes/Admin/Assets.php:157
+msgid "Run email marketing campaigns"
+msgstr "Gestionează campanii de marketing prin email"
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/PageForm.js:62
+msgid "Save"
+msgstr "Salvează"
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/PageForm.js:59
+msgid "Saving"
+msgstr "Economisești"
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/SearchBar.js:7
+#: gutenberg/edit-pages-panel/src/components/SearchBar.js:8
+msgid "Search pages"
+msgstr "Pagini de căutare"
+
+#: includes/Admin/Onboarding/PluginManager.php:38
+msgid ""
+"Securely accept payments, synchronize sales, and seamlessly manage inventory "
+"and product data between WooCommerce and Square POS."
+msgstr ""
+"Acceptă plăți în siguranță, sincronizează vânzările și gestionează fără "
+"probleme inventarul și datele despre produse între WooCommerce și Square POS."
+
+#: includes/Admin/Onboarding/Onboarding.php:331
+msgid ""
+"Sell products, services and digital downloads. Set up and customize each "
+"item to fit your business needs."
+msgstr ""
+"Vinde produse, servicii și produse digitale. Configurează și personalizează "
+"fiecare articol pentru a se potrivi nevoilor afacerii tale."
+
+#: includes/Admin/Assets.php:175
+msgid ""
+"Sell products, services, and digital downloads. Set up and customize each "
+"item to fit your business needs."
+msgstr ""
+"Vinde produse, servicii și produse digitale. Configurează și personalizează "
+"fiecare articol pentru a se potrivi nevoilor afacerii tale."
+
+#: includes/Admin/Assets.php:170
+msgid "Set up a payment method"
+msgstr "Configurează o metodă de plată"
+
+#: includes/Admin/Onboarding/WelcomeCards.php:17
+msgid "Set up an online store"
+msgstr "Creează un magazin online"
+
+#: includes/Admin/Onboarding/Onboarding.php:410
+msgid "Set up Google Site Kit"
+msgstr "Configurează Google Site Kit"
+
+#: includes/Admin/Assets.php:171 includes/Admin/Onboarding/Onboarding.php:359
+msgid "Set up payment method"
+msgstr "Configurează metoda de plată"
+
+#: includes/Admin/Assets.php:274 includes/Admin/Onboarding/Onboarding.php:355
+msgid "Set up payments"
+msgstr "Configurează plăți"
+
+#: includes/Admin/Assets.php:296
+msgid "Set up shipping"
+msgstr "Configurează expedieri"
+
+#: includes/Admin/Onboarding/Onboarding.php:382
+#, fuzzy
+msgid "Set up shipping method"
+msgstr "Configurați metoda de expediere"
+
+#: includes/Admin/Assets.php:295
+msgid "Set up Site Kit"
+msgstr "Configurează Site Kit"
+
+#: includes/Admin/Onboarding/Onboarding.php:279
+msgid "Set up your online store"
+msgstr "Configurează magazinul tău online"
+
+#: includes/Admin/Assets.php:285
+#, fuzzy
+msgid "Set up your site"
+msgstr "Configurați site-ul dvs"
+
+#: includes/Admin/Assets.php:130
+#, fuzzy
+msgid "Setting up..."
+msgstr "Configurarea..."
+
+#: includes/Admin/Onboarding/WelcomeCards.php:19
+msgid ""
+"Setup <strong>WooCommerce</strong>, add products or services, and start "
+"selling today."
+msgstr ""
+"Configurează <strong>WooCommerce</strong>, adaugă produse sau servicii și "
+"începe să vinzi astăzi."
+
+#: includes/Admin/Assets.php:176
+msgid "Setup Google Site Kit"
+msgstr "Configurează Google Site Kit"
+
+#: includes/Admin/Assets.php:169 includes/Admin/Assets.php:210
+msgid "Setup my online store"
+msgstr "Configurează magazinului meu online"
+
+#: includes/Admin/Assets.php:217
+msgid "Setup website"
+msgstr "Configurează site-ul web"
+
+#: includes/Admin/Views/Partials/PromotionalBanner.php:9
+msgid ""
+"Share your referral link with friends and family and <b>receive 20% "
+"commission</b> for every successful referral."
+msgstr ""
+"Distribuie link-ul tău de recomandare către prietenii și familia și <b>poți "
+"primi un comision de 20%</b> pentru fiecare persoană care devine client."
+
+#: includes/Admin/Assets.php:187
+msgid ""
+"Share your referral link with friends and family and <strong>receive 20% "
+"commission</strong> for every successful referral."
+msgstr ""
+"Distribuie link-ul tău de recomandare către prietenii și familia și <strong>"
+"poți primi un comision de 20%</strong> pentru fiecare persoană care devine "
+"client."
+
+#: includes/Admin/Assets.php:159
+msgid "Ship products with ease"
+msgstr "Expediază produse cu ușurință"
+
+#: includes/Admin/Assets.php:160
+msgid "Shipping methods"
+msgstr "Metode de expediere"
+
+#: includes/Admin/Assets.php:270
+msgid "Shipping plugins"
+msgstr "Plugin-uri de expediere"
+
+#: includes/Admin/Assets.php:281
+msgid "Shipping settings"
+msgstr "Setări de expediere"
+
+#: includes/Rest/WooRoutes.php:47
+msgid "Shop locale is empty, please setup store first"
+msgstr "Magazinul local este gol, te rugăm să configurezi mai întâi magazinul"
+
+#: includes/Admin/Assets.php:221
+msgid "Show list"
+msgstr "Afișează lista"
+
+#: includes/Admin/Assets.php:209
+msgid "Skip"
+msgstr "Treci peste"
+
+#: includes/Rest/StepRoutes.php:175
+msgid "Sorry, there are activation errors."
+msgstr "Ne pare rău, au apărut erori de activare."
+
+#: includes/Rest/StepRoutes.php:73 includes/Rest/StepRoutes.php:162
+#: includes/Rest/StepRoutes.php:211 includes/Rest/StepRoutes.php:243
+#: includes/Rest/StepRoutes.php:259 includes/Rest/WooRoutes.php:53
+#: includes/Rest/WooRoutes.php:135
+msgid "Sorry, there are validation errors."
+msgstr "Ne pare rău, au apărut erori de validare."
+
+#: includes/Admin/Assets.php:271 includes/Admin/Onboarding/Onboarding.php:601
+#: includes/Admin/Onboarding/Onboarding.php:609
+#, fuzzy
+#| msgid "Started creating your site"
+msgid "Start creating your site"
+msgstr "S-a început crearea site-ului tău"
+
+#: includes/Admin/Assets.php:178
+#: includes/Admin/Views/Partials/PromotionalBanner.php:24
+msgid "Start earning"
+msgstr "Începe să câștigi bani"
+
+#: includes/Rest/StepRoutes.php:92
+msgid "Step category and/or step does not exist."
+msgstr "Categoria de pas și/sau pasul nu există."
+
+#: includes/Rest/WooRoutes.php:129
+msgid "Store location locale not found"
+msgstr "Magazinul local nu a fost găsit"
+
+#: includes/Admin/Onboarding/PluginManager.php:26
+msgid "Take credit card payments on your store using Stripe."
+msgstr "Efectează plăți cu cardul de credit în magazinul tău utilizând Stripe."
+
+#: includes/Admin/Assets.php:207
+msgid "Take me there"
+msgstr "Du-mă acolo"
+
+#: includes/Admin/Assets.php:322
+msgid "Tell us a bit about your business"
+msgstr "Spune-ne câte ceva despre afacerea ta"
+
+#: includes/Admin/Assets.php:149
+msgid ""
+"The biggest ever <span style=\"color: #8C85FF\">Amazing Friday</span> sale!"
+msgstr ""
+"Cea mai mare promoție de <span style=\"color: #8C85FF\">Black Friday</span>!"
+
+#: includes/Admin/Assets.php:147
+msgid ""
+"The biggest ever <span style=\"color: #8C85FF\">Black Friday</span> sale!"
+msgstr ""
+"Cea mai mare reducere de <span style=\"color: #8C85FF\">Black Friday</span>!"
+
+#: includes/Admin/Assets.php:150
+msgid ""
+"The biggest ever <span style=\"color: #8C85FF\">Blessed Friday</span> sale!"
+msgstr ""
+"Cea mai mare reducere de <span style=\"color: #8C85FF\">Black Friday</span>!"
+
+#: includes/Admin/Assets.php:146
+msgid ""
+"The biggest ever <span style=\"color: #8C85FF\">Cyber Monday</span> sale!"
+msgstr ""
+"Cea mai mare reducere de <span style=\"color: #8C85FF\">Cyber Monday</span>!"
+
+#: includes/Admin/Assets.php:151
+msgid ""
+"The biggest ever <span style=\"color: #8C85FF\">End of the year</span> sale!"
+msgstr ""
+"Cea mai mare reducere de <span style=\"color: #8C85FF\">sfârșit de an</span>!"
+
+#: includes/Admin/Assets.php:148
+msgid ""
+"The biggest ever <span style=\"color: #8C85FF\">White Friday</span> sale!"
+msgstr ""
+"Cea mai mare reducere de <span style=\"color: #8C85FF\">Black Friday</span>!"
+
+#. translators: %s php version
+#: hostinger-easy-onboarding.php:74
+msgid ""
+"The Hostinger Easy Onboarding plugin requires minimum PHP version of <b>"
+"%s</b>. "
+msgstr ""
+"Pluginul Hostinger Easy Onboarding necesită o versiune PHP minimă de <b>"
+"%s</b>."
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/DeletePageButton.js:49
+msgid "The page was deleted!"
+msgstr "Pagina a fost ștearsă!"
+
+#: includes/Admin/Onboarding/PluginManager.php:66
+msgid ""
+"The USPS Simple plugin calculates rates for domestic shipping dynamically "
+"using USPS API during checkout."
+msgstr ""
+"Pluginul USPS Simple calculează în mod dinamic tarifele pentru expedierea "
+"internă utilizând USPS API în timpul procesului de finalizare a comenzii."
+
+#: includes/Admin/Assets.php:138
+#, fuzzy
+msgid "Theme activation failed"
+msgstr "Activarea temei a eșuat"
+
+#: includes/Admin/Assets.php:127
+#, fuzzy
+msgid "Theme has been succesfully activated"
+msgstr "Tema a fost activată cu succes"
+
+#: includes/Admin/Assets.php:128
+#, fuzzy
+msgid "Theme has been succesfully installed"
+msgstr "Tema a fost instalată cu succes"
+
+#: includes/Admin/Assets.php:129
+#, fuzzy
+msgid "Theme has been succesfully installed and activated"
+msgstr "Tema a fost instalată și activată cu succes"
+
+#: includes/Admin/Assets.php:136
+#, fuzzy
+msgid "Theme installation failed"
+msgstr "Instalarea temei a eșuat"
+
+#: includes/Admin/Assets.php:133
+#, fuzzy
+msgid "Theme sucessfully activated"
+msgstr "Tema a fost activată cu succes"
+
+#: includes/Admin/Assets.php:131
+#, fuzzy
+msgid "Theme sucessfully installed"
+msgstr "Tema a fost instalată cu succes"
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/DeletePageButton.js:62
+msgid "There was an error."
+msgstr "A existat o eroare."
+
+#: includes/Admin/Onboarding/PluginManager.php:63
+msgid ""
+"This extension gives you the possibility to use the Colissimo shipping "
+"methods in WooCommerce"
+msgstr ""
+"Această extensie îți oferă posibilitatea de a utiliza metodele de expediere "
+"Colissimo în WooCommerce"
+
+#: includes/Admin/Assets.php:327
+msgid "This field is required"
+msgstr "Acest câmp este obligatoriu"
+
+#: gutenberg/edit-pages-panel/build/index.js:1
+#: gutenberg/edit-pages-panel/src/components/PagesList.js:41
+msgid "Title"
+msgstr "Titlu"
+
+#: includes/Admin/Assets.php:244
+msgid ""
+"To upload a new image, click on Add New button on the Media Library page and "
+"select files."
+msgstr ""
+"Pentru a încărca o imagine nouă, dă click pe butonul Adaugă de pe pagina "
+"Biblioteca media și selectează fișierele dorite."
+
+#: includes/Admin/Assets.php:161
+msgid "Try Omnisend"
+msgstr "Încearcă Omnisend"
+
+#: includes/Admin/Assets.php:222
+msgid "Tutorials"
+msgstr "Tutoriale"
+
+#: includes/Errors.php:31
+msgid "Unknown error code."
+msgstr "Cod de eroare necunoscut."
+
+#: includes/Admin/Assets.php:198 includes/Admin/Assets.php:243
+msgid "Upload an image"
+msgstr "Încarcă o imagine"
+
+#: includes/Admin/Assets.php:191 includes/Admin/Assets.php:205
+msgid "Upload your logo"
+msgstr "Încarcă logo-ul tău"
+
+#: includes/Admin/Hooks.php:333
+msgid ""
+"Use the special discount code <b>ONLYHOSTINGER30</b> to get 30% off on "
+"Omnisend for 6 months when you upgrade."
+msgstr ""
+"Atunci când faci upgrade, utilizează codul special de reducere <b>"
+"ONLYHOSTINGER30</b> pentru a beneficia de o reducere de 30% la Omnisend timp "
+"de 6 luni."
+
+#: includes/Admin/Hooks.php:490
+msgid "View checklist"
+msgstr "Vezi checklist-ul"
+
+#: includes/Admin/Assets.php:231
+msgid "View completed"
+msgstr "Vezi acțiunile complete"
+
+#: includes/Admin/Assets.php:283
+#, fuzzy
+msgid "View less"
+msgstr "Vezi mai puțin"
+
+#: includes/Admin/Onboarding/Onboarding.php:288
+msgid "View list"
+msgstr "Vezi lista"
+
+#: includes/Admin/Assets.php:282
+#, fuzzy
+msgid "View more"
+msgstr "Vezi mai mult"
+
+#: includes/Admin/Assets.php:229
+msgid "View plugins"
+msgstr "Vezi pluginuri"
+
+#: includes/Admin/Onboarding/Onboarding.php:206
+msgid ""
+"Visit hPanel and connect a real domain. If you already did this, please wait "
+"up to 24h until the domain fully connects"
+msgstr ""
+"Accesează hPanel și conectează un domeniu real. Dacă ai făcut deja acest "
+"lucru, te rugăm să aștepți până la 24 de ore până la conectarea completă a "
+"domeniului"
+
+#: includes/Admin/Assets.php:180
+msgid "Wait for domain propagation"
+msgstr "Așteaptă propagarea domeniului"
+
+#: includes/Admin/Onboarding/Onboarding.php:516
+msgid "Want to create a new AI site?"
+msgstr "Vrei să creezi un nou site AI?"
+
+#: includes/Admin/Onboarding/Onboarding.php:539
+#, fuzzy
+msgid "Want to create a new site on a different template?"
+msgstr "Doriți să creați un site nou pe un șablon diferit?"
+
+#: includes/Admin/Onboarding/Onboarding.php:579
+#, fuzzy
+msgid "Want to create a new site on a pre-built template?"
+msgstr "Doriți să creați un site nou pe un șablon pre-construit?"
+
+#: includes/Admin/Onboarding/Onboarding.php:571
+#, fuzzy
+msgid "Want to create a new site?"
+msgstr "Doriți să creați un site nou?"
+
+#: includes/Errors.php:20
+msgid ""
+"We apologize for the inconvenience. The AI content generation process "
+"encountered a server error. Please try again later, and if the issue "
+"persists, kindly contact our support team for assistance."
+msgstr ""
+"Ne cerem scuze pentru neplăceri. Procesul de generare a conținutului AI a "
+"întâmpinat o eroare de server. Te rugăm să încerci din nou mai târziu, iar "
+"dacă problema persistă, te rugăm să contactezi echipa noastră de asistență."
+
+#: includes/Admin/Assets.php:323 includes/Admin/Onboarding/Onboarding.php:306
+msgid "We'll use this information to help you set up your store faster."
+msgstr ""
+"Vom folosi aceste informații pentru a te ajuta să-ți configurezi magazinul "
+"mai rapid."
+
+#: gutenberg/edit-pages-panel/src/components/StoreSetupButton.js:29
+msgid "Website Setup"
+msgstr "Configurarea site-ului web"
+
+#: includes/Admin/Assets.php:189 includes/Admin/Assets.php:214
+#: includes/Admin/Onboarding/Onboarding.php:48
+#: gutenberg/edit-pages-panel/build/index.js:1
+msgid "Website setup"
+msgstr "Configurarea site-ului web"
+
+#: includes/Admin/Assets.php:193
+msgid "Website URL"
+msgstr "URL-ul site-ului"
+
+#: includes/Admin/Assets.php:325
+msgid "Welcome to WordPress!"
+msgstr "Bine ai venit la WordPress!"
+
+#: includes/Admin/Assets.php:165
+msgid "What type of products or services will you sell?"
+msgstr "Ce tip de produse sau servicii vei vinde?"
+
+#: includes/Admin/Assets.php:164
+msgid "Where is your store located?"
+msgstr "Unde este situat magazinul tău?"
+
+#: includes/Admin/Assets.php:318
+msgid "WordPress tutorials"
+msgstr "Tutoriale WordPress"
+
+#: includes/Admin/Assets.php:298
+msgid "Yes, skip step"
+msgstr "Da, treci peste acest pas"
+
+#. translators: %s php version
+#: hostinger-easy-onboarding.php:78
+msgid "You are running <b>%s</b> PHP version."
+msgstr "Utilizezi versiunea PHP <b>%s</b>."
+
+#: includes/Admin/Assets.php:286
+msgid ""
+"You can also set up a shipping method without installing additional plugins."
+msgstr ""
+"De asemenea, poți configura o metodă de expediere fără a instala pluginuri "
+"suplimentare."
+
+#: includes/Admin/Assets.php:183
+#| msgid ""
+#| "You can connect domain to Hostinger by changing the nameservers. "
+#| "Different domain providers are have unique procedures for changing "
+#| "nameservers. Here are Hostinger's nameservers:"
+msgid ""
+"You can connect a domain to Hostinger by changing the nameservers. Different "
+"domain providers are have unique procedures for changing nameservers. Here "
+"are Hostinger's nameservers:"
+msgstr ""
+"Poți conecta un domeniu la Hostinger prin schimbarea nameserverelor. "
+"Diferiți furnizori de domenii au proceduri distincte pentru schimbarea "
+"nameserverelor. Acestea sunt nameserverele Hostinger:"
+
+#: includes/Admin/Assets.php:240
+msgid ""
+"You can see the whole post in the editor. Find the description part and "
+"change it to your preferences."
+msgstr ""
+"Poți vedea întreaga postare în editor. Găsește partea de descriere și "
+"modific-o conform preferințelor tale."
+
+#: includes/Admin/Assets.php:195
+msgid ""
+"You need to purchase a domain for your website before the preview domain "
+"becomes inaccessible. Find a desired website name using a <a style=\"text-"
+"decoration:none; font-weight:bold; color:#673de6\" target=\"_blank\" "
+"href=\"https://hpanel.hostinger.com/domains/domain-checker\" >domain name "
+"searcher.</a >"
+msgstr ""
+"Trebuie să achiziționezi un domeniu pentru site-ul tău web înainte ca "
+"domeniul de previzualizare să devină inaccesibil. Găsește-ți numele de site "
+"web dorit utilizând un <a style=\"text-decoration:none; font-weight:bold; "
+"color:#673de6\" target=\"_blank\" href=\"https://hpanel.hostinger."
+"com/domains/domain-checker\" >Instrument de căutare a numelor de domeniu.</a "
+">"
+
+#: includes/Admin/Assets.php:163
+msgid "Your business email"
+msgstr "Adresa ta de email profesională"
+
+#: includes/Admin/Onboarding/Onboarding.php:572
+#, fuzzy
+msgid ""
+"Your new site will replace the current one. Choose from 140+ professional "
+"templates or use AI."
+msgstr ""
+"Noul dvs. site îl va înlocui pe cel actual. Alegeți din peste 140 de modele "
+"profesionale sau utilizați AI."
+
+#: includes/Admin/Onboarding/Onboarding.php:540
+#: includes/Admin/Onboarding/Onboarding.php:580
+#, fuzzy
+msgid ""
+"Your new site will replace the current one. Choose from 140+ professional "
+"templates."
+msgstr ""
+"Noul dvs. site îl va înlocui pe cel actual. Alegeți din peste 140 de modele "
+"profesionale."
+
+#: includes/Admin/Onboarding/Onboarding.php:517
+msgid ""
+"Your new site will replace the current one. Use the same description or "
+"change it."
+msgstr ""
+"Noul tău site îl va înlocui pe cel actual. Utilizează aceeași descriere sau "
+"modific-o."
+
+#: includes/Admin/Assets.php:168 includes/Admin/Assets.php:212
+msgid "Your progress"
+msgstr "Progresul tău"
+
+#: includes/Admin/Assets.php:162
+msgid "Your store name"
+msgstr "Numele magazinului tău"
+
+#: includes/Admin/Assets.php:194
+msgid ""
+"Your website is already published and can be accessed using Hostinger free "
+"temporary subdomain right now. Here is the current URL of your website:"
+msgstr ""
+"Site-ul tău este deja publicat și poate fi accesat chiar acum utilizând "
+"subdomeniul temporar gratuit de la Hostinger. Aici este URL-ul actual al "
+"site-ului tău:"
+
+#: includes/Admin/Assets.php:145
+msgid "You’ll love these great deals that were handpicked just for you."
+msgstr ""
+"O să-ți placă aceste oferte grozave care au fost alese manual doar pentru "
+"tine."
+
+#: includes/Admin/Assets.php:230
+msgid "You’re done setting up your online store!"
+msgstr "Ai terminat de configurat magazinul tău online!"
+
+#: includes/Admin/Assets.php:192
+msgid "👋 Welcome to WordPress"
+msgstr "👋 Bine ai venit la WordPress"

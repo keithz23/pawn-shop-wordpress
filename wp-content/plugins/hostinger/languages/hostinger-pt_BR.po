@@ -1,0 +1,300 @@
+# Translation of Plugins - Hostinger Tools - Stable (latest release) in Portuguese (Brazil)
+# This file is distributed under the same license as the Plugins - Hostinger Tools - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2025-02-07 13:20+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Loco https://localise.biz/\n"
+"Language: pt_BR\n"
+"Project-Id-Version: Plugins - Hostinger Tools - Stable (latest release)\n"
+"Language-Team: Portuguese (Brazil)"
+
+#: includes/Admin/Assets.php:145
+msgid ""
+" Turning on XML-RPC might make your site less secure. Do you want to proceed?"
+msgstr ""
+" Ativar o XML-RPC pode tornar seu site menos seguro. Você quer prosseguir?"
+
+#: includes/Errors.php:16
+msgid "Action Failed. Try again or contact support. Apologies."
+msgstr ""
+"Ação: falhou. Tente novamente ou entre em contato com o suporte. Desculpas."
+
+#: includes/Errors.php:19
+msgid "An unexpected error occurred. Please try again or contact support."
+msgstr ""
+"Um erro inesperado ocorreu. Tente novamente ou entre em contato com o "
+"suporte."
+
+#. translators: %s: PHP version
+#: hostinger.php:84
+msgid "Attention:"
+msgstr "Atenção:"
+
+#: includes/Admin/Assets.php:141
+msgid "Bypass link"
+msgstr "Ignorar link"
+
+#: includes/Admin/Assets.php:149
+msgid "Bypass link reset"
+msgstr "Ignorar redefinir link"
+
+#: includes/Admin/Assets.php:147 includes/Admin/Assets.php:151
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: includes/Views/ComingSoon.php:6 includes/Views/ComingSoon.php:24
+msgid "Coming Soon"
+msgstr "Em breve"
+
+#: includes/Admin/Assets.php:121
+#, fuzzy
+msgid "Disable application passwords"
+msgstr "Desativar senhas de aplicativos"
+
+#: includes/Admin/Assets.php:116
+msgid ""
+"Disable public access to the site (WordPress admins will still be able to "
+"access)"
+msgstr ""
+"Desativar o acesso público ao site (os administradores do WordPress ainda "
+"poderão acessar)"
+
+#: includes/Admin/Assets.php:119
+msgid "Disable XML-RPC"
+msgstr "Desativar XML-RPC"
+
+#: includes/Admin/Assets.php:146
+msgid "Disclaimer"
+msgstr "Aviso Legal"
+
+#: includes/Admin/Assets.php:135
+msgid "For improved security, ensure you use the latest version of WordPress"
+msgstr ""
+"Para maior segurança, certifique-se de usar a versão mais recente do "
+"WordPress"
+
+#: includes/Admin/Assets.php:124
+msgid "Force HTTPS"
+msgstr "Forçar HTTPs"
+
+#: includes/Admin/Assets.php:126
+msgid "Force WWW"
+msgstr "Forçar WWW"
+
+#: includes/Admin/Assets.php:144 includes/Admin/Hooks.php:55
+msgid "Got it"
+msgstr "Entendi!"
+
+#. Author of the plugin
+#: hostinger.php
+msgid "Hostinger"
+msgstr "Hostinger"
+
+#: includes/Admin/Hooks.php:53
+msgid "Hostinger Easy Onboarding"
+msgstr "Integração fácil da Hostinger"
+
+#: includes/Admin/Hooks.php:49
+msgid "Hostinger plugin updates"
+msgstr "Atualização do plugin Hostinger"
+
+#. Plugin Name of the plugin
+#: hostinger.php includes/Admin/Hooks.php:52
+msgid "Hostinger Tools"
+msgstr "Hostinger Tools"
+
+#: includes/Admin/Assets.php:143
+msgid ""
+"Hostinger Tools will offer new tools to simplify your site management. And "
+"Hostinger Easy Onboarding will guide you through the steps of building a "
+"website."
+msgstr ""
+"O Hostinger Tools oferecerá novas ferramentas para simplificar o "
+"gerenciamento do seu site. E o Hostinger Easy Onboarding guiará você pelas "
+"etapas de construção de um site."
+
+#. Description of the plugin
+#: hostinger.php
+msgid "Hostinger WordPress plugin."
+msgstr "Plugin da Hostinger para WordPress."
+
+#. Plugin URI of the plugin
+#: hostinger.php
+msgid "https://hostinger.com"
+msgstr "https://hostinger.com"
+
+#. Author URI of the plugin
+#: hostinger.php
+msgid "https://www.hostinger.com"
+msgstr "https://www.hostinger.com"
+
+#: includes/Admin/Assets.php:134
+msgid "is recommended"
+msgstr "é recomendado"
+
+#: includes/Admin/Assets.php:153
+msgid "Link has been reset"
+msgstr "O link foi redefinido"
+
+#: includes/Admin/Assets.php:136
+msgid "Maintenance"
+msgstr "Manutenção"
+
+#: includes/Admin/Assets.php:140
+msgid "Maintenance mode"
+msgstr "Modo de manutenção"
+
+#: includes/Views/ComingSoon.php:27
+msgid "New WordPress website is being built and will be published soon"
+msgstr "Um novo site WordPress está sendo criado e será publicado em breve"
+
+#: includes/Admin/Hooks.php:52
+msgid "offers a toolkit for easier site maintenance."
+msgstr "oferece um kit de ferramentas para facilitar a manutenção do site."
+
+#: includes/Admin/Views/Partials/RateUs.php:38
+msgid ""
+"on <a href=\"https://wordpress.org/support/plugin/hostinger/reviews/#new-"
+"post\" target=\"_blank\" rel=\"noopener noreferrer\">WordPress.org</a>"
+msgstr ""
+"em <a href=\"https://wordpress.org/support/plugin/hostinger/reviews/#new-"
+"post\" target=\"_blank\" rel=\"noopener noreferrer\">WordPress.org</a>"
+
+#: includes/Admin/Assets.php:115
+msgid "Open guide"
+msgstr "Guia aberto"
+
+#: includes/Admin/Assets.php:129
+msgid "PHP version"
+msgstr "Versão do PHP"
+
+#: includes/Admin/Assets.php:137
+msgid "Preview my website"
+msgstr "Pré-visualizar meu site"
+
+#: includes/Admin/Assets.php:148
+msgid "Proceed anyway"
+msgstr "Continuar mesmo assim"
+
+#: includes/Admin/Hooks.php:53
+msgid ""
+"provides guidance and learning resources for beginners to get started with "
+"building a site using WordPress."
+msgstr ""
+"fornece orientação e recursos de aprendizagem para iniciantes começarem a "
+"construir um site usando WordPress."
+
+#: includes/Admin/Views/Partials/RateUs.php:2
+msgid "Rate this plugin"
+msgstr "Avalie esse plugin"
+
+#: includes/Admin/Assets.php:139
+msgid "Redirects"
+msgstr "Redirecionamentos"
+
+#: includes/Admin/Assets.php:125
+msgid "Redirects all HTTP URLs to HTTPS sites"
+msgstr "Redireciona todos os URLs HTTP para sites HTTPS"
+
+#: includes/Admin/Assets.php:127
+msgid "Redirects all WWW URLs to non-WWW ones"
+msgstr "Redireciona todos os URLs WWW para URLs não WWW"
+
+#: includes/Admin/Assets.php:118 includes/Admin/Assets.php:152
+msgid "Reset link"
+msgstr "Redefinir link"
+
+#: includes/Admin/Assets.php:132
+msgid "Running the latest version"
+msgstr "Executando a versão mais recente"
+
+#: includes/Admin/Assets.php:138
+msgid "Security"
+msgstr "Segurança"
+
+#: includes/Admin/Assets.php:117
+msgid "Skip-link that bypasses the maintenance mode"
+msgstr "Skip-link que ignora o modo de manutenção"
+
+#: includes/Admin/Hooks.php:50
+msgid "The Hostinger plugin has been split into two different plugins:"
+msgstr "O plugin Hostinger foi dividido em dois plugins diferentes:"
+
+#: includes/Admin/Assets.php:150
+msgid ""
+"This will invalidate the currently generated link in use. This action cannot "
+"be undone, are you sure you want to proceed?"
+msgstr ""
+"Isso invalidará o link em uso no momento. Esta ação não pode ser desfeita. "
+"Tem certeza de que deseja continuar?"
+
+#: includes/Admin/Assets.php:114 includes/Admin/Menu.php:22
+#: includes/Admin/Menu.php:31 includes/Admin/Menu.php:32
+msgid "Tools"
+msgstr "Ferramentas"
+
+#: includes/Errors.php:38
+msgid "Unknown error code."
+msgstr "Código de erro desconhecido."
+
+#: includes/Admin/Assets.php:133
+msgid "Update to"
+msgstr "Atualizar para"
+
+#: includes/Admin/Assets.php:131
+msgid "Various updates and fixes available in the newest version."
+msgstr "Várias atualizações e correções disponíveis na versão mais recente."
+
+#: includes/Errors.php:22
+msgid ""
+"We apologize for the inconvenience. The AI content generation process "
+"encountered a server error. Please try again later, and if the issue "
+"persists, kindly contact our support team for assistance."
+msgstr ""
+"Pedimos desculpas pela inconveniência. O processo de geração de conteúdo de "
+"IA encontrou um erro no servidor. Tente novamente mais tarde e, se o "
+"problema persistir, entre em contato com nossa equipe de suporte para obter "
+"assistência."
+
+#: includes/Admin/Assets.php:142
+msgid ""
+"We’re splitting Hostinger plugin into two: Hostinger Tools and Hostinger "
+"Easy Onboarding"
+msgstr ""
+"Estamos dividindo o plugin Hostinger em dois: Hostinger Tools e Hostinger "
+"Easy Onboarding"
+
+#: includes/Admin/Assets.php:122
+#, fuzzy
+msgid ""
+"WordPress application passwords allow users to authenticate API requests "
+"without using their main login credentials, allowing for third-party "
+"integrations."
+msgstr ""
+"As senhas de aplicativos do WordPress permitem que os usuários autentiquem "
+"solicitações de API sem usar suas credenciais de login principais, "
+"permitindo integrações de terceiros."
+
+#: includes/Admin/Assets.php:130
+msgid "WordPress version"
+msgstr "Versão do WordPress"
+
+#: includes/Admin/Assets.php:128
+msgid ""
+"WWW and non-WWW domain records are not pointing to the same host. Redirect "
+"not possible."
+msgstr ""
+"Os registros de domínio WWW e não WWW não apontam para o mesmo host. Não é "
+"possível redirecionar."
+
+#: includes/Admin/Assets.php:120
+msgid ""
+"XML-RPC allows apps to connect to your WordPress site, but might expose your "
+"site's security. Disable this feature if you don't need it"
+msgstr ""
+"XML-RPC permite que aplicativos se conectem ao seu site WordPress, mas pode "
+"expor a segurança do seu site. Desative este recurso se não precisar dele"
