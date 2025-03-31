@@ -1,0 +1,112 @@
+{
+  "features": [
+    "專人立即為你評估服務，解除所有疑慮！",
+    "免押、免保，完全了解後再決定是否借貸！",
+    "手續簡便，只要備妥文件，即可立即搞定。亦可到府收件辦案！",
+    "採當日撥款，讓您在地一時間解決困境，不再煩惱！"
+  ],
+  "process": [
+    {
+      "title": "免費諮詢",
+      "description": "專業服務團隊為您解答各種問題，全程保密"
+    },
+    {
+      "title": "資料評估",
+      "description": "提供基本資料，由專人為您評估最佳方案"
+    },
+    {
+      "title": "文件準備",
+      "description": "準備必要文件，可安排到府收件服務"
+    },
+    {
+      "title": "立即撥款",
+      "description": "文件核准後，當日完成撥款作業"
+    }
+  ],
+  "advantages": [
+    "政府立案，合法經營，安全有保障",
+    "專業估價，實在價格，即時撥款",
+    "手續簡便，免押免保，快速方便",
+    "全程保密，專人服務，安心放心",
+    "利率透明，無隱藏費用，誠信服務",
+    "經驗豐富，值得信賴，用心服務"
+  ],
+  "resources": {
+    "resources": {
+      "title": "傳統貸不到？這些都不是問題！",
+      "items": [
+        "無薪轉勞保",
+        "銀行未過件",
+        "信用瑕疵",
+        "無保人",
+        "信用小白",
+        "債務協商"
+      ],
+      "image": {
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0PO6lVNqDuymeNRVbcoVRfaBGIDJN3zF59w&s"
+      },
+      "backLink": {
+        "url": "tel:0928043112"
+      }
+    },
+    "newApplications": {
+      "title": "貸款條件 (皆可)",
+      "items": [
+        "薪轉證明",
+        "職業證明",
+        "勞保異動明細",
+        "土地/房屋",
+		"家電/手機",
+		"汽車/機車"
+      ],
+      "image": {
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0PO6lVNqDuymeNRVbcoVRfaBGIDJN3zF59w&s"
+      },
+      "backLink": {
+        "url": "https://line.me/ti/p/5j9yYsXE07"
+      }
+    }
+  },
+  "services": [
+    {
+      "icon": "fas fa-chart-bar",
+      "title": "個人信貸",
+      "description": "個人信貸免押、免保、免照會，讓您的資金運作更加靈活。"
+    },
+    {
+      "icon": "fas fa-life-ring",
+      "title": "汽車借款",
+      "description": "汽車、計程車、自用車、貸款車，分期車都可借，各類融資汽車借款不限車種車齡！"
+    },
+    {
+      "icon": "fas fa-calculator",
+      "title": "機車借款",
+      "description": "機車、貸款機車、分期機車都可借，各類機車借款不限車種車齡！機車借款最高可借車價的兩倍"
+    },
+    {
+      "icon": "fas fa-wallet",
+      "title": "房屋二胎",
+      "description": "代辦房屋二胎貸款，只要備妥房屋或土地其建物所有權狀正本、印鑑證明、戶籍謄本、印鑑章。"
+    },
+    {
+      "icon": "fas fa-briefcase",
+      "title": "工商融資",
+      "description": "工商融資(中小企業融資)、免保免照會，不佔銀行額度，讓您的資金運作更加靈活"
+    },
+    {
+      "icon": "fas fa-calculator",
+      "title": "支票貼現",
+      "description": "代辦支客票貼現，銀行式利息，免保人、支票借款手續簡便。"
+    },
+    {
+      "icon": "fas fa-wallet",
+      "title": "代償當鋪",
+      "description": "針對目前尚在別家當舖或融資公司借款的客戶，提出更優惠的利率，更高的額度免保人，手續簡便快速撥款。"
+    },
+    {
+      "icon": "fas fa-chart-bar",
+      "title": "名牌精品",
+      "description": "各類珠寶，如 鑽石 紅寶 藍寶 名錶，如 勞力士 沛納海 蕭邦 精品，如 LV Cartier CHANEL等。"
+    }
+  ]
+}
