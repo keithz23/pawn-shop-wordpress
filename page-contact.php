@@ -85,4 +85,89 @@ get_header();
     </div>
 </section>
 
+ <!-- Contact form -->
+    <section class="contact-form-section">
+      <h2 class="">線上預約 專人回覆</h2>
+      <div class="form-map-container">
+        <div class="form-container">
+          <p>
+            有任何問題與建議，歡迎透過以下表單與我們聯繫，將由專人為您協助處理，謝謝。
+          </p>
+          <form>
+            <div class="form-group">
+              <label for="name"
+                >貴賓姓名 <span style="color: red">(必填)</span></label
+              >
+              <input type="text" id="name" placeholder="請輸入姓名" required />
+            </div>
+            <div class="form-group">
+              <label for="email"
+                >電子郵件 <span style="color: red">(必填)</span></label
+              >
+              <input
+                type="email"
+                id="email"
+                placeholder="請輸入電子郵件"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="amount"
+                >借款金額 <span style="color: red">(必填)</span></label
+              >
+              <input
+                type="number"
+                id="amount"
+                placeholder="例如: 50000元"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="phone"
+                >聯絡電話 <span style="color: red">(必填)</span></label
+              >
+              <input
+                type="tel"
+                id="phone"
+                placeholder="請輸入聯絡電話"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="time"
+                >可聯絡時間 <span style="color: red">(必填)</span></label
+              >
+              <select id="time" required>
+                <option value="">請選擇聯絡時段</option>
+                <option value="morning">上午</option>
+                <option value="afternoon">下午</option>
+                <option value="evening">晚上</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="other">其它需求</label>
+              <textarea
+                id="other"
+                rows="3"
+                placeholder="請輸入您的需求"
+              ></textarea>
+            </div>
+            <button type="submit" class="submit-btn">送出訊息</button>
+          </form>
+        </div>
+
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14564334.91234593!2d118.06479748749998!3d23.69781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x345d54d8b9d2e7e5%3A0xb5b16e8cb443a68d!2zVGFpd2Fu!5e0!3m2!1sen!2stw!4v1711951234567!5m2!1sen!2stw"
+            width="100%"
+            height="300"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          >
+          </iframe>
+        </div>
+      </div>
+    </section>
+
 <?php get_footer(); ?> 

@@ -3,7 +3,7 @@ name: FTP Deploy WordPress Theme
 on:
   push:
     branches:
-      - main  # Trigger only on push to main (e.g., after merge)
+      - main # Trigger only on push to main (e.g., after merge)
 
 jobs:
   ftp-deploy:
