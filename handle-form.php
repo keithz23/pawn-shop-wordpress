@@ -36,7 +36,7 @@ function handle_contact_form_submission() {
             exit;
         } else {
             error_log("Failed to insert data into $table_name: " . $wpdb->last_error);
-            wp_safe_redirect(add_query_arg($redirect_url));
+            //wp_safe_redirect(add_query_arg($redirect_url));
             exit;
         }
     }
