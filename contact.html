@@ -171,13 +171,25 @@
           <p>
             有任何問題與建議，歡迎透過以下表單與我們聯繫，將由專人為您協助處理，謝謝。
           </p>
-          <form>
+          <form
+            action="<?php echo esc_url(admin_url('admin-post.php')); ?>"
+            method="POST"
+          >
+            <input type="hidden" name="action" value="submit_contact_form" />
+
             <div class="form-group">
               <label for="name"
                 >貴賓姓名 <span style="color: red">(必填)</span></label
               >
-              <input type="text" id="name" placeholder="請輸入姓名" required />
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="請輸入姓名"
+                required
+              />
             </div>
+
             <div class="form-group">
               <label for="email"
                 >電子郵件 <span style="color: red">(必填)</span></label
@@ -185,10 +197,12 @@
               <input
                 type="email"
                 id="email"
+                name="email"
                 placeholder="請輸入電子郵件"
                 required
               />
             </div>
+
             <div class="form-group">
               <label for="amount"
                 >借款金額 <span style="color: red">(必填)</span></label
@@ -196,10 +210,12 @@
               <input
                 type="number"
                 id="amount"
+                name="amount"
                 placeholder="例如: 50000元"
                 required
               />
             </div>
+
             <div class="form-group">
               <label for="phone"
                 >聯絡電話 <span style="color: red">(必填)</span></label
@@ -207,29 +223,34 @@
               <input
                 type="tel"
                 id="phone"
+                name="phone"
                 placeholder="請輸入聯絡電話"
                 required
               />
             </div>
+
             <div class="form-group">
               <label for="time"
                 >可聯絡時間 <span style="color: red">(必填)</span></label
               >
-              <select id="time" required>
+              <select id="time" name="time" required>
                 <option value="">請選擇聯絡時段</option>
                 <option value="morning">上午</option>
                 <option value="afternoon">下午</option>
                 <option value="evening">晚上</option>
               </select>
             </div>
+
             <div class="form-group">
               <label for="other">其它需求</label>
               <textarea
                 id="other"
+                name="other"
                 rows="3"
                 placeholder="請輸入您的需求"
               ></textarea>
             </div>
+
             <button type="submit" class="submit-btn">送出訊息</button>
           </form>
         </div>
