@@ -95,7 +95,7 @@ get_header();
                 <p class="error-message">提交表單時出現錯誤，請稍後再試。</p>
             <?php endif; ?>
 
-            <form method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>">
+            <form method="post" action="">
                 <?php wp_nonce_field('submit_contact_form_action', 'contact_form_nonce'); ?>
                 <input type="hidden" name="action" value="submit_contact_form" />
                 
