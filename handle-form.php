@@ -39,12 +39,10 @@ function handle_contact_form_submission() {
             }
 
             // Redirect with success message
-            wp_redirect(add_query_arg('success', '1', get_permalink()));
             exit;
         } else {
             // Log error if insertion fails
             error_log('Failed to insert contact form data into database.');
-            wp_redirect(add_query_arg('error', '1', get_permalink()));
             exit;
         }
     }
