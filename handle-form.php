@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['contact_form_submit'])
         add_post_meta($post_id, 'other', $other);
     }
 
-    wp_redirect(home_url('/thank-you'));
+    wp_redirect(home_url('/'));
     exit;
 }
 ?>
