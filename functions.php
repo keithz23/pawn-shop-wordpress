@@ -362,13 +362,10 @@ function add_default_testimonials() {
 // Hook to run after theme activation
 add_action('after_switch_theme', 'add_default_testimonials');
 
-// Create Contact Page Programmatically
 function create_contact_page() {
-    // Check if the page doesn't already exist
     $contact_page = get_page_by_path('contact');
     
     if (!$contact_page) {
-        // Create post object
         $contact_page_args = array(
             'post_title'    => '聯繫我們',
             'post_content'  => '<!-- wp:paragraph --><p>Contact page content will be handled by the template.</p><!-- /wp:paragraph -->',
@@ -377,40 +374,82 @@ function create_contact_page() {
             'post_name'     => 'contact',
         );
         
-        // Insert the page into the database
-        $page_id = wp_insert_post($contact_page_args);
-        
-        if ($page_id) {
-            // Set the page template
+        $page_id = wp_insert_post($contact_page_args, true);
+        if (!is_wp_error($page_id)) {
             update_post_meta($page_id, '_wp_page_template', 'page-contact.php');
-            
-            // Force a refresh of the permalinks
             flush_rewrite_rules();
+        } else {
+            error_log('Failed to create contact page: ' . $page_id->get_error_message());
         }
     } else {
-        // Update existing page to ensure correct template
         update_post_meta($contact_page->ID, '_wp_page_template', 'page-contact.php');
     }
 }
+add_action('after_switch_theme', 'create_contact_page');
 
+// Register Admin Menu Page for Contact Forms
 function register_contact_menu_page() {
     add_menu_page(
-        'Contact Form Submissions',  
-        'Contact Forms',            
-        'manage_options',          
-        'contact-forms',            
-        'display_contact_forms',     
-        'dashicons-email',         
-        25                  
+        'Contact Form Submissions',  // Page title
+        'Contact Forms',             // Menu title
+        'manage_options',            // Capability
+        'contact-forms',             // Menu slug
+        'display_contact_forms',     // Callback function
+        'dashicons-email',           // Icon
+        25                           // Position
     );
 }
 add_action('admin_menu', 'register_contact_menu_page');
 
+// Display Contact Forms in Admin
+function display_contact_forms() {
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'contact_form';
+    $submissions = $wpdb->get_results("SELECT * FROM $table_name ORDER BY date DESC");
+
+    ?>
+    <div class="wrap">
+        <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
+        <?php if ($submissions) : ?>
+            <table class="wp-list-table widefat fixed striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Amount</th>
+                        <th>Message</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($submissions as $submission) : ?>
+                        <tr>
+                            <td><?php echo esc_html($submission->id); ?></td>
+                            <td><?php echo esc_html($submission->name); ?></td>
+                            <td><?php echo esc_html($submission->email); ?></td>
+                            <td><?php echo esc_html($submission->phone); ?></td>
+                            <td><?php echo esc_html($submission->amount); ?></td>
+                            <td><?php echo esc_html($submission->message); ?></td>
+                            <td><?php echo esc_html($submission->date); ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        <?php else : ?>
+            <p>No contact form submissions yet.</p>
+        <?php endif; ?>
+    </div>
+    <?php
+}
+
+// Create Contact Form Table
 function create_contact_form_table() {
     global $wpdb;
-    $table_name = $wpdb->prefix . "contact_form";
-
+    $table_name = $wpdb->prefix . 'contact_form';
     $charset_collate = $wpdb->get_charset_collate();
+
     $sql = "CREATE TABLE $table_name (
         id INT AUTO_INCREMENT PRIMARY KEY,
         name VARCHAR(255) NOT NULL,
@@ -424,23 +463,24 @@ function create_contact_form_table() {
     require_once ABSPATH . 'wp-admin/includes/upgrade.php';
     dbDelta($sql);
 }
+add_action('after_switch_theme', 'create_contact_form_table');
 
-
+// Register Contact Form Custom Post Type
 function create_contact_form_post_type() {
-    register_post_type('contact_form',
-        array(
-            'labels' => array(
-                'name' => __('Contact Forms'),
-                'singular_name' => __('Contact Form')
-            ),
-            'public' => false,
-            'show_ui' => true,
-            'supports' => array('title', 'custom-fields'),
-            'menu_icon' => 'dashicons-email',
-        )
-    );
+    register_post_type('contact_form', array(
+        'labels' => array(
+            'name' => __('Contact Forms', 'zongkuan'),
+            'singular_name' => __('Contact Form', 'zongkuan'),
+        ),
+        'public' => false,
+        'show_ui' => true,
+        'supports' => array('title', 'custom-fields'),
+        'menu_icon' => 'dashicons-email',
+    ));
 }
+add_action('init', 'create_contact_form_post_type');
 
+// Custom Columns for Contact Form Post Type
 function contact_form_admin_columns($columns) {
     $columns['email'] = 'Email';
     $columns['phone'] = 'Phone';
@@ -452,26 +492,17 @@ add_filter('manage_contact_form_posts_columns', 'contact_form_admin_columns');
 function contact_form_custom_columns($column, $post_id) {
     switch ($column) {
         case 'email':
-            echo get_post_meta($post_id, 'email', true);
+            echo esc_html(get_post_meta($post_id, 'email', true));
             break;
         case 'phone':
-            echo get_post_meta($post_id, 'phone', true);
+            echo esc_html(get_post_meta($post_id, 'phone', true));
             break;
         case 'amount':
-            echo get_post_meta($post_id, 'amount', true);
+            echo esc_html(get_post_meta($post_id, 'amount', true));
             break;
     }
 }
 add_action('manage_contact_form_posts_custom_column', 'contact_form_custom_columns', 10, 2);
-
-
-
-// Run on theme activation
-add_action('after_switch_theme', 'create_contact_page');
-
-// Also run on init to ensure the page exists
-add_action('init', 'create_contact_page');
-add_action('init', 'create_contact_form_table');
 
 // Add a filter to ensure template is loaded
 add_filter('template_include', function($template) {
