@@ -463,7 +463,7 @@ function create_contact_form_table() {
     require_once ABSPATH . 'wp-admin/includes/upgrade.php';
     dbDelta($sql);
 }
-add_action('after_switch_theme', 'create_contact_form_table');
+add_action('init', 'create_contact_form_table');
 
 // Register Contact Form Custom Post Type
 function create_contact_form_post_type() {
