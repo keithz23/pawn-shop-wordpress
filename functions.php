@@ -416,14 +416,14 @@ function create_contact_form_table() {
         name VARCHAR(255) NOT NULL,
         email VARCHAR(255) NOT NULL,
         message TEXT NOT NULL,
+        phone VARCHAR(50),
+        amount DECIMAL(10, 2),
         date DATETIME DEFAULT CURRENT_TIMESTAMP
     ) $charset_collate;";
 
     require_once ABSPATH . 'wp-admin/includes/upgrade.php';
     dbDelta($sql);
 }
-add_action('after_switch_theme', 'create_contact_form_table');
-
 
 
 function create_contact_form_post_type() {
@@ -440,7 +440,6 @@ function create_contact_form_post_type() {
         )
     );
 }
-add_action('init', 'create_contact_form_post_type');
 
 function contact_form_admin_columns($columns) {
     $columns['email'] = 'Email';
@@ -472,6 +471,7 @@ add_action('after_switch_theme', 'create_contact_page');
 
 // Also run on init to ensure the page exists
 add_action('init', 'create_contact_page');
+add_action('init', 'create_contact_form_table');
 
 // Add a filter to ensure template is loaded
 add_filter('template_include', function($template) {
