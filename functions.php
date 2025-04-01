@@ -393,6 +393,80 @@ function create_contact_page() {
     }
 }
 
+function register_contact_menu_page() {
+    add_menu_page(
+        'Contact Form Submissions',  
+        'Contact Forms',            
+        'manage_options',          
+        'contact-forms',            
+        'display_contact_forms',     
+        'dashicons-email',         
+        25                  
+    );
+}
+add_action('admin_menu', 'register_contact_menu_page');
+
+function create_contact_form_table() {
+    global $wpdb;
+    $table_name = $wpdb->prefix . "contact_form";
+
+    $charset_collate = $wpdb->get_charset_collate();
+    $sql = "CREATE TABLE $table_name (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(255) NOT NULL,
+        email VARCHAR(255) NOT NULL,
+        message TEXT NOT NULL,
+        date DATETIME DEFAULT CURRENT_TIMESTAMP
+    ) $charset_collate;";
+
+    require_once ABSPATH . 'wp-admin/includes/upgrade.php';
+    dbDelta($sql);
+}
+add_action('after_switch_theme', 'create_contact_form_table');
+
+
+
+function create_contact_form_post_type() {
+    register_post_type('contact_form',
+        array(
+            'labels' => array(
+                'name' => __('Contact Forms'),
+                'singular_name' => __('Contact Form')
+            ),
+            'public' => false,
+            'show_ui' => true,
+            'supports' => array('title', 'custom-fields'),
+            'menu_icon' => 'dashicons-email',
+        )
+    );
+}
+add_action('init', 'create_contact_form_post_type');
+
+function contact_form_admin_columns($columns) {
+    $columns['email'] = 'Email';
+    $columns['phone'] = 'Phone';
+    $columns['amount'] = 'Amount';
+    return $columns;
+}
+add_filter('manage_contact_form_posts_columns', 'contact_form_admin_columns');
+
+function contact_form_custom_columns($column, $post_id) {
+    switch ($column) {
+        case 'email':
+            echo get_post_meta($post_id, 'email', true);
+            break;
+        case 'phone':
+            echo get_post_meta($post_id, 'phone', true);
+            break;
+        case 'amount':
+            echo get_post_meta($post_id, 'amount', true);
+            break;
+    }
+}
+add_action('manage_contact_form_posts_custom_column', 'contact_form_custom_columns', 10, 2);
+
+
+
 // Run on theme activation
 add_action('after_switch_theme', 'create_contact_page');
 
