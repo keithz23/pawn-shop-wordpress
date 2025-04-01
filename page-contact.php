@@ -89,14 +89,6 @@ get_header();
     <h2>線上預約 專人回覆</h2>
     <div class="form-map-container">
         <div class="form-container">
-            <p>有任何問題與建議，歡迎透過以下表單與我們聯繫，將由專人為您協助處理，謝謝。</p>
-            
-            <?php if (isset($_GET['success']) && $_GET['success'] == '1') : ?>
-                <p class="success-message">感謝您的提交！我們會盡快與您聯繫。</p>
-            <?php elseif (isset($_GET['error']) && $_GET['error'] == '1') : ?>
-                <p class="error-message">提交表單時出現錯誤，請稍後再試。</p>
-            <?php endif; ?>
-
             <form method="post" action="">
                 <?php wp_nonce_field('contact_form_action', 'contact_form_nonce'); ?>
                 <input type="hidden" name="contact_form_submit" value="1">
