@@ -444,26 +444,31 @@ function display_contact_forms() {
     <?php
 }
 
-// Create Contact Form Table
 function create_contact_form_table() {
     global $wpdb;
     $table_name = $wpdb->prefix . 'contact_form';
     $charset_collate = $wpdb->get_charset_collate();
 
-    $sql = "CREATE TABLE $table_name (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        name VARCHAR(255) NOT NULL,
-        email VARCHAR(255) NOT NULL,
-        message TEXT NOT NULL,
-        phone VARCHAR(50),
-        amount DECIMAL(10, 2),
-        date DATETIME DEFAULT CURRENT_TIMESTAMP
-    ) $charset_collate;";
+    if ($wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name) {
+        $sql = "CREATE TABLE $table_name (
+            id INT NOT NULL AUTO_INCREMENT,
+            name VARCHAR(255) NOT NULL,
+            email VARCHAR(255) NOT NULL,
+            message TEXT NOT NULL,
+            phone VARCHAR(50),
+            amount DECIMAL(10,2),
+            date DATETIME DEFAULT CURRENT_TIMESTAMP,
+            PRIMARY KEY (id)
+        ) $charset_collate;";
 
-    require_once ABSPATH . 'wp-admin/includes/upgrade.php';
-    dbDelta($sql);
+        require_once ABSPATH . 'wp-admin/includes/upgrade.php';
+        dbDelta($sql);
+
+        // Ghi log để kiểm tra
+        error_log("Tried to create table $table_name");
+    }
 }
-add_action('init', 'create_contact_form_table');
+add_action('after_switch_theme', 'create_contact_form_table');
 
 // Register Contact Form Custom Post Type
 function create_contact_form_post_type() {
