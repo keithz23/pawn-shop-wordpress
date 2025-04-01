@@ -425,6 +425,7 @@ function create_contact_form_table() {
     dbDelta($sql);
 }
 
+
 function create_contact_form_post_type() {
     register_post_type('contact_form',
         array(
@@ -463,33 +464,14 @@ function contact_form_custom_columns($column, $post_id) {
 }
 add_action('manage_contact_form_posts_custom_column', 'contact_form_custom_columns', 10, 2);
 
-// Create contact form page when theme is activated
-function create_contact_page() {
-    $page_title = 'Contact Form Submissions';
-    $page_slug = 'contact-form-submissions';
 
-    // Check if the page already exists
-    if (!get_page_by_path($page_slug)) {
-        $page = array(
-            'post_title'    => $page_title,
-            'post_content'  => '[contact_form]',
-            'post_status'   => 'publish',
-            'post_author'   => 1,
-            'post_type'     => 'page',
-            'post_name'     => $page_slug
-        );
-        wp_insert_post($page);
-    }
-}
 
 // Run on theme activation
-add_action('after_switch_theme', 'create_contact_form_table');
 add_action('after_switch_theme', 'create_contact_page');
 
-// Also run on init to ensure the table and post type exist
-add_action('init', 'create_contact_form_post_type');
+// Also run on init to ensure the page exists
+add_action('init', 'create_contact_page');
 add_action('init', 'create_contact_form_table');
-
 
 // Add a filter to ensure template is loaded
 add_filter('template_include', function($template) {
