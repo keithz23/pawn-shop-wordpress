@@ -89,9 +89,15 @@ get_header();
     <h2>線上預約 專人回覆</h2>
     <div class="form-map-container">
         <div class="form-container">
-            <form method="post" action="">
-                <?php wp_nonce_field('contact_form_action', 'contact_form_nonce'); ?>
-                <input type="hidden" name="contact_form_submit" value="1">
+            <?php if (isset($_GET['success']) && $_GET['success'] == '1') : ?>
+                <p class="success-message">感謝您的提交！我們會盡快與您聯繫。</p>
+            <?php elseif (isset($_GET['error']) && $_GET['error'] == '1') : ?>
+                <p class="error-message">提交表單時出現錯誤，請稍後再試。</p>
+            <?php endif; ?>
+
+            <form method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>">
+                <?php wp_nonce_field('submit_contact_form_action', 'contact_form_nonce'); ?>
+                <input type="hidden" name="action" value="submit_contact_form" />
                 
                 <div class="form-group">
                     <label for="name">貴賓姓名 <span style="color: red">(必填)</span></label>
@@ -120,7 +126,7 @@ get_header();
                 </div>
                 <div class="form-group">
                     <label for="other">其它需求</label>
-                    <textarea id="other" name="message" rows="3" placeholder="請輸入您的需求"></textarea>
+                    <textarea id="other" name="other" rows="3" placeholder="請輸入您的需求"></textarea>
                 </div>
                 <button type="submit" class="submit-btn">送出訊息</button>
             </form>
