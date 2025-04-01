@@ -4,7 +4,7 @@ function handle_contact_form_submission() {
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['contact_form_submit']) && $_POST['contact_form_submit'] == '1') {
         if (!isset($_POST['contact_form_nonce']) || !wp_verify_nonce($_POST['contact_form_nonce'], 'contact_form_action')) {
             error_log("Nonce verification failed.");
-            wp_safe_redirect(add_query_arg('error', '1', home_url('/contact/')));
+            wp_safe_redirect(add_query_arg('error', 'nonce', home_url('/contact/')));
             exit;
         }
 
