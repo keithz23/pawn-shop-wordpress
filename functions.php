@@ -464,7 +464,6 @@ function create_contact_form_table() {
         require_once ABSPATH . 'wp-admin/includes/upgrade.php';
         dbDelta($sql);
 
-        // Ghi log để kiểm tra
         error_log("Tried to create table $table_name");
     }
 }
