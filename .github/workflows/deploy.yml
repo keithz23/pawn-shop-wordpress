@@ -17,7 +17,7 @@ jobs:
       - name: 📤 Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ftp://109.106.250.183
+          server: 109.106.250.183
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: /domains/zongkuan.com.tw/public_html/wp-content/themes/zongkuan_theme/
