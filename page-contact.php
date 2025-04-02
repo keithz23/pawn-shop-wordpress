@@ -84,9 +84,9 @@ get_header();
                 >
                 <select id="time" name="time" required>
                   <option value="">請選擇聯絡時段</option>
-                  <option value="morning">上午</option>
-                  <option value="afternoon">下午</option>
-                  <option value="evening">晚上</option>
+                  <option value="上午">上午</option>
+                  <option value="下午">下午</option>
+                  <option value="晚上">晚上</option>
                 </select>
               </div>
 

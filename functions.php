@@ -392,7 +392,7 @@ function register_contact_menu_page() {
         'name'                  => _x('Contact Forms', 'Post type general name', 'textdomain'),
         'singular_name'         => _x('Contact Form', 'Post type singular name', 'textdomain'),
         'menu_name'             => _x('Contact Forms', 'Admin Menu text', 'textdomain'),
-        'name_admin_bar'        => _x('Contact Form', 'Add New on Toolbar', 'textdomain'),
+        'name_admin_bar'        => _x('客服訊息 ', 'Add New on Toolbar', 'textdomain'),
         'add_new'               => __('Add New', 'textdomain'),
         'add_new_item'          => __('Add New Contact Form', 'textdomain'),
         'new_item'              => __('New Contact Form', 'textdomain'),
@@ -420,7 +420,7 @@ function register_contact_menu_page() {
     // Register Admin Menu Page
     add_menu_page(
         'Contact Form Submissions',  // Page title
-        'Contact Forms',             // Menu title
+        '客服訊息',             // Menu title
         'manage_options',            // Capability
         'contact-forms',             // Menu slug
         'display_contact_forms',     // Callback function
@@ -438,6 +438,31 @@ function display_contact_forms() {
     $table_name = $wpdb->prefix . 'contact_form';
     $submissions = $wpdb->get_results("SELECT * FROM $table_name ORDER BY date DESC");
 
+    if (isset($_POST['export_csv'])) {
+        header('Content-Type: text/csv; charset=utf-8')
+        header('Content-Disposition: attachment; filename="聯絡表單提交' . date('Y-m-d_H-i-s') . '.csv"');
+        
+        $output=fopen('php://output', 'w')
+
+        fprintf($output, chr(0xEF) . chr(0xBB) . chr(0xBF));
+
+        fputcsv($output, array('ID', 'Name', 'Email', 'Phone', 'Amount', 'Message', 'Date'));
+
+        foreach ($submissions as $submission) {
+            fputcsv($output, array(
+                $submission->id,
+                $submission->name,
+                $submission->email,
+                $submission->phone,
+                $submission->amount,
+                $submission->message,
+                $submission->date
+            ));
+        }
+
+        fclose($output);
+        exit;
+    }
     ?>
     <div class="wrap">
         <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
@@ -545,7 +570,7 @@ function handle_contact_form_submission() {
             'email'   => $email,
             'phone'   => $phone,
             'amount'  => $amount,
-            'message' => $other . ' | Preferred time: ' . $time,
+            'message' => $other . ' | 請選擇聯絡時段: ' . $time,
         ]);
 
         if ($result) {
