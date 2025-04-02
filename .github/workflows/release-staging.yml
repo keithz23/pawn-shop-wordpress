@@ -19,5 +19,5 @@ jobs:
           server: 109.106.250.183
           username: ${{ secrets.STAG_FTP_USERNAME }}
           password: ${{ secrets.STAG_FTP_PASSWORD }}
-          server-dir: /domains/u898320208.snow-penguin-849289.hostingersite.com@109.106.250.183/public_html/wp-content/themes/zongkuan_theme/
+          server-dir: /public_html/wp-content/themes/zongkuan_theme/
           protocol: ftp
