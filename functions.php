@@ -491,7 +491,6 @@ function display_contact_forms() {
             );
         }
 
-        // Làm mới trang sau khi cập nhật
         wp_redirect(admin_url('admin.php?page=contact-forms'));
         exit;
     }
