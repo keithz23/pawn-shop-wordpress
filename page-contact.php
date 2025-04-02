@@ -102,20 +102,15 @@ get_header();
           <div class="banner-features">
             <div class="features-column">
               <span
-                ><i class="fas fa-clock"></i
-                ><?php echo esc_html(get_theme_mod('business_hours', '週一至週日: 08:00 - 21:00')); ?></span
+                ><i class="fas fa-clock"></i> 週一至週六: 09:00 - 21:00</span
               >
-              <span
-                ><i class="fas fa-clock"></i
-                ><?php echo esc_html__('24H線上客服', 'your-theme-domain'); ?></span
-              >
+              <span><i class="fas fa-clock"></i> 週日: 10:00 - 18:00</span>
             </div>
             <div class="features-column">
-              <span><i class="fab fa-line"></i> LINE ID: @599jmyld</span>
               <span
-                ><i class="fas fa-envelope"></i>
-                <?php echo esc_html(get_theme_mod('contact_email', 'zhongkuan001@gmail.com')); ?></span
+                ><i class="fas fa-envelope"></i> zhongkuan001@gmail.com</span
               >
+              <span><i class="fab fa-line"></i> LINE ID: @599jmyld</span>
             </div>
           </div>
         </div>
