@@ -522,7 +522,7 @@ function display_contact_forms() {
                         <th>Amount</th>
                         <th>Message</th>
                         <th>Date</th>
-                        <th>Marked</th>
+                        <th>已連絡</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -575,7 +575,7 @@ function create_contact_form_table() {
             phone VARCHAR(50),
             amount DECIMAL(10,2),
             date DATETIME DEFAULT CURRENT_TIMESTAMP,
-            is_contacted TINYINT(1) DEFAULT 0
+            is_contacted TINYINT(1) DEFAULT 0,
             PRIMARY KEY (id)
         ) $charset_collate;";
 
@@ -583,12 +583,6 @@ function create_contact_form_table() {
         dbDelta($sql);
 
         error_log("Tried to create table $table_name");
-
-        $column_exists = $wpdb->get_results("SHOW COLUMNS FROM $table_name LIKE 'is_contacted'");
-        if (empty($column_exists)) {
-            $wpdb->query("ALTER TABLE $table_name ADD COLUMN is_contacted TINYINT(1) DEFAULT 0");
-            error_log("Added is_contacted column to $table_name");
-        }
     }
 }
 add_action('after_switch_theme', 'create_contact_form_table');
