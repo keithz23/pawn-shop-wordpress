@@ -146,9 +146,16 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Initialize with first category
-  if (contentDiv) {
-    updateCategoryContent("企業融資");
-  }
+  document.addEventListener("DOMContentLoaded", function () {
+    const contentDiv = document.querySelector(".category-content");
+    if (contentDiv) {
+      updateCategoryContent("企業融資");
+    } else {
+      console.error(
+        "Error: .category-content element not found in the DOM during initialization."
+      );
+    }
+  });
 
   // Mobile menu toggle
   const menuToggle = document.querySelector(".menu-toggle");
