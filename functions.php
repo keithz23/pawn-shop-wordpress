@@ -14,25 +14,24 @@ function theme_setup() {
 }
 add_action('after_setup_theme', 'theme_setup');
 
-// Enqueue scripts and styles
 function theme_scripts() {
-    // Enqueue Google Fonts
     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap', array(), null);
     
-    // Enqueue Font Awesome
     wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css', array(), '6.0.0');
-    
-    // Enqueue main stylesheet
-    wp_enqueue_style('zongkuan-style', get_stylesheet_uri(), array(), '1.0.0');
-    wp_enqueue_style('zongkuan-main', get_template_directory_uri() . '/style.css', array(), '1.0.0');
-    
-    // Enqueue JavaScript
+
+    wp_register_style('zongkuan-home', get_template_directory_uri() . '/styles/style.css', array(), '1.0.0');
+    wp_register_style('zongkuan-contact', get_template_directory_uri() . '/styles/contact.css', array(), '1.0.0');
+
+    if (is_front_page()) { 
+        wp_enqueue_style('zongkuan-home');
+    } elseif (is_page('contact')) { 
+        wp_enqueue_style('zongkuan-contact');
+    } else {
+        wp_enqueue_style('zongkuan-style', get_stylesheet_uri(), array(), '1.0.0');
+    }
+
     wp_enqueue_script('zongkuan-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '1.0.0', true);
-    
-    // Enqueue carousel script
     wp_enqueue_script('zongkuan-carousel', get_template_directory_uri() . '/js/carousel.js', array('jquery'), '1.0.0', true);
-    
-    // Enqueue main script
     wp_enqueue_script('zongkuan-main', get_template_directory_uri() . '/js/main.js', array('jquery'), '1.0.0', true);
 
     // Localize the navigation script
@@ -576,13 +575,6 @@ function hide_admin_menus() {
     }
 }
 add_action('admin_menu', 'hide_admin_menus', 999);
-
-function load_custom_styles() {
-    wp_enqueue_style('custom-style-1', get_template_directory_uri() . '/styles/style.css', [], '1.0', 'all');
-
-    wp_enqueue_style('custom-style-2', get_template_directory_uri() . '/styles/contact.css', ['custom-style-1'], '1.0', 'all');
-}
-add_action('wp_enqueue_scripts', 'load_custom_styles');
 
 
 // Add a filter to ensure template is loaded
