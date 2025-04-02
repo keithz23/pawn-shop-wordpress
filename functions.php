@@ -419,7 +419,7 @@ function register_contact_menu_page() {
 
     // Register Admin Menu Page
     add_menu_page(
-        'Contact Form Submissions',  // Page title
+        '聯絡表單提交',  // Page title
         '客服訊息',             // Menu title
         'manage_options',            // Capability
         'contact-forms',             // Menu slug
@@ -449,7 +449,7 @@ function export_contact_form_csv() {
     $output = fopen('php://output', 'w');
     fprintf($output, chr(0xEF) . chr(0xBB) . chr(0xBF));
 
-    fputcsv($output, array('ID', 'Name', 'Email', 'Phone', 'Amount', 'Message', 'Date', '已連絡'));
+    fputcsv($output, array('編號', '姓名', '電子郵件', '電話', '金額', '訊息', '日期', '已連絡'));
 
     foreach ($submissions as $submission) {
         fputcsv($output, array(
@@ -460,7 +460,7 @@ function export_contact_form_csv() {
             $submission->amount,
             $submission->message,
             $submission->date,
-            $submission->is_contacted ? 'Yes' : 'No'
+            $submission->is_contacted ? '是' : '否'
         ));
     }
 
@@ -469,91 +469,163 @@ function export_contact_form_csv() {
 }
 add_action('admin_post_export_contact_form_csv', 'export_contact_form_csv');
 
+function update_contact_form_marked() {
+    if (!isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'], 'update_marked_nonce')) {
+        wp_send_json_error(array('message' => 'Nonce verification failed'), 403);
+    }
 
+    if (!current_user_can('manage_options')) {
+        wp_send_json_error(array('message' => 'Permission denied'), 403);
+    }
 
-// Display Contact Forms in Admin
+    $submission_id = isset($_POST['submission_id']) ? intval($_POST['submission_id']) : 0;
+    $is_contacted = isset($_POST['is_contacted']) ? intval($_POST['is_contacted']) : 0;
+
+    if ($submission_id <= 0) {
+        wp_send_json_error(array('message' => 'Invalid submission ID'), 400);
+    }
+
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'contact_form';
+
+    $table_exists = $wpdb->get_var("SHOW TABLES LIKE '$table_name'");
+    if (!$table_exists) {
+        error_log("Table $table_name does not exist");
+        wp_send_json_error(array('message' => 'Table does not exist'), 500);
+    }
+
+    $column_exists = $wpdb->get_results("SHOW COLUMNS FROM $table_name LIKE 'is_contacted'");
+    if (empty($column_exists)) {
+        error_log("Column is_contacted does not exist in $table_name");
+        wp_send_json_error(array('message' => 'Column is_contacted does not exist'), 500);
+    }
+
+    $updated = $wpdb->update(
+        $table_name,
+        array('is_contacted' => $is_contacted),
+        array('id' => $submission_id),
+        array('%d'),
+        array('%d')
+    );
+
+    if ($updated === false) {
+        error_log("Failed to update $table_name: " . $wpdb->last_error);
+        wp_send_json_error(array('message' => 'Failed to update database: ' . $wpdb->last_error), 500);
+    }
+
+    wp_send_json_success();
+}
+add_action('wp_ajax_update_contact_form_marked', 'update_contact_form_marked');
+
 function display_contact_forms() {
     global $wpdb;
     $table_name = $wpdb->prefix . 'contact_form';
     $submissions = $wpdb->get_results("SELECT * FROM $table_name ORDER BY date DESC");
-    if (isset($_POST['mark_submission']) && !empty($_POST['submission_ids'])) {
-        $submission_ids = array_map('intval', $_POST['submission_ids']);
-        $action = sanitize_text_field($_POST['mark_action']);
-        $new_value = ($action === 'mark') ? 1 : 0;
 
-        foreach ($submission_ids as $id) {
-            $wpdb->update(
-                $table_name,
-                array('is_contacted' => $new_value),
-                array('id' => $id),
-                array('%d'),
-                array('%d')
-            );
-        }
-
-        wp_redirect(admin_url('admin.php?page=contact-forms'));
-        exit;
-    }
     ?>
     <div class="wrap">
         <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
         <form method="post" action="<?php echo admin_url('admin-post.php'); ?>" style="margin-bottom: 10px;">
             <input type="hidden" name="action" value="export_contact_form_csv">
             <?php wp_nonce_field('export_contact_form_csv_nonce', 'export_nonce'); ?>
-            <input type="submit" class="button button-primary" value="Export to CSV">
+            <input type="submit" class="button button-primary" value="匯出為CSV">
         </form>
 
-        <form method="post" style="margin-bottom: 20px;">
-            <select name="mark_action" required>
-                <option value="">Select Action</option>
-                <option value="mark">Mark</option>
-                <option value="unmark">Unmark</option>
-            </select>
-            <input type="submit" name="mark_submission" class="button button-secondary" value="Apply">
-            <table class="wp-list-table widefat fixed striped">
-                <thead>
-                    <tr>
-                        <th><input type="checkbox" id="select-all"></th>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Amount</th>
-                        <th>Message</th>
-                        <th>Date</th>
-                        <th>已連絡</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php if ($submissions) : ?>
-                        <?php foreach ($submissions as $submission) : ?>
-                            <tr>
-                                <td><input type="checkbox" name="submission_ids[]" value="<?php echo esc_attr($submission->id); ?>" class="submission-checkbox"></td>
-                                <td><?php echo esc_html($submission->id); ?></td>
-                                <td><?php echo esc_html($submission->name); ?></td>
-                                <td><?php echo esc_html($submission->email); ?></td>
-                                <td><?php echo esc_html($submission->phone); ?></td>
-                                <td><?php echo esc_html($submission->amount); ?></td>
-                                <td><?php echo esc_html($submission->message); ?></td>
-                                <td><?php echo esc_html($submission->date); ?></td>
-                                <td><?php echo $submission->is_contacted ? 'Yes' : 'No'; ?></td>
-                            </tr>
-                        <?php endforeach; ?>
-                    <?php else : ?>
+        <table class="wp-list-table widefat fixed striped">
+            <thead>
+                <tr>
+                    <th><input type="checkbox" id="select-all"></th>
+                    <th>編號</th>
+                    <th>姓名</th>
+                    <th>電子郵件</th>
+                    <th>電話</th>
+                    <th>金額</th>
+                    <th>訊息</th>
+                    <th>日期</th>
+                    <th>已連絡</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php if ($submissions) : ?>
+                    <?php foreach ($submissions as $submission) : ?>
                         <tr>
-                            <td colspan="9">No contact form submissions yet.</td>
+                            <td>
+                                <input type="checkbox" 
+                                       name="submission_ids[]" 
+                                       value="<?php echo esc_attr($submission->id); ?>" 
+                                       class="submission-checkbox" 
+                                       <?php checked($submission->is_contacted, 1); ?>
+                                       data-id="<?php echo esc_attr($submission->id); ?>">
+                            </td>
+                            <td><?php echo esc_html($submission->id); ?></td>
+                            <td><?php echo esc_html($submission->name); ?></td>
+                            <td><?php echo esc_html($submission->email); ?></td>
+                            <td><?php echo esc_html($submission->phone); ?></td>
+                            <td><?php echo esc_html($submission->amount); ?></td>
+                            <td><?php echo esc_html($submission->message); ?></td>
+                            <td><?php echo esc_html($submission->date); ?></td>
+                            <td class="marked-status"><?php echo $submission->is_contacted ? '是' : '否'; ?></td>
                         </tr>
-                    <?php endif; ?>
-                </tbody>
-            </table>
-        </form>
+                    <?php endforeach; ?>
+                <?php else : ?>
+                    <tr>
+                        <td colspan="9">尚無聯絡表單提交</td>
+                    </tr>
+                <?php endif; ?>
+            </tbody>
+        </table>
 
         <script>
-            document.getElementById('select-all').addEventListener('change', function() {
+            document.addEventListener('DOMContentLoaded', function() {
+                const selectAll = document.getElementById('select-all');
                 const checkboxes = document.querySelectorAll('.submission-checkbox');
-                checkboxes.forEach(checkbox => {
-                    checkbox.checked = this.checked;
+
+                const ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
+                const nonce = '<?php echo wp_create_nonce('update_marked_nonce'); ?>';
+
+                selectAll.addEventListener('change', function() {
+                    const isChecked = this.checked;
+                    checkboxes.forEach(checkbox => {
+                        checkbox.checked = isChecked;
+                        updateMarkedStatus(checkbox);
+                    });
                 });
+
+                checkboxes.forEach(checkbox => {
+                    checkbox.addEventListener('change', function() {
+                        updateMarkedStatus(this);
+                    });
+                });
+
+                function updateMarkedStatus(checkbox) {
+                    const submissionId = checkbox.getAttribute('data-id');
+                    const isMarked = checkbox.checked ? 1 : 0;
+                    const row = checkbox.closest('tr');
+                    const statusCell = row.querySelector('.marked-status');
+
+                    jQuery.ajax({
+                        url: ajaxurl,
+                        type: 'POST',
+                        data: {
+                            action: 'update_contact_form_marked',
+                            submission_id: submissionId,
+                            is_contacted: isMarked,
+                            nonce: nonce
+                        },
+                        success: function(response) {
+                            if (response.success) {
+                                statusCell.textContent = isMarked ? '是' : '否';
+                            } else {
+                                alert('Failed to update: ' + response.data.message);
+                                checkbox.checked = !checkbox.checked;
+                            }
+                        },
+                        error: function() {
+                            alert('An error occurred while updating.');
+                            checkbox.checked = !checkbox.checked; 
+                        }
+                    });
+                }
             });
         </script>
     </div>
