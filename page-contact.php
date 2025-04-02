@@ -16,8 +16,15 @@ get_header();
         <div class="banner-form">
           <h1>線上預約 專人回覆</h1>
           <div class="form-container">
-            <form>
-              <input type="hidden" name="action" value="submit_contact_form" />
+            <?php if (isset($_GET['success']) && $_GET['success'] == '1') : ?>
+                <p class="success-message">感謝您的提交！我們會盡快與您聯繫。</p>
+            <?php elseif (isset($_GET['error']) && $_GET['error'] == '1') : ?>
+                <p class="error-message">提交表單時出現錯誤，請稍後再試。</p>
+            <?php endif; ?>
+            <form method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>">
+               <input type="hidden" name="action" value="handle_contact_form">
+              <?php wp_nonce_field('contact_form_action', 'contact_form_nonce'); ?>
+              <input type="hidden" name="contact_form_submit" value="1" />
 
               <div class="form-group">
                 <label for="name"
