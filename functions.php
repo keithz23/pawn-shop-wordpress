@@ -392,7 +392,7 @@ function register_contact_menu_page() {
         'name'                  => _x('Contact Forms', 'Post type general name', 'textdomain'),
         'singular_name'         => _x('Contact Form', 'Post type singular name', 'textdomain'),
         'menu_name'             => _x('Contact Forms', 'Admin Menu text', 'textdomain'),
-        'name_admin_bar'        => _x('客服訊息 ', 'Add New on Toolbar', 'textdomain'),
+        'name_admin_bar'        => _x('Contact Form ', 'Add New on Toolbar', 'textdomain'),
         'add_new'               => __('Add New', 'textdomain'),
         'add_new_item'          => __('Add New Contact Form', 'textdomain'),
         'new_item'              => __('New Contact Form', 'textdomain'),
@@ -430,6 +430,45 @@ function register_contact_menu_page() {
 }
 add_action('admin_menu', 'register_contact_menu_page');
 
+function export_contact_form_csv() {
+    if (!current_user_can('manage_options')) {
+        wp_die('You do not have permission to access this action.', 'Permission Denied', array('response' => 403));
+    }
+
+    if (!isset($_POST['export_nonce']) || !wp_verify_nonce($_POST['export_nonce'], 'export_contact_form_csv_nonce')) {
+        wp_die('Nonce verification failed', 'Error', array('response' => 403));
+    }
+
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'contact_form';
+    $submissions = $wpdb->get_results("SELECT * FROM $table_name ORDER BY date DESC");
+
+    header('Content-Type: text/csv; charset=utf-8');
+    header('Content-Disposition: attachment; filename="聯絡表單提交_' . date('Y-m-d_H-i-s') . '.csv"');
+
+    $output = fopen('php://output', 'w');
+    fprintf($output, chr(0xEF) . chr(0xBB) . chr(0xBF));
+
+    fputcsv($output, array('ID', 'Name', 'Email', 'Phone', 'Amount', 'Message', 'Date', '已連絡'));
+
+    foreach ($submissions as $submission) {
+        fputcsv($output, array(
+            $submission->id,
+            $submission->name,
+            $submission->email,
+            $submission->phone,
+            $submission->amount,
+            $submission->message,
+            $submission->date,
+            $submission->is_contacted ? 'Yes' : 'No'
+        ));
+    }
+
+    fclose($output);
+    exit;
+}
+add_action('admin_post_export_contact_form_csv', 'export_contact_form_csv');
+
 
 
 // Display Contact Forms in Admin
@@ -437,39 +476,45 @@ function display_contact_forms() {
     global $wpdb;
     $table_name = $wpdb->prefix . 'contact_form';
     $submissions = $wpdb->get_results("SELECT * FROM $table_name ORDER BY date DESC");
+    if (isset($_POST['mark_submission']) && !empty($_POST['submission_ids'])) {
+        $submission_ids = array_map('intval', $_POST['submission_ids']);
+        $action = sanitize_text_field($_POST['mark_action']);
+        $new_value = ($action === 'mark') ? 1 : 0;
 
-    if (isset($_POST['export_csv'])) {
-        header('Content-Type: text/csv; charset=utf-8')
-        header('Content-Disposition: attachment; filename="聯絡表單提交' . date('Y-m-d_H-i-s') . '.csv"');
-        
-        $output=fopen('php://output', 'w')
-
-        fprintf($output, chr(0xEF) . chr(0xBB) . chr(0xBF));
-
-        fputcsv($output, array('ID', 'Name', 'Email', 'Phone', 'Amount', 'Message', 'Date'));
-
-        foreach ($submissions as $submission) {
-            fputcsv($output, array(
-                $submission->id,
-                $submission->name,
-                $submission->email,
-                $submission->phone,
-                $submission->amount,
-                $submission->message,
-                $submission->date
-            ));
+        foreach ($submission_ids as $id) {
+            $wpdb->update(
+                $table_name,
+                array('is_contacted' => $new_value),
+                array('id' => $id),
+                array('%d'),
+                array('%d')
+            );
         }
 
-        fclose($output);
+        // Làm mới trang sau khi cập nhật
+        wp_redirect(admin_url('admin.php?page=contact-forms'));
         exit;
     }
     ?>
     <div class="wrap">
         <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
-        <?php if ($submissions) : ?>
+        <form method="post" action="<?php echo admin_url('admin-post.php'); ?>" style="margin-bottom: 10px;">
+            <input type="hidden" name="action" value="export_contact_form_csv">
+            <?php wp_nonce_field('export_contact_form_csv_nonce', 'export_nonce'); ?>
+            <input type="submit" class="button button-primary" value="Export to CSV">
+        </form>
+
+        <form method="post" style="margin-bottom: 20px;">
+            <select name="mark_action" required>
+                <option value="">Select Action</option>
+                <option value="mark">Mark</option>
+                <option value="unmark">Unmark</option>
+            </select>
+            <input type="submit" name="mark_submission" class="button button-secondary" value="Apply">
             <table class="wp-list-table widefat fixed striped">
                 <thead>
                     <tr>
+                        <th><input type="checkbox" id="select-all"></th>
                         <th>ID</th>
                         <th>Name</th>
                         <th>Email</th>
@@ -477,25 +522,41 @@ function display_contact_forms() {
                         <th>Amount</th>
                         <th>Message</th>
                         <th>Date</th>
+                        <th>Marked</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($submissions as $submission) : ?>
+                    <?php if ($submissions) : ?>
+                        <?php foreach ($submissions as $submission) : ?>
+                            <tr>
+                                <td><input type="checkbox" name="submission_ids[]" value="<?php echo esc_attr($submission->id); ?>" class="submission-checkbox"></td>
+                                <td><?php echo esc_html($submission->id); ?></td>
+                                <td><?php echo esc_html($submission->name); ?></td>
+                                <td><?php echo esc_html($submission->email); ?></td>
+                                <td><?php echo esc_html($submission->phone); ?></td>
+                                <td><?php echo esc_html($submission->amount); ?></td>
+                                <td><?php echo esc_html($submission->message); ?></td>
+                                <td><?php echo esc_html($submission->date); ?></td>
+                                <td><?php echo $submission->is_contacted ? 'Yes' : 'No'; ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php else : ?>
                         <tr>
-                            <td><?php echo esc_html($submission->id); ?></td>
-                            <td><?php echo esc_html($submission->name); ?></td>
-                            <td><?php echo esc_html($submission->email); ?></td>
-                            <td><?php echo esc_html($submission->phone); ?></td>
-                            <td><?php echo esc_html($submission->amount); ?></td>
-                            <td><?php echo esc_html($submission->message); ?></td>
-                            <td><?php echo esc_html($submission->date); ?></td>
+                            <td colspan="9">No contact form submissions yet.</td>
                         </tr>
-                    <?php endforeach; ?>
+                    <?php endif; ?>
                 </tbody>
             </table>
-        <?php else : ?>
-            <p>No contact form submissions yet.</p>
-        <?php endif; ?>
+        </form>
+
+        <script>
+            document.getElementById('select-all').addEventListener('change', function() {
+                const checkboxes = document.querySelectorAll('.submission-checkbox');
+                checkboxes.forEach(checkbox => {
+                    checkbox.checked = this.checked;
+                });
+            });
+        </script>
     </div>
     <?php
 }
@@ -514,6 +575,7 @@ function create_contact_form_table() {
             phone VARCHAR(50),
             amount DECIMAL(10,2),
             date DATETIME DEFAULT CURRENT_TIMESTAMP,
+            is_contacted TINYINT(1) DEFAULT 0
             PRIMARY KEY (id)
         ) $charset_collate;";
 
@@ -521,6 +583,12 @@ function create_contact_form_table() {
         dbDelta($sql);
 
         error_log("Tried to create table $table_name");
+
+        $column_exists = $wpdb->get_results("SHOW COLUMNS FROM $table_name LIKE 'is_contacted'");
+        if (empty($column_exists)) {
+            $wpdb->query("ALTER TABLE $table_name ADD COLUMN is_contacted TINYINT(1) DEFAULT 0");
+            error_log("Added is_contacted column to $table_name");
+        }
     }
 }
 add_action('after_switch_theme', 'create_contact_form_table');
