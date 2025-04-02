@@ -577,6 +577,12 @@ function hide_admin_menus() {
 }
 add_action('admin_menu', 'hide_admin_menus', 999);
 
+function load_custom_styles() {
+    wp_enqueue_style('custom-style-1', get_template_directory_uri() . '/styles/style.css', [], '1.0', 'all');
+
+    wp_enqueue_style('custom-style-2', get_template_directory_uri() . '/styles/contact.css', ['custom-style-1'], '1.0', 'all');
+}
+add_action('wp_enqueue_scripts', 'load_custom_styles');
 
 
 // Add a filter to ensure template is loaded
