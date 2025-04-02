@@ -387,8 +387,38 @@ function create_contact_page() {
 }
 add_action('after_switch_theme', 'create_contact_page');
 
-// Register Admin Menu Page for Contact Forms
 function register_contact_menu_page() {
+    // Register Custom Post Type
+    $labels = array(
+        'name'                  => _x('Contact Forms', 'Post type general name', 'textdomain'),
+        'singular_name'         => _x('Contact Form', 'Post type singular name', 'textdomain'),
+        'menu_name'             => _x('Contact Forms', 'Admin Menu text', 'textdomain'),
+        'name_admin_bar'        => _x('Contact Form', 'Add New on Toolbar', 'textdomain'),
+        'add_new'               => __('Add New', 'textdomain'),
+        'add_new_item'          => __('Add New Contact Form', 'textdomain'),
+        'new_item'              => __('New Contact Form', 'textdomain'),
+        'edit_item'             => __('Edit Contact Form', 'textdomain'),
+        'view_item'             => __('View Contact Form', 'textdomain'),
+        'all_items'             => __('All Contact Forms', 'textdomain'),
+        'search_items'          => __('Search Contact Forms', 'textdomain'),
+        'not_found'             => __('No contact forms found.', 'textdomain'),
+    );
+
+    $args = array(
+        'labels'                => $labels,
+        'public'                => false,           // Not visible on frontend
+        'show_ui'               => true,            // Visible in admin
+        'show_in_menu'          => 'contact-forms', // Attach to the custom menu
+        'query_var'             => false,
+        'rewrite'               => false,
+        'capability_type'       => 'post',
+        'has_archive'           => false,
+        'hierarchical'          => false,
+        'supports'              => array('title', 'custom-fields'),
+    );
+    register_post_type('contact_form', $args);
+
+    // Register Admin Menu Page
     add_menu_page(
         'Contact Form Submissions',  // Page title
         'Contact Forms',             // Menu title
@@ -400,6 +430,8 @@ function register_contact_menu_page() {
     );
 }
 add_action('admin_menu', 'register_contact_menu_page');
+
+
 
 // Display Contact Forms in Admin
 function display_contact_forms() {
@@ -469,21 +501,6 @@ function create_contact_form_table() {
 }
 add_action('after_switch_theme', 'create_contact_form_table');
 
-// Register Contact Form Custom Post Type
-function create_contact_form_post_type() {
-    register_post_type('contact_form', array(
-        'labels' => array(
-            'name' => __('Contact Forms', 'zongkuan'),
-            'singular_name' => __('Contact Form', 'zongkuan'),
-        ),
-        'public' => false,
-        'show_ui' => true,
-        'supports' => array('title', 'custom-fields'),
-        'menu_icon' => 'dashicons-email',
-    ));
-}
-add_action('init', 'create_contact_form_post_type');
-
 // Custom Columns for Contact Form Post Type
 function contact_form_admin_columns($columns) {
     $columns['email'] = 'Email';
@@ -507,6 +524,60 @@ function contact_form_custom_columns($column, $post_id) {
     }
 }
 add_action('manage_contact_form_posts_custom_column', 'contact_form_custom_columns', 10, 2);
+
+function handle_contact_form_submission() {
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (!isset($_POST['contact_form_nonce']) || !wp_verify_nonce($_POST['contact_form_nonce'], 'contact_form_action')) {
+            wp_die('Nonce verification failed', 'Error', array('response' => 403));
+        }
+
+        global $wpdb;
+        $table_name = $wpdb->prefix . 'contact_form';
+
+        $name = sanitize_text_field($_POST['name']);
+        $email = sanitize_email($_POST['email']);
+        $amount = floatval($_POST['amount']);
+        $phone = sanitize_text_field($_POST['phone']);
+        $time = sanitize_text_field($_POST['time']);
+        $other = sanitize_textarea_field($_POST['other']);
+
+        $result = $wpdb->insert($table_name, [
+            'name'    => $name,
+            'email'   => $email,
+            'phone'   => $phone,
+            'amount'  => $amount,
+            'message' => $other . ' | Preferred time: ' . $time,
+        ]);
+
+        if ($result) {
+            wp_safe_redirect(home_url('/contact/?success=1'));
+        } else {
+            wp_die('Database error', 'Error', array('response' => 500));
+        }
+        exit;
+    }
+}
+
+add_action('admin_post_nopriv_handle_contact_form', 'handle_contact_form_submission');
+add_action('admin_post_handle_contact_form', 'handle_contact_form_submission');
+
+
+function hide_admin_menus() {
+    global $menu;
+
+    $allowed_menus = ['contact-forms']; 
+
+    // Loop through each menu item
+    foreach ($menu as $key => $value) {
+        // Check if the menu slug is not in the allowed list and remove it
+        if (!in_array($value[2], $allowed_menus)) {
+            remove_menu_page($value[2]);
+        }
+    }
+}
+add_action('admin_menu', 'hide_admin_menus', 999);
+
+
 
 // Add a filter to ensure template is loaded
 add_filter('template_include', function($template) {
