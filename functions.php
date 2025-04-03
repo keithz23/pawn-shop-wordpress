@@ -2,6 +2,9 @@
 
 // Add theme support
 function theme_setup() {
+    // Load theme text domain for translations
+    load_theme_textdomain('zongkuan', get_template_directory() . '/languages');
+
     add_theme_support('title-tag');
     add_theme_support('custom-logo');
     add_theme_support('post-thumbnails');
@@ -13,6 +16,21 @@ function theme_setup() {
     ));
 }
 add_action('after_setup_theme', 'theme_setup');
+
+// Set default locale to Traditional Chinese
+function set_locale_to_zh_tw($locale) {
+    return 'zh_TW';
+}
+add_filter('locale', 'set_locale_to_zh_tw');
+
+// Force admin panel to Traditional Chinese
+function set_admin_locale_to_zh_tw($locale) {
+    if (is_admin()) {
+        return 'zh_TW';
+    }
+    return $locale;
+}
+add_filter('determine_locale', 'set_admin_locale_to_zh_tw');
 
 function theme_scripts() {
     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap', array(), null);
@@ -47,8 +65,8 @@ function register_custom_post_types() {
     // Testimonials
     register_post_type('testimonial', array(
         'labels' => array(
-            'name' => __('Testimonials', 'your-theme-domain'),
-            'singular_name' => __('Testimonial', 'your-theme-domain'),
+            'name' => __('Testimonials', 'zongkuan'),
+            'singular_name' => __('Testimonial', 'zongkuan'),
         ),
         'public' => true,
         'has_archive' => false,
@@ -59,8 +77,8 @@ function register_custom_post_types() {
     // FAQs
     register_post_type('faq', array(
         'labels' => array(
-            'name' => __('FAQs', 'your-theme-domain'),
-            'singular_name' => __('FAQ', 'your-theme-domain'),
+            'name' => __('FAQs', 'zongkuan'),
+            'singular_name' => __('FAQ', 'zongkuan'),
         ),
         'public' => true,
         'has_archive' => false,
@@ -74,7 +92,7 @@ add_action('init', 'register_custom_post_types');
 function theme_customizer_settings($wp_customize) {
     // Contact Information Section
     $wp_customize->add_section('contact_info', array(
-        'title' => __('Contact Information', 'your-theme-domain'),
+        'title' => __('Contact Information', 'zongkuan'),
         'priority' => 30,
     ));
 
@@ -85,7 +103,7 @@ function theme_customizer_settings($wp_customize) {
     ));
 
     $wp_customize->add_control('contact_email', array(
-        'label' => __('Contact Email', 'your-theme-domain'),
+        'label' => __('Contact Email', 'zongkuan'),
         'section' => 'contact_info',
         'type' => 'email',
     ));
@@ -97,7 +115,7 @@ function theme_customizer_settings($wp_customize) {
     ));
 
     $wp_customize->add_control('line_url', array(
-        'label' => __('Line URL', 'your-theme-domain'),
+        'label' => __('Line URL', 'zongkuan'),
         'section' => 'contact_info',
         'type' => 'url',
     ));
@@ -109,16 +127,16 @@ function theme_customizer_settings($wp_customize) {
     ));
 
     $wp_customize->add_control('business_hours', array(
-        'label' => __('Business Hours', 'your-theme-domain'),
+        'label' => __('Business Hours', 'zongkuan'),
         'section' => 'contact_info',
         'type' => 'text',
     ));
 
     // Video Section
     $wp_customize->add_section('video_settings', array(
-        'title' => __('Video Settings', 'your-theme-domain'),
+        'title' => __('Video Settings', 'zongkuan'),
         'priority' => 32,
-        'description' => __('Upload your video and set a thumbnail image.', 'your-theme-domain'),
+        'description' => __('Upload your video and set a thumbnail image.', 'zongkuan'),
     ));
 
     // Video URL Setting
@@ -128,8 +146,8 @@ function theme_customizer_settings($wp_customize) {
     ));
 
     $wp_customize->add_control('video_url', array(
-        'label' => __('Video URL', 'your-theme-domain'),
-        'description' => __('Enter the URL of your MP4 video file', 'your-theme-domain'),
+        'label' => __('Video URL', 'zongkuan'),
+        'description' => __('Enter the URL of your MP4 video file', 'zongkuan'),
         'section' => 'video_settings',
         'type' => 'url',
     ));
@@ -141,16 +159,16 @@ function theme_customizer_settings($wp_customize) {
     ));
 
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'video_thumbnail', array(
-        'label' => __('Video Thumbnail', 'your-theme-domain'),
-        'description' => __('Select an image to show before the video plays', 'your-theme-domain'),
+        'label' => __('Video Thumbnail', 'zongkuan'),
+        'description' => __('Select an image to show before the video plays', 'zongkuan'),
         'section' => 'video_settings',
     )));
 
     // Carousel Section
     $wp_customize->add_section('carousel_settings', array(
-        'title' => __('Carousel Settings', 'your-theme-domain'),
+        'title' => __('Carousel Settings', 'zongkuan'),
         'priority' => 33,
-        'description' => __('Upload images for the carousel slider. You can add up to 8 images.', 'your-theme-domain'),
+        'description' => __('Upload images for the carousel slider. You can add up to 8 images.', 'zongkuan'),
     ));
 
     // Carousel Images
@@ -161,8 +179,8 @@ function theme_customizer_settings($wp_customize) {
         ));
 
         $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, "carousel_image_$i", array(
-            'label' => sprintf(__('Carousel Image %d', 'your-theme-domain'), $i),
-            'description' => __('Upload or select an image', 'your-theme-domain'),
+            'label' => sprintf(__('Carousel Image %d', 'zongkuan'), $i),
+            'description' => __('Upload or select an image', 'zongkuan'),
             'section' => 'carousel_settings',
         )));
 
@@ -173,8 +191,8 @@ function theme_customizer_settings($wp_customize) {
         ));
 
         $wp_customize->add_control("carousel_title_$i", array(
-            'label' => sprintf(__('Image %d Title', 'your-theme-domain'), $i),
-            'description' => __('Enter a title for this image (optional)', 'your-theme-domain'),
+            'label' => sprintf(__('Image %d Title', 'zongkuan'), $i),
+            'description' => __('Enter a title for this image (optional)', 'zongkuan'),
             'section' => 'carousel_settings',
             'type' => 'text',
         ));
@@ -186,8 +204,8 @@ function theme_customizer_settings($wp_customize) {
         ));
 
         $wp_customize->add_control("carousel_description_$i", array(
-            'label' => sprintf(__('Image %d Description', 'your-theme-domain'), $i),
-            'description' => __('Enter a description for this image (optional)', 'your-theme-domain'),
+            'label' => sprintf(__('Image %d Description', 'zongkuan'), $i),
+            'description' => __('Enter a description for this image (optional)', 'zongkuan'),
             'section' => 'carousel_settings',
             'type' => 'textarea',
         ));
@@ -200,7 +218,7 @@ function theme_customizer_settings($wp_customize) {
     ));
 
     $wp_customize->add_control('carousel_autoplay', array(
-        'label' => __('Enable Autoplay', 'your-theme-domain'),
+        'label' => __('Enable Autoplay', 'zongkuan'),
         'section' => 'carousel_settings',
         'type' => 'checkbox',
     ));
@@ -211,7 +229,7 @@ function theme_customizer_settings($wp_customize) {
     ));
 
     $wp_customize->add_control('carousel_speed', array(
-        'label' => __('Autoplay Speed (ms)', 'your-theme-domain'),
+        'label' => __('Autoplay Speed (ms)', 'zongkuan'),
         'section' => 'carousel_settings',
         'type' => 'number',
         'input_attrs' => array(
@@ -223,7 +241,7 @@ function theme_customizer_settings($wp_customize) {
 
     // Social Proof Section
     $wp_customize->add_section('social_proof', array(
-        'title' => __('Social Proof', 'your-theme-domain'),
+        'title' => __('Social Proof', 'zongkuan'),
         'priority' => 35,
     ));
 
@@ -234,7 +252,7 @@ function theme_customizer_settings($wp_customize) {
     ));
 
     $wp_customize->add_control('success_cases', array(
-        'label' => __('Success Cases', 'your-theme-domain'),
+        'label' => __('Success Cases', 'zongkuan'),
         'section' => 'social_proof',
         'type' => 'text',
     ));
@@ -246,7 +264,7 @@ function theme_customizer_settings($wp_customize) {
     ));
 
     $wp_customize->add_control('satisfaction_rate', array(
-        'label' => __('Satisfaction Rate', 'your-theme-domain'),
+        'label' => __('Satisfaction Rate', 'zongkuan'),
         'section' => 'social_proof',
         'type' => 'text',
     ));
@@ -258,7 +276,7 @@ function theme_customizer_settings($wp_customize) {
     ));
 
     $wp_customize->add_control('years_experience', array(
-        'label' => __('Years Experience', 'your-theme-domain'),
+        'label' => __('Years Experience', 'zongkuan'),
         'section' => 'social_proof',
         'type' => 'text',
     ));
@@ -276,7 +294,7 @@ add_action('wp_enqueue_scripts', 'enqueue_section_assets');
 function add_testimonial_meta_boxes() {
     add_meta_box(
         'testimonial_author',
-        __('Author Information', 'your-theme-domain'),
+        __('Author Information', 'zongkuan'),
         'testimonial_author_callback',
         'testimonial',
         'normal',
@@ -291,7 +309,7 @@ function testimonial_author_callback($post) {
     $author = get_post_meta($post->ID, '_testimonial_author', true);
     ?>
     <p>
-        <label for="testimonial_author"><?php _e('Author Name:', 'your-theme-domain'); ?></label>
+        <label for="testimonial_author"><?php _e('Author Name:', 'zongkuan'); ?></label>
         <input type="text" id="testimonial_author" name="testimonial_author" value="<?php echo esc_attr($author); ?>" size="25" />
     </p>
     <?php
@@ -389,18 +407,18 @@ add_action('after_switch_theme', 'create_contact_page');
 function register_contact_menu_page() {
     // Register Custom Post Type
     $labels = array(
-        'name'                  => _x('Contact Forms', 'Post type general name', 'textdomain'),
-        'singular_name'         => _x('Contact Form', 'Post type singular name', 'textdomain'),
-        'menu_name'             => _x('Contact Forms', 'Admin Menu text', 'textdomain'),
-        'name_admin_bar'        => _x('Contact Form ', 'Add New on Toolbar', 'textdomain'),
-        'add_new'               => __('Add New', 'textdomain'),
-        'add_new_item'          => __('Add New Contact Form', 'textdomain'),
-        'new_item'              => __('New Contact Form', 'textdomain'),
-        'edit_item'             => __('Edit Contact Form', 'textdomain'),
-        'view_item'             => __('View Contact Form', 'textdomain'),
-        'all_items'             => __('All Contact Forms', 'textdomain'),
-        'search_items'          => __('Search Contact Forms', 'textdomain'),
-        'not_found'             => __('No contact forms found.', 'textdomain'),
+        'name'                  => _x('Contact Forms', 'Post type general name', 'zongkuan'),
+        'singular_name'         => _x('Contact Form', 'Post type singular name', 'zongkuan'),
+        'menu_name'             => _x('Contact Forms', 'Admin Menu text', 'zongkuan'),
+        'name_admin_bar'        => _x('Contact Form', 'Add New on Toolbar', 'zongkuan'),
+        'add_new'              => __('Add New', 'zongkuan'),
+        'add_new_item'          => __('Add New Contact Form', 'zongkuan'),
+        'new_item'              => __('New Contact Form', 'zongkuan'),
+        'edit_item'             => __('Edit Contact Form', 'zongkuan'),
+        'view_item'             => __('View Contact Form', 'zongkuan'),
+        'all_items'             => __('All Contact Forms', 'zongkuan'),
+        'search_items'          => __('Search Contact Forms', 'zongkuan'),
+        'not_found'             => __('No contact forms found.', 'zongkuan'),
     );
 
     $args = array(
@@ -419,8 +437,8 @@ function register_contact_menu_page() {
 
     // Register Admin Menu Page
     add_menu_page(
-        '客服訊息',  // Page title
-        '客服訊息',             // Menu title
+        __('客服訊息', 'zongkuan'),  // Page title
+        __('客服訊息', 'zongkuan'),             // Menu title
         'manage_options',            // Capability
         'contact-forms',             // Menu slug
         'display_contact_forms',     // Callback function
@@ -618,25 +636,25 @@ function display_contact_forms() {
                 <input type="hidden" name="page" value="contact-forms">
                 
                 <div>
-                    <label for="status">狀態篩選：</label>
+                    <label for="status"><?php _e('Status Filter:', 'zongkuan'); ?></label>
                     <select name="status" id="status">
-                        <option value="">全部</option>
-                        <option value="未聯絡" <?php selected($status_filter, '未聯絡'); ?>>未聯絡</option>
-                        <option value="已連絡" <?php selected($status_filter, '已連絡'); ?>>已連絡</option>
-                        <option value="忽略" <?php selected($status_filter, '忽略'); ?>>忽略</option>
+                        <option value=""><?php _e('All', 'zongkuan'); ?></option>
+                        <option value="未聯絡" <?php selected($status_filter, '未聯絡'); ?>><?php _e('Not Contacted', 'zongkuan'); ?></option>
+                        <option value="已連絡" <?php selected($status_filter, '已連絡'); ?>><?php _e('Contacted', 'zongkuan'); ?></option>
+                        <option value="忽略" <?php selected($status_filter, '忽略'); ?>><?php _e('Ignored', 'zongkuan'); ?></option>
                     </select>
                 </div>
 
                 <div>
-                    <label for="date_from">日期範圍：</label>
+                    <label for="date_from"><?php _e('Date Range:', 'zongkuan'); ?></label>
                     <input type="date" id="date_from" name="date_from" value="<?php echo esc_attr($date_from); ?>">
-                    <span>至</span>
+                    <span><?php _e('to', 'zongkuan'); ?></span>
                     <input type="date" id="date_to" name="date_to" value="<?php echo esc_attr($date_to); ?>">
                 </div>
 
                 <div>
-                    <button type="submit" class="button button-primary">篩選</button>
-                    <a href="?page=contact-forms" class="button">重置</a>
+                    <button type="submit" class="button button-primary"><?php _e('Filter', 'zongkuan'); ?></button>
+                    <a href="?page=contact-forms" class="button"><?php _e('Reset', 'zongkuan'); ?></a>
                 </div>
             </form>
         </div>
@@ -648,38 +666,38 @@ function display_contact_forms() {
             <input type="hidden" name="date_from" value="<?php echo esc_attr($date_from); ?>">
             <input type="hidden" name="date_to" value="<?php echo esc_attr($date_to); ?>">
             <?php wp_nonce_field('export_contact_form_csv_nonce', 'export_nonce'); ?>
-            <input type="submit" class="button button-primary" value="匯出CSV">
+            <input type="submit" class="button button-primary" value="<?php esc_attr_e('Export CSV', 'zongkuan'); ?>">
         </form>
 
         <!-- Bulk Action Buttons -->
         <div style="margin-bottom: 10px;">
             <button id="mark-all-contacted" class="button button-primary">
                 <i class="dashicons dashicons-yes-alt" style="vertical-align: middle;"></i>
-                全部標記為已連絡
+                <?php _e('Mark All as Contacted', 'zongkuan'); ?>
             </button>
             <button id="mark-all-not-contacted" class="button">
                 <i class="dashicons dashicons-dismiss" style="vertical-align: middle;"></i>
-                全部標記為未聯絡
+                <?php _e('Mark All as Not Contacted', 'zongkuan'); ?>
             </button>
         </div>
 
         <!-- Results Summary -->
         <div class="tablenav-pages">
             <span class="displaying-num">
-                共 <?php echo count($submissions); ?> 筆資料
+                <?php printf(__('Total %d records', 'zongkuan'), count($submissions)); ?>
             </span>
         </div>
 
         <table class="wp-list-table widefat fixed striped">
             <thead>
                 <tr>
-                    <th>姓名</th>
-                    <th>電子郵件</th>
-                    <th>電話</th>
-                    <th>借款金額</th>
-                    <th>可聯絡時間</th>
-                    <th>填表日期</th>
-                    <th>狀態</th>
+                    <th><?php _e('Name', 'zongkuan'); ?></th>
+                    <th><?php _e('Email', 'zongkuan'); ?></th>
+                    <th><?php _e('Phone', 'zongkuan'); ?></th>
+                    <th><?php _e('Amount', 'zongkuan'); ?></th>
+                    <th><?php _e('Contact Time', 'zongkuan'); ?></th>
+                    <th><?php _e('Submit Date', 'zongkuan'); ?></th>
+                    <th><?php _e('Status', 'zongkuan'); ?></th>
                 </tr>
             </thead>
             <tbody>
@@ -694,16 +712,16 @@ function display_contact_forms() {
                             <td><?php echo esc_html($submission->date); ?></td>
                             <td class="marked-status">
                                 <select class="status-select" data-id="<?php echo esc_attr($submission->id); ?>" onchange="window.updateStatus(this)">
-                                    <option value="未聯絡" <?php selected($submission->status, '未聯絡'); ?>>未聯絡</option>
-                                    <option value="已連絡" <?php selected($submission->status, '已連絡'); ?>>已連絡</option>
-                                    <option value="忽略" <?php selected($submission->status, '忽略'); ?>>忽略</option>
+                                    <option value="未聯絡" <?php selected($submission->status, '未聯絡'); ?>><?php _e('Not Contacted', 'zongkuan'); ?></option>
+                                    <option value="已連絡" <?php selected($submission->status, '已連絡'); ?>><?php _e('Contacted', 'zongkuan'); ?></option>
+                                    <option value="忽略" <?php selected($submission->status, '忽略'); ?>><?php _e('Ignored', 'zongkuan'); ?></option>
                                 </select>
                             </td>
                         </tr>
                     <?php endforeach; ?>
                 <?php else : ?>
                     <tr>
-                        <td colspan="9">尚未有資料</td>
+                        <td colspan="9"><?php _e('No contact forms found.', 'zongkuan'); ?></td>
                     </tr>
                 <?php endif; ?>
             </tbody>
@@ -732,7 +750,7 @@ function display_contact_forms() {
                     },
                     success: function(response) {
                         if (!response.success) {
-                            alert('Failed to update: ' + response.data.message);
+                            alert('<?php echo esc_js(__('Failed to update status', 'zongkuan')); ?>');
                             select.value = select.getAttribute('data-original-value');
                         } else {
                             // If the current filter is set and the new status doesn't match the filter
@@ -747,7 +765,7 @@ function display_contact_forms() {
                         }
                     },
                     error: function() {
-                        alert('An error occurred while updating.');
+                        alert('<?php echo esc_js(__('An error occurred while updating', 'zongkuan')); ?>');
                         select.value = select.getAttribute('data-original-value');
                     }
                 });

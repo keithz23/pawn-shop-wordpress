@@ -17,9 +17,9 @@ get_header();
           <h1>線上預約 專人回覆</h1>
           <div class="form-container">
             <?php if (isset($_GET['success']) && $_GET['success'] == '1') : ?>
-                <p class="success-message">感謝您的提交！我們會盡快與您聯繫。</p>
+                <p class="success-message"><?php _e('Thank you for your submission!', 'zongkuan'); ?></p>
             <?php elseif (isset($_GET['error']) && $_GET['error'] == '1') : ?>
-                <p class="error-message">提交表單時出現錯誤，請稍後再試。</p>
+                <p class="error-message"><?php _e('Please fill in all required fields.', 'zongkuan'); ?></p>
             <?php endif; ?>
             <form method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>">
                <input type="hidden" name="action" value="handle_contact_form">
@@ -27,80 +27,80 @@ get_header();
               <input type="hidden" name="contact_form_submit" value="1" />
 
               <div class="form-group">
-                <label for="name"
-                  >姓名 <span style="color: red">(必填)</span></label
-                >
+                <label for="name">
+                    <?php _e('Name:', 'zongkuan'); ?> <span style="color: red">(<?php _e('required', 'zongkuan'); ?>)</span>
+                </label>
                 <input
                   type="text"
                   id="name"
                   name="name"
-                  placeholder="請輸入姓名"
+                  placeholder="<?php esc_attr_e('Please enter your name', 'zongkuan'); ?>"
                   required
                 />
               </div>
 
               <div class="form-group">
-                <label for="email"
-                  >電子郵件 <span style="color: red">(必填)</span></label
-                >
+                <label for="email">
+                    <?php _e('Email:', 'zongkuan'); ?> <span style="color: red">(<?php _e('required', 'zongkuan'); ?>)</span>
+                </label>
                 <input
                   type="email"
                   id="email"
                   name="email"
-                  placeholder="請輸入電子郵件"
+                  placeholder="<?php esc_attr_e('Please enter your email', 'zongkuan'); ?>"
                   required
                 />
               </div>
 
               <div class="form-group">
-                <label for="amount"
-                  >借款金額 <span style="color: red">(必填)</span></label
-                >
+                <label for="amount">
+                    <?php _e('Amount:', 'zongkuan'); ?> <span style="color: red">(<?php _e('required', 'zongkuan'); ?>)</span>
+                </label>
                 <input
                   type="number"
                   id="amount"
                   name="amount"
-                  placeholder="例如: 50000元"
+                  placeholder="<?php esc_attr_e('Example: 50000', 'zongkuan'); ?>"
                   required
                 />
               </div>
 
               <div class="form-group">
-                <label for="phone"
-                  >聯絡電話 <span style="color: red">(必填)</span></label
-                >
+                <label for="phone">
+                    <?php _e('Phone:', 'zongkuan'); ?> <span style="color: red">(<?php _e('required', 'zongkuan'); ?>)</span>
+                </label>
                 <input
                   type="tel"
                   id="phone"
                   name="phone"
-                  placeholder="請輸入聯絡電話"
+                  placeholder="<?php esc_attr_e('Please enter your phone number', 'zongkuan'); ?>"
                   required
                 />
               </div>
 
               <div class="form-group">
-                <label for="time"
-                  >可聯絡時間 <span style="color: red">(必填)</span></label
-                >
+                <label for="time">
+                    <?php _e('Preferred Contact Time:', 'zongkuan'); ?> <span style="color: red">(<?php _e('required', 'zongkuan'); ?>)</span>
+                </label>
                 <select id="time" name="time" required>
-                  <option value="">請選擇聯絡時段</option>
-                  <option value="上午">上午</option>
-                  <option value="下午">下午</option>
-                  <option value="晚上">晚上</option>
+                  <option value=""><?php _e('Please select contact time', 'zongkuan'); ?></option>
+                  <option value="上午"><?php _e('Morning', 'zongkuan'); ?></option>
+                  <option value="下午"><?php _e('Afternoon', 'zongkuan'); ?></option>
+                  <option value="晚上"><?php _e('Evening', 'zongkuan'); ?></option>
                 </select>
               </div>
 
               <div class="form-group">
-                <label for="other">其它需求</label>
+                <label for="other"><?php _e('Message:', 'zongkuan'); ?></label>
                 <textarea
                   id="other"
                   name="other"
                   rows="3"
-                  placeholder="請輸入您的需求"
+                  placeholder="<?php esc_attr_e('Please enter your message', 'zongkuan'); ?>"
                 ></textarea>
               </div>
 
-              <button type="submit" class="submit-btn">送出訊息</button>
+              <button type="submit" class="submit-btn"><?php _e('Submit', 'zongkuan'); ?></button>
             </form>
           </div>
         </div>
