@@ -1,0 +1,280 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Zongkuan Theme\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-03 16:45+0800\n"
+"PO-Revision-Date: 2024-04-03 16:45+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: .\n"
+
+# Admin Menu Items
+msgid "Contact Forms"
+msgstr "聯絡表單"
+
+msgid "Contact Form"
+msgstr "聯絡表單"
+
+msgid "Add New"
+msgstr "新增"
+
+msgid "Add New Contact Form"
+msgstr "新增聯絡表單"
+
+msgid "New Contact Form"
+msgstr "新增聯絡表單"
+
+msgid "Edit Contact Form"
+msgstr "編輯聯絡表單"
+
+msgid "View Contact Form"
+msgstr "查看聯絡表單"
+
+msgid "All Contact Forms"
+msgstr "所有聯絡表單"
+
+msgid "Search Contact Forms"
+msgstr "搜尋聯絡表單"
+
+msgid "No contact forms found."
+msgstr "找不到聯絡表單"
+
+# Contact Form Table Headers
+msgid "Name"
+msgstr "姓名"
+
+msgid "Email"
+msgstr "電子郵件"
+
+msgid "Phone"
+msgstr "電話"
+
+msgid "Amount"
+msgstr "金額"
+
+msgid "Contact Time"
+msgstr "可聯絡時間"
+
+msgid "Submit Date"
+msgstr "提交日期"
+
+msgid "Status"
+msgstr "狀態"
+
+# Contact Form Status
+msgid "Not Contacted"
+msgstr "未聯絡"
+
+msgid "Contacted"
+msgstr "已連絡"
+
+msgid "Ignored"
+msgstr "忽略"
+
+# Filter Labels
+msgid "Status Filter:"
+msgstr "狀態篩選："
+
+msgid "Date Range:"
+msgstr "日期範圍："
+
+msgid "to"
+msgstr "至"
+
+msgid "Filter"
+msgstr "篩選"
+
+msgid "Reset"
+msgstr "重置"
+
+# Action Buttons
+msgid "Export CSV"
+msgstr "匯出CSV"
+
+msgid "Mark All as Contacted"
+msgstr "全部標記為已連絡"
+
+msgid "Mark All as Not Contacted"
+msgstr "全部標記為未聯絡"
+
+# Summary Text
+msgid "Total %d records"
+msgstr "共 %d 筆資料"
+
+# Messages
+msgid "Successfully updated status"
+msgstr "狀態更新成功"
+
+msgid "Failed to update status"
+msgstr "狀態更新失敗"
+
+msgid "An error occurred while updating"
+msgstr "更新時發生錯誤"
+
+msgid "All items have been successfully updated"
+msgstr "所有項目已成功更新"
+
+msgid "Error occurred while updating items"
+msgstr "更新項目時發生錯誤"
+
+# User Section Labels
+msgid "Name:"
+msgstr "姓名："
+
+msgid "Email:"
+msgstr "電子郵件："
+
+msgid "Phone:"
+msgstr "電話："
+
+msgid "Amount:"
+msgstr "借款金額："
+
+msgid "Preferred Contact Time:"
+msgstr "可聯絡時間："
+
+msgid "Message:"
+msgstr "其它需求："
+
+msgid "Submit"
+msgstr "送出訊息"
+
+msgid "required"
+msgstr "必填"
+
+msgid "Please enter your name"
+msgstr "請輸入姓名"
+
+msgid "Please enter your email"
+msgstr "請輸入電子郵件"
+
+msgid "Example: 50000"
+msgstr "例如: 50000元"
+
+msgid "Please enter your phone number"
+msgstr "請輸入聯絡電話"
+
+msgid "Please select contact time"
+msgstr "請選擇聯絡時段"
+
+msgid "Morning"
+msgstr "上午"
+
+msgid "Afternoon"
+msgstr "下午"
+
+msgid "Evening"
+msgstr "晚上"
+
+msgid "Please enter your message"
+msgstr "請輸入您的需求"
+
+msgid "Thank you for your submission!"
+msgstr "感謝您的提交！我們會盡快與您聯繫。"
+
+msgid "Please fill in all required fields."
+msgstr "提交表單時出現錯誤，請稍後再試。"
+
+# Original translations remain below
+msgid "Primary Menu"
+msgstr "主選單"
+
+msgid "Testimonials"
+msgstr "客戶評價"
+
+msgid "Testimonial"
+msgstr "客戶評價"
+
+msgid "FAQs"
+msgstr "常見問題"
+
+msgid "FAQ"
+msgstr "常見問題"
+
+msgid "Contact Information"
+msgstr "聯絡資訊"
+
+msgid "Contact Email"
+msgstr "聯絡信箱"
+
+msgid "Line URL"
+msgstr "Line 連結"
+
+msgid "Business Hours"
+msgstr "營業時間"
+
+msgid "Video Settings"
+msgstr "影片設定"
+
+msgid "Upload your video and set a thumbnail image."
+msgstr "上傳您的影片並設定縮圖"
+
+msgid "Video URL"
+msgstr "影片網址"
+
+msgid "Enter the URL of your MP4 video file"
+msgstr "輸入您的 MP4 影片網址"
+
+msgid "Video Thumbnail"
+msgstr "影片縮圖"
+
+msgid "Select an image to show before the video plays"
+msgstr "選擇影片播放前顯示的圖片"
+
+msgid "Carousel Settings"
+msgstr "輪播設定"
+
+msgid "Upload images for the carousel slider. You can add up to 8 images."
+msgstr "上傳輪播圖片，最多可新增 8 張圖片"
+
+msgid "Carousel Image %d"
+msgstr "輪播圖片 %d"
+
+msgid "Upload or select an image"
+msgstr "上傳或選擇圖片"
+
+msgid "Image %d Title"
+msgstr "圖片 %d 標題"
+
+msgid "Enter a title for this image (optional)"
+msgstr "輸入圖片標題（選填）"
+
+msgid "Image %d Description"
+msgstr "圖片 %d 描述"
+
+msgid "Enter a description for this image (optional)"
+msgstr "輸入圖片描述（選填）"
+
+msgid "Enable Autoplay"
+msgstr "啟用自動播放"
+
+msgid "Autoplay Speed (ms)"
+msgstr "自動播放速度（毫秒）"
+
+msgid "Social Proof"
+msgstr "服務實績"
+
+msgid "Success Cases"
+msgstr "成功案例"
+
+msgid "Satisfaction Rate"
+msgstr "滿意度"
+
+msgid "Years Experience"
+msgstr "服務年資"
+
+msgid "Author Information"
+msgstr "作者資訊"
+
+msgid "Author Name:"
+msgstr "作者姓名：" 
