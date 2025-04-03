@@ -28,7 +28,7 @@ get_header();
 
               <div class="form-group">
                 <label for="name"
-                  >貴賓姓名 <span style="color: red">(必填)</span></label
+                  >姓名 <span style="color: red">(必填)</span></label
                 >
                 <input
                   type="text"

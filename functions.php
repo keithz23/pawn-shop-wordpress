@@ -419,7 +419,7 @@ function register_contact_menu_page() {
 
     // Register Admin Menu Page
     add_menu_page(
-        '聯絡表單提交',  // Page title
+        '客服訊息',  // Page title
         '客服訊息',             // Menu title
         'manage_options',            // Capability
         'contact-forms',             // Menu slug
@@ -441,7 +441,38 @@ function export_contact_form_csv() {
 
     global $wpdb;
     $table_name = $wpdb->prefix . 'contact_form';
-    $submissions = $wpdb->get_results("SELECT * FROM $table_name ORDER BY date DESC");
+
+    // Get filter values
+    $status_filter = isset($_POST['status_filter']) ? sanitize_text_field($_POST['status_filter']) : '';
+    $date_from = isset($_POST['date_from']) ? sanitize_text_field($_POST['date_from']) : '';
+    $date_to = isset($_POST['date_to']) ? sanitize_text_field($_POST['date_to']) : '';
+
+    // Build query
+    $where_clauses = array();
+    $where_values = array();
+
+    if ($status_filter !== '') {
+        $where_clauses[] = 'status = %s';
+        $where_values[] = $status_filter;
+    }
+
+    if ($date_from !== '') {
+        $where_clauses[] = 'DATE(date) >= %s';
+        $where_values[] = $date_from;
+    }
+
+    if ($date_to !== '') {
+        $where_clauses[] = 'DATE(date) <= %s';
+        $where_values[] = $date_to;
+    }
+
+    $query = "SELECT * FROM $table_name";
+    if (!empty($where_clauses)) {
+        $query .= " WHERE " . implode(' AND ', $where_clauses);
+    }
+    $query .= " ORDER BY date DESC";
+
+    $submissions = $wpdb->get_results($wpdb->prepare($query, $where_values));
 
     header('Content-Type: text/csv; charset=utf-8');
     header('Content-Disposition: attachment; filename="聯絡表單提交_' . date('Y-m-d_H-i-s') . '.csv"');
@@ -449,7 +480,7 @@ function export_contact_form_csv() {
     $output = fopen('php://output', 'w');
     fprintf($output, chr(0xEF) . chr(0xBB) . chr(0xBF));
 
-    fputcsv($output, array('編號', '姓名', '電子郵件', '電話', '金額', '訊息', '日期', '已連絡'));
+    fputcsv($output, array('編號', '姓名', '電子郵件', '電話', '金額', '訊息', '日期', '可聯絡時間', '狀態'));
 
     foreach ($submissions as $submission) {
         fputcsv($output, array(
@@ -460,7 +491,8 @@ function export_contact_form_csv() {
             $submission->amount,
             $submission->message,
             $submission->date,
-            $submission->is_contacted ? '是' : '否'
+            $submission->preferred_time,
+            $submission->status
         ));
     }
 
@@ -479,153 +511,321 @@ function update_contact_form_marked() {
     }
 
     $submission_id = isset($_POST['submission_id']) ? intval($_POST['submission_id']) : 0;
-    $is_contacted = isset($_POST['is_contacted']) ? intval($_POST['is_contacted']) : 0;
+    $status = isset($_POST['status']) ? sanitize_text_field($_POST['status']) : '';
+    
+    // Get filter values
+    $current_filter_status = isset($_POST['current_filter_status']) ? sanitize_text_field($_POST['current_filter_status']) : '';
+    $current_filter_date_from = isset($_POST['current_filter_date_from']) ? sanitize_text_field($_POST['current_filter_date_from']) : '';
+    $current_filter_date_to = isset($_POST['current_filter_date_to']) ? sanitize_text_field($_POST['current_filter_date_to']) : '';
 
     if ($submission_id <= 0) {
         wp_send_json_error(array('message' => 'Invalid submission ID'), 400);
     }
 
+    if (!in_array($status, array('未聯絡', '已連絡', '忽略'))) {
+        wp_send_json_error(array('message' => 'Invalid status value'), 400);
+    }
+
     global $wpdb;
     $table_name = $wpdb->prefix . 'contact_form';
 
-    $table_exists = $wpdb->get_var("SHOW TABLES LIKE '$table_name'");
-    if (!$table_exists) {
-        error_log("Table $table_name does not exist");
-        wp_send_json_error(array('message' => 'Table does not exist'), 500);
+    // Build query to check if the record matches current filters
+    $where_clauses = array('id = %d');
+    $where_values = array($submission_id);
+
+    if ($current_filter_status !== '') {
+        $where_clauses[] = 'status = %s';
+        $where_values[] = $current_filter_status;
     }
 
-    $column_exists = $wpdb->get_results("SHOW COLUMNS FROM $table_name LIKE 'is_contacted'");
-    if (empty($column_exists)) {
-        error_log("Column is_contacted does not exist in $table_name");
-        wp_send_json_error(array('message' => 'Column is_contacted does not exist'), 500);
+    if ($current_filter_date_from !== '') {
+        $where_clauses[] = 'DATE(date) >= %s';
+        $where_values[] = $current_filter_date_from;
     }
 
-    $updated = $wpdb->update(
-        $table_name,
-        array('is_contacted' => $is_contacted),
-        array('id' => $submission_id),
-        array('%d'),
-        array('%d')
-    );
-
-    if ($updated === false) {
-        error_log("Failed to update $table_name: " . $wpdb->last_error);
-        wp_send_json_error(array('message' => 'Failed to update database: ' . $wpdb->last_error), 500);
+    if ($current_filter_date_to !== '') {
+        $where_clauses[] = 'DATE(date) <= %s';
+        $where_values[] = $current_filter_date_to;
     }
 
-    wp_send_json_success();
+    // Check if the record exists and matches the current filters
+    $check_query = "SELECT COUNT(*) FROM $table_name WHERE " . implode(' AND ', $where_clauses);
+    $exists = $wpdb->get_var($wpdb->prepare($check_query, $where_values));
+
+    if ($exists) {
+        $updated = $wpdb->update(
+            $table_name,
+            array('status' => $status),
+            array('id' => $submission_id),
+            array('%s'),
+            array('%d')
+        );
+
+        if ($updated === false) {
+            wp_send_json_error(array('message' => 'Failed to update database: ' . $wpdb->last_error), 500);
+        }
+
+        wp_send_json_success();
+    } else {
+        wp_send_json_error(array('message' => 'Record not found or does not match current filters'), 404);
+    }
 }
 add_action('wp_ajax_update_contact_form_marked', 'update_contact_form_marked');
 
 function display_contact_forms() {
     global $wpdb;
     $table_name = $wpdb->prefix . 'contact_form';
-    $submissions = $wpdb->get_results("SELECT * FROM $table_name ORDER BY date DESC");
+
+    // Get filter values
+    $status_filter = isset($_GET['status']) ? sanitize_text_field($_GET['status']) : '';
+    $date_from = isset($_GET['date_from']) ? sanitize_text_field($_GET['date_from']) : '';
+    $date_to = isset($_GET['date_to']) ? sanitize_text_field($_GET['date_to']) : '';
+
+    // Build query
+    $where_clauses = array();
+    $where_values = array();
+
+    if ($status_filter !== '') {
+        $where_clauses[] = 'status = %s';
+        $where_values[] = $status_filter;
+    }
+
+    if ($date_from !== '') {
+        $where_clauses[] = 'DATE(date) >= %s';
+        $where_values[] = $date_from;
+    }
+
+    if ($date_to !== '') {
+        $where_clauses[] = 'DATE(date) <= %s';
+        $where_values[] = $date_to;
+    }
+
+    $query = "SELECT * FROM $table_name";
+    if (!empty($where_clauses)) {
+        $query .= " WHERE " . implode(' AND ', $where_clauses);
+    }
+    $query .= " ORDER BY date DESC";
+
+    $submissions = $wpdb->get_results($wpdb->prepare($query, $where_values));
 
     ?>
     <div class="wrap">
         <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
+
+        <!-- Filter Form -->
+        <div class="tablenav top" style="margin: 20px 0;">
+            <form method="get" style="display: flex; gap: 15px; align-items: flex-end;">
+                <input type="hidden" name="page" value="contact-forms">
+                
+                <div>
+                    <label for="status">狀態篩選：</label>
+                    <select name="status" id="status">
+                        <option value="">全部</option>
+                        <option value="未聯絡" <?php selected($status_filter, '未聯絡'); ?>>未聯絡</option>
+                        <option value="已連絡" <?php selected($status_filter, '已連絡'); ?>>已連絡</option>
+                        <option value="忽略" <?php selected($status_filter, '忽略'); ?>>忽略</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="date_from">日期範圍：</label>
+                    <input type="date" id="date_from" name="date_from" value="<?php echo esc_attr($date_from); ?>">
+                    <span>至</span>
+                    <input type="date" id="date_to" name="date_to" value="<?php echo esc_attr($date_to); ?>">
+                </div>
+
+                <div>
+                    <button type="submit" class="button button-primary">篩選</button>
+                    <a href="?page=contact-forms" class="button">重置</a>
+                </div>
+            </form>
+        </div>
+
+        <!-- Export Form -->
         <form method="post" action="<?php echo admin_url('admin-post.php'); ?>" style="margin-bottom: 10px;">
             <input type="hidden" name="action" value="export_contact_form_csv">
+            <input type="hidden" name="status_filter" value="<?php echo esc_attr($status_filter); ?>">
+            <input type="hidden" name="date_from" value="<?php echo esc_attr($date_from); ?>">
+            <input type="hidden" name="date_to" value="<?php echo esc_attr($date_to); ?>">
             <?php wp_nonce_field('export_contact_form_csv_nonce', 'export_nonce'); ?>
-            <input type="submit" class="button button-primary" value="匯出為CSV">
+            <input type="submit" class="button button-primary" value="匯出CSV">
         </form>
+
+        <!-- Bulk Action Buttons -->
+        <div style="margin-bottom: 10px;">
+            <button id="mark-all-contacted" class="button button-primary">
+                <i class="dashicons dashicons-yes-alt" style="vertical-align: middle;"></i>
+                全部標記為已連絡
+            </button>
+            <button id="mark-all-not-contacted" class="button">
+                <i class="dashicons dashicons-dismiss" style="vertical-align: middle;"></i>
+                全部標記為未聯絡
+            </button>
+        </div>
+
+        <!-- Results Summary -->
+        <div class="tablenav-pages">
+            <span class="displaying-num">
+                共 <?php echo count($submissions); ?> 筆資料
+            </span>
+        </div>
 
         <table class="wp-list-table widefat fixed striped">
             <thead>
                 <tr>
-                    <th><input type="checkbox" id="select-all"></th>
-                    <th>編號</th>
                     <th>姓名</th>
                     <th>電子郵件</th>
                     <th>電話</th>
-                    <th>金額</th>
-                    <th>訊息</th>
-                    <th>日期</th>
-                    <th>已連絡</th>
+                    <th>借款金額</th>
+                    <th>可聯絡時間</th>
+                    <th>填表日期</th>
+                    <th>狀態</th>
                 </tr>
             </thead>
             <tbody>
                 <?php if ($submissions) : ?>
                     <?php foreach ($submissions as $submission) : ?>
                         <tr>
-                            <td>
-                                <input type="checkbox" 
-                                       name="submission_ids[]" 
-                                       value="<?php echo esc_attr($submission->id); ?>" 
-                                       class="submission-checkbox" 
-                                       <?php checked($submission->is_contacted, 1); ?>
-                                       data-id="<?php echo esc_attr($submission->id); ?>">
-                            </td>
-                            <td><?php echo esc_html($submission->id); ?></td>
                             <td><?php echo esc_html($submission->name); ?></td>
                             <td><?php echo esc_html($submission->email); ?></td>
                             <td><?php echo esc_html($submission->phone); ?></td>
                             <td><?php echo esc_html($submission->amount); ?></td>
-                            <td><?php echo esc_html($submission->message); ?></td>
+                            <td><?php echo esc_html($submission->preferred_time); ?></td>
                             <td><?php echo esc_html($submission->date); ?></td>
-                            <td class="marked-status"><?php echo $submission->is_contacted ? '是' : '否'; ?></td>
+                            <td class="marked-status">
+                                <select class="status-select" data-id="<?php echo esc_attr($submission->id); ?>" onchange="window.updateStatus(this)">
+                                    <option value="未聯絡" <?php selected($submission->status, '未聯絡'); ?>>未聯絡</option>
+                                    <option value="已連絡" <?php selected($submission->status, '已連絡'); ?>>已連絡</option>
+                                    <option value="忽略" <?php selected($submission->status, '忽略'); ?>>忽略</option>
+                                </select>
+                            </td>
                         </tr>
                     <?php endforeach; ?>
                 <?php else : ?>
                     <tr>
-                        <td colspan="9">尚無聯絡表單提交</td>
+                        <td colspan="9">尚未有資料</td>
                     </tr>
                 <?php endif; ?>
             </tbody>
         </table>
 
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const selectAll = document.getElementById('select-all');
-                const checkboxes = document.querySelectorAll('.submission-checkbox');
+            // Define updateStatus in the global scope
+            window.updateStatus = function(select) {
+                const submissionId = select.getAttribute('data-id');
+                const newStatus = select.value;
+                const currentStatus = document.getElementById('status').value;
+                const currentDateFrom = document.getElementById('date_from').value;
+                const currentDateTo = document.getElementById('date_to').value;
 
-                const ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
-                const nonce = '<?php echo wp_create_nonce('update_marked_nonce'); ?>';
-
-                selectAll.addEventListener('change', function() {
-                    const isChecked = this.checked;
-                    checkboxes.forEach(checkbox => {
-                        checkbox.checked = isChecked;
-                        updateMarkedStatus(checkbox);
-                    });
-                });
-
-                checkboxes.forEach(checkbox => {
-                    checkbox.addEventListener('change', function() {
-                        updateMarkedStatus(this);
-                    });
-                });
-
-                function updateMarkedStatus(checkbox) {
-                    const submissionId = checkbox.getAttribute('data-id');
-                    const isMarked = checkbox.checked ? 1 : 0;
-                    const row = checkbox.closest('tr');
-                    const statusCell = row.querySelector('.marked-status');
-
-                    jQuery.ajax({
-                        url: ajaxurl,
-                        type: 'POST',
-                        data: {
-                            action: 'update_contact_form_marked',
-                            submission_id: submissionId,
-                            is_contacted: isMarked,
-                            nonce: nonce
-                        },
-                        success: function(response) {
-                            if (response.success) {
-                                statusCell.textContent = isMarked ? '是' : '否';
-                            } else {
-                                alert('Failed to update: ' + response.data.message);
-                                checkbox.checked = !checkbox.checked;
+                jQuery.ajax({
+                    url: '<?php echo admin_url('admin-ajax.php'); ?>',
+                    type: 'POST',
+                    data: {
+                        action: 'update_contact_form_marked',
+                        submission_id: submissionId,
+                        status: newStatus,
+                        current_filter_status: currentStatus,
+                        current_filter_date_from: currentDateFrom,
+                        current_filter_date_to: currentDateTo,
+                        nonce: '<?php echo wp_create_nonce('update_marked_nonce'); ?>'
+                    },
+                    success: function(response) {
+                        if (!response.success) {
+                            alert('Failed to update: ' + response.data.message);
+                            select.value = select.getAttribute('data-original-value');
+                        } else {
+                            // If the current filter is set and the new status doesn't match the filter
+                            if (currentStatus && newStatus !== currentStatus) {
+                                // Remove the row from the table
+                                select.closest('tr').remove();
+                                // Update the count
+                                const displayingNum = document.querySelector('.displaying-num');
+                                const currentCount = parseInt(displayingNum.textContent.match(/\d+/)[0]);
+                                displayingNum.textContent = `共 ${currentCount - 1} 筆資料`;
                             }
-                        },
-                        error: function() {
-                            alert('An error occurred while updating.');
-                            checkbox.checked = !checkbox.checked; 
                         }
-                    });
+                    },
+                    error: function() {
+                        alert('An error occurred while updating.');
+                        select.value = select.getAttribute('data-original-value');
+                    }
+                });
+            };
+
+            document.addEventListener('DOMContentLoaded', function() {
+                const markAllContactedBtn = document.getElementById('mark-all-contacted');
+                const markAllNotContactedBtn = document.getElementById('mark-all-not-contacted');
+                const statusFilter = document.getElementById('status');
+                const dateFrom = document.getElementById('date_from');
+                const dateTo = document.getElementById('date_to');
+        
+                // Add event listeners for filter changes
+                statusFilter.addEventListener('change', handleFilterChange);
+                dateFrom.addEventListener('change', handleFilterChange);
+                dateTo.addEventListener('change', handleFilterChange);
+
+                function handleFilterChange() {
+                    // Submit the form to refresh the page with new filters
+                    statusFilter.closest('form').submit();
                 }
+
+                // Add click event listeners to the buttons
+                markAllContactedBtn.addEventListener('click', () => updateAllFilteredStatus('已連絡'));
+                markAllNotContactedBtn.addEventListener('click', () => updateAllFilteredStatus('未聯絡'));
+
+                function updateAllFilteredStatus(newStatus) {
+                    const selects = document.querySelectorAll('.status-select');
+                    const currentStatus = statusFilter.value;
+                    const currentDateFrom = dateFrom.value;
+                    const currentDateTo = dateTo.value;
+
+                    const promises = Array.from(selects).map(select => {
+                        return new Promise((resolve, reject) => {
+                            const submissionId = select.getAttribute('data-id');
+
+                            jQuery.ajax({
+                                url: '<?php echo admin_url('admin-ajax.php'); ?>',
+                                type: 'POST',
+                                data: {
+                                    action: 'update_contact_form_marked',
+                                    submission_id: submissionId,
+                                    status: newStatus,
+                                    current_filter_status: currentStatus,
+                                    current_filter_date_from: currentDateFrom,
+                                    current_filter_date_to: currentDateTo,
+                                    nonce: '<?php echo wp_create_nonce('update_marked_nonce'); ?>'
+                                },
+                                success: function(response) {
+                                    if (response.success) {
+                                        select.value = newStatus;
+                                        resolve();
+                                    } else {
+                                        reject(new Error(response.data.message));
+                                    }
+                                },
+                                error: function() {
+                                    reject(new Error('An error occurred while updating.'));
+                                }
+                            });
+                        });
+                    });
+
+                    Promise.all(promises)
+                        .then(() => {
+                            alert('所有項目已成功更新狀態');
+                            // Refresh the page to show updated results
+                            window.location.reload();
+                        })
+                        .catch(error => {
+                            alert('更新過程中發生錯誤: ' + error.message);
+                        });
+                }
+
+                // Store original values
+                document.querySelectorAll('.status-select').forEach(select => {
+                    select.setAttribute('data-original-value', select.value);
+                });
             });
         </script>
     </div>
@@ -635,28 +835,32 @@ function display_contact_forms() {
 function create_contact_form_table() {
     global $wpdb;
     $table_name = $wpdb->prefix . 'contact_form';
-    $charset_collate = $wpdb->get_charset_collate();
-
-    if ($wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name) {
+    
+    // Check if table already exists
+    if($wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name) {
+        $charset_collate = $wpdb->get_charset_collate();
+        
+        // SQL to create your table
         $sql = "CREATE TABLE $table_name (
-            id INT NOT NULL AUTO_INCREMENT,
-            name VARCHAR(255) NOT NULL,
-            email VARCHAR(255) NOT NULL,
-            message TEXT NOT NULL,
-            phone VARCHAR(50),
+            id mediumint(9) NOT NULL AUTO_INCREMENT,
+            date datetime DEFAULT CURRENT_TIMESTAMP,
+            name varchar(100) NOT NULL,
+            email varchar(100) NOT NULL,
+            message text NOT NULL,
+            preferred_time varchar(50),
+            phone varchar(50),
             amount DECIMAL(10,2),
-            date DATETIME DEFAULT CURRENT_TIMESTAMP,
-            is_contacted TINYINT(1) DEFAULT 0,
-            PRIMARY KEY (id)
+            status ENUM('未聯絡', '已連絡', '忽略') DEFAULT '未聯絡',
+            PRIMARY KEY  (id)
         ) $charset_collate;";
-
-        require_once ABSPATH . 'wp-admin/includes/upgrade.php';
+        
+        require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
         dbDelta($sql);
-
-        error_log("Tried to create table $table_name");
     }
 }
-add_action('after_switch_theme', 'create_contact_form_table');
+
+// Also add an init hook to ensure table exists even if theme was already activated
+add_action('init', 'create_contact_form_table');
 
 // Custom Columns for Contact Form Post Type
 function contact_form_admin_columns($columns) {
@@ -703,7 +907,8 @@ function handle_contact_form_submission() {
             'email'   => $email,
             'phone'   => $phone,
             'amount'  => $amount,
-            'message' => $other . ' | 請選擇聯絡時段: ' . $time,
+            'preferred_time' => $time,
+            'message' => $other
         ]);
 
         if ($result) {
