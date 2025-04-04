@@ -498,13 +498,12 @@ function export_contact_form_csv() {
     $output = fopen('php://output', 'w');
     fprintf($output, chr(0xEF) . chr(0xBB) . chr(0xBF));
 
-    fputcsv($output, array('編號', '姓名', '電子郵件', '電話', '金額', '訊息', '日期', '可聯絡時間', '狀態'));
+    fputcsv($output, array('編號', '姓名', '電話', '金額', '顧客留言', '日期', '可聯絡時間', '狀態'));
 
     foreach ($submissions as $submission) {
         fputcsv($output, array(
             $submission->id,
             $submission->name,
-            $submission->email,
             $submission->phone,
             $submission->amount,
             $submission->message,
@@ -692,12 +691,12 @@ function display_contact_forms() {
             <thead>
                 <tr>
                     <th><?php _e('Name', 'zongkuan'); ?></th>
-                    <th><?php _e('Email', 'zongkuan'); ?></th>
                     <th><?php _e('Phone', 'zongkuan'); ?></th>
                     <th><?php _e('Amount', 'zongkuan'); ?></th>
                     <th><?php _e('Contact Time', 'zongkuan'); ?></th>
-                    <th><?php _e('Submit Date', 'zongkuan'); ?></th>
                     <th><?php _e('Status', 'zongkuan'); ?></th>
+                    <th><?php _e('Message', 'zongkuan'); ?></th>
+                    <th><?php _e('Submit Date', 'zongkuan'); ?></th>
                 </tr>
             </thead>
             <tbody>
@@ -705,11 +704,10 @@ function display_contact_forms() {
                     <?php foreach ($submissions as $submission) : ?>
                         <tr>
                             <td><?php echo esc_html($submission->name); ?></td>
-                            <td><?php echo esc_html($submission->email); ?></td>
                             <td><?php echo esc_html($submission->phone); ?></td>
                             <td><?php echo esc_html($submission->amount); ?></td>
                             <td><?php echo esc_html($submission->preferred_time); ?></td>
-                            <td><?php echo esc_html($submission->date); ?></td>
+                            
                             <td class="marked-status">
                                 <select class="status-select" data-id="<?php echo esc_attr($submission->id); ?>" onchange="window.updateStatus(this)">
                                     <option value="未聯絡" <?php selected($submission->status, '未聯絡'); ?>><?php _e('Not Contacted', 'zongkuan'); ?></option>
@@ -717,6 +715,8 @@ function display_contact_forms() {
                                     <option value="忽略" <?php selected($submission->status, '忽略'); ?>><?php _e('Ignored', 'zongkuan'); ?></option>
                                 </select>
                             </td>
+                            <td><?php echo esc_html($submission->message); ?></td>
+                            <td><?php echo esc_html($submission->date); ?></td>
                         </tr>
                     <?php endforeach; ?>
                 <?php else : ?>
@@ -863,7 +863,6 @@ function create_contact_form_table() {
             id mediumint(9) NOT NULL AUTO_INCREMENT,
             date datetime DEFAULT CURRENT_TIMESTAMP,
             name varchar(100) NOT NULL,
-            email varchar(100) NOT NULL,
             message text NOT NULL,
             preferred_time varchar(50),
             phone varchar(50),
@@ -914,7 +913,6 @@ function handle_contact_form_submission() {
         $table_name = $wpdb->prefix . 'contact_form';
 
         $name = sanitize_text_field($_POST['name']);
-        $email = sanitize_email($_POST['email']);
         $amount = floatval($_POST['amount']);
         $phone = sanitize_text_field($_POST['phone']);
         $time = sanitize_text_field($_POST['time']);
@@ -922,7 +920,6 @@ function handle_contact_form_submission() {
 
         $result = $wpdb->insert($table_name, [
             'name'    => $name,
-            'email'   => $email,
             'phone'   => $phone,
             'amount'  => $amount,
             'preferred_time' => $time,

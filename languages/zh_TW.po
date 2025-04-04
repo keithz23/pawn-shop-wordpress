@@ -71,6 +71,9 @@ msgstr "提交日期"
 msgid "Status"
 msgstr "狀態"
 
+msgid "Message"
+msgstr "顧客留言"
+
 # Contact Form Status
 msgid "Not Contacted"
 msgstr "未聯絡"

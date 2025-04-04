@@ -40,19 +40,6 @@ get_header();
               </div>
 
               <div class="form-group">
-                <label for="email">
-                    <?php _e('Email:', 'zongkuan'); ?> <span style="color: red">(<?php _e('required', 'zongkuan'); ?>)</span>
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="<?php esc_attr_e('Please enter your email', 'zongkuan'); ?>"
-                  required
-                />
-              </div>
-
-              <div class="form-group">
                 <label for="amount">
                     <?php _e('Amount:', 'zongkuan'); ?> <span style="color: red">(<?php _e('required', 'zongkuan'); ?>)</span>
                 </label>
