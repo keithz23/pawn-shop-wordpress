@@ -173,3 +173,90 @@ get_header();
 </section>
 
 <?php get_footer(); ?>
+
+<!-- Notification Dialog -->
+<div class="notification-overlay" id="notification-overlay"></div>
+<div class="notification-dialog" id="notification-dialog">
+  <h3 id="notification-title"></h3>
+  <p id="notification-message"></p>
+  <button class="close-btn" id="notification-close"><?php _e('Close', 'zongkuan'); ?></button>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const contactForm = document.querySelector('.form-container form');
+  const notificationDialog = document.getElementById('notification-dialog');
+  const notificationOverlay = document.getElementById('notification-overlay');
+  const notificationTitle = document.getElementById('notification-title');
+  const notificationMessage = document.getElementById('notification-message');
+  const notificationClose = document.getElementById('notification-close');
+  
+  // Function to show notification
+  function showNotification(title, message, type) {
+    notificationTitle.textContent = title;
+    notificationMessage.textContent = message;
+    notificationDialog.className = 'notification-dialog ' + type;
+    notificationDialog.classList.add('show');
+    notificationOverlay.classList.add('show');
+  }
+  
+  // Close notification when clicking the close button
+  notificationClose.addEventListener('click', function() {
+    notificationDialog.classList.remove('show');
+    notificationOverlay.classList.remove('show');
+  });
+  
+  // Close notification when clicking the overlay
+  notificationOverlay.addEventListener('click', function() {
+    notificationDialog.classList.remove('show');
+    notificationOverlay.classList.remove('show');
+  });
+  
+  // Handle form submission
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form data
+      const formData = new FormData(contactForm);
+      
+      // Add action and nonce
+      formData.append('action', 'handle_contact_form');
+      formData.append('contact_form_nonce', '<?php echo wp_create_nonce("contact_form_action"); ?>');
+      
+      // Send AJAX request
+      fetch('<?php echo admin_url('admin-post.php'); ?>', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => {
+        if (response.ok) {
+          // Success
+          showNotification(
+            '<?php _e('Success!', 'zongkuan'); ?>', 
+            '<?php _e('Thank you for your submission! We will contact you soon.', 'zongkuan'); ?>', 
+            'success'
+          );
+          contactForm.reset();
+        } else {
+          // Error
+          showNotification(
+            '<?php _e('Error!', 'zongkuan'); ?>', 
+            '<?php _e('There was a problem submitting your form. Please try again.', 'zongkuan'); ?>', 
+            'error'
+          );
+        }
+      })
+      .catch(error => {
+        // Network error
+        showNotification(
+          '<?php _e('Error!', 'zongkuan'); ?>', 
+          '<?php _e('There was a network error. Please check your connection and try again.', 'zongkuan'); ?>', 
+          'error'
+        );
+        console.error('Error:', error);
+      });
+    });
+  }
+});
+</script>

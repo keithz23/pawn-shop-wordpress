@@ -1882,3 +1882,83 @@ textarea {
     margin: 0.8rem 0;
   }
 }
+
+/* Notification Dialog Styles */
+.notification-dialog {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+}
+
+.notification-dialog.show {
+  display: block;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.notification-dialog h3 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.notification-dialog p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.notification-dialog .close-btn {
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.notification-dialog .close-btn:hover {
+  background-color: var(--main-color-dark);
+}
+
+.notification-dialog.success h3 {
+  color: #28a745;
+}
+
+.notification-dialog.error h3 {
+  color: #dc3545;
+}
+
+.notification-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.notification-overlay.show {
+  display: block;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
