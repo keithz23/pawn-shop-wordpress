@@ -230,32 +230,55 @@ document.addEventListener('DOMContentLoaded', function() {
         body: formData
       })
       .then(response => {
-        if (response.ok) {
-          // Success
-          showNotification(
-            '<?php _e('Success!', 'zongkuan'); ?>', 
-            '<?php _e('Thank you for your submission! We will contact you soon.', 'zongkuan'); ?>', 
-            'success'
-          );
-          contactForm.reset();
-        } else {
-          // Error
-          showNotification(
-            '<?php _e('Error!', 'zongkuan'); ?>', 
-            '<?php _e('There was a problem submitting your form. Please try again.', 'zongkuan'); ?>', 
-            'error'
-          );
+        if (!response.ok) {
+          console.error('Form submission error:', response.status);
         }
       })
       .catch(error => {
-        // Network error
-        showNotification(
-          '<?php _e('Error!', 'zongkuan'); ?>', 
-          '<?php _e('There was a network error. Please check your connection and try again.', 'zongkuan'); ?>', 
-          'error'
-        );
-        console.error('Error:', error);
+        console.error('Network error:', error);
       });
+
+      // Show success notification immediately
+      showNotification(
+        '<?php _e('Success!', 'zongkuan'); ?>', 
+        '<?php _e('Thank you for your submission! We will contact you soon.', 'zongkuan'); ?>', 
+        'success'
+      );
+      
+      // Store the form data for later use
+      const submittedFormData = formData;
+      
+      // Override the close button click handler for this notification
+      const originalCloseHandler = notificationClose.onclick;
+      notificationClose.onclick = function() {
+        // Reset the form
+        contactForm.reset();
+        
+        // Redirect after dialog is closed
+        window.location.href = '<?php echo home_url('/contact/?success=1'); ?>';
+        
+        // Restore the original close handler
+        notificationClose.onclick = originalCloseHandler;
+        
+        // Call the original handler to close the dialog
+        originalCloseHandler();
+      };
+      
+      // Also override the overlay click handler
+      const originalOverlayHandler = notificationOverlay.onclick;
+      notificationOverlay.onclick = function() {
+        // Reset the form
+        contactForm.reset();
+        
+        // Redirect after dialog is closed
+        window.location.href = '<?php echo home_url('/contact/?success=1'); ?>';
+        
+        // Restore the original overlay handler
+        notificationOverlay.onclick = originalOverlayHandler;
+        
+        // Call the original handler to close the dialog
+        originalOverlayHandler();
+      };
     });
   }
 });

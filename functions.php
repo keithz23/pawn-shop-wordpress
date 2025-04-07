@@ -589,6 +589,38 @@ function update_contact_form_marked() {
 }
 add_action('wp_ajax_update_contact_form_marked', 'update_contact_form_marked');
 
+function delete_contact_form_record() {
+    if (!isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'], 'delete_record_nonce')) {
+        wp_send_json_error(array('message' => 'Nonce verification failed'), 403);
+    }
+
+    if (!current_user_can('manage_options')) {
+        wp_send_json_error(array('message' => 'Permission denied'), 403);
+    }
+
+    $record_id = isset($_POST['record_id']) ? intval($_POST['record_id']) : 0;
+
+    if ($record_id <= 0) {
+        wp_send_json_error(array('message' => 'Invalid record ID'), 400);
+    }
+
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'contact_form';
+
+    $deleted = $wpdb->delete(
+        $table_name,
+        array('id' => $record_id),
+        array('%d')
+    );
+
+    if ($deleted === false) {
+        wp_send_json_error(array('message' => 'Failed to delete record'), 500);
+    }
+
+    wp_send_json_success(array('message' => 'Record deleted successfully'));
+}
+add_action('wp_ajax_delete_contact_form_record', 'delete_contact_form_record');
+
 function display_contact_forms() {
     global $wpdb;
     $table_name = $wpdb->prefix . 'contact_form';
@@ -624,6 +656,10 @@ function display_contact_forms() {
     $query .= " ORDER BY date DESC";
 
     $submissions = $wpdb->get_results($wpdb->prepare($query, $where_values));
+
+    // Set timezone for display
+    $original_timezone = date_default_timezone_get();
+    date_default_timezone_set('Asia/Taipei');
 
     ?>
     <div class="wrap">
@@ -697,17 +733,17 @@ function display_contact_forms() {
                     <th><?php _e('Status', 'zongkuan'); ?></th>
                     <th><?php _e('Message', 'zongkuan'); ?></th>
                     <th><?php _e('Submit Date', 'zongkuan'); ?></th>
+                    <th><?php _e('Actions', 'zongkuan'); ?></th>
                 </tr>
             </thead>
             <tbody>
                 <?php if ($submissions) : ?>
                     <?php foreach ($submissions as $submission) : ?>
-                        <tr>
+                        <tr id="record-<?php echo esc_attr($submission->id); ?>">
                             <td><?php echo esc_html($submission->name); ?></td>
                             <td><?php echo esc_html($submission->phone); ?></td>
                             <td><?php echo esc_html($submission->amount); ?></td>
                             <td><?php echo esc_html($submission->preferred_time); ?></td>
-                            
                             <td class="marked-status">
                                 <select class="status-select" data-id="<?php echo esc_attr($submission->id); ?>" onchange="window.updateStatus(this)">
                                     <option value="未聯絡" <?php selected($submission->status, '未聯絡'); ?>><?php _e('Not Contacted', 'zongkuan'); ?></option>
@@ -717,11 +753,17 @@ function display_contact_forms() {
                             </td>
                             <td><?php echo esc_html($submission->message); ?></td>
                             <td><?php echo esc_html($submission->date); ?></td>
+                            <td>
+                                <button class="button button-small delete-record" data-id="<?php echo esc_attr($submission->id); ?>">
+                                    <span class="dashicons dashicons-trash" style="vertical-align: middle;"></span>
+                                    <?php _e('Delete', 'zongkuan'); ?>
+                                </button>
+                            </td>
                         </tr>
                     <?php endforeach; ?>
                 <?php else : ?>
                     <tr>
-                        <td colspan="9"><?php _e('No contact forms found.', 'zongkuan'); ?></td>
+                        <td colspan="8"><?php _e('No contact forms found.', 'zongkuan'); ?></td>
                     </tr>
                 <?php endif; ?>
             </tbody>
@@ -844,10 +886,50 @@ function display_contact_forms() {
                 document.querySelectorAll('.status-select').forEach(select => {
                     select.setAttribute('data-original-value', select.value);
                 });
+
+                // Add delete functionality
+                document.querySelectorAll('.delete-record').forEach(button => {
+                    button.addEventListener('click', function() {
+                        if (!confirm('<?php echo esc_js(__('Are you sure you want to delete this record?', 'zongkuan')); ?>')) {
+                            return;
+                        }
+
+                        const recordId = this.getAttribute('data-id');
+                        const row = document.getElementById('record-' + recordId);
+
+                        jQuery.ajax({
+                            url: '<?php echo admin_url('admin-ajax.php'); ?>',
+                            type: 'POST',
+                            data: {
+                                action: 'delete_contact_form_record',
+                                record_id: recordId,
+                                nonce: '<?php echo wp_create_nonce('delete_record_nonce'); ?>'
+                            },
+                            success: function(response) {
+                                if (response.success) {
+                                    // Remove the row from the table
+                                    row.remove();
+                                    // Update the count
+                                    const displayingNum = document.querySelector('.displaying-num');
+                                    const currentCount = parseInt(displayingNum.textContent.match(/\d+/)[0]);
+                                    displayingNum.textContent = `<?php echo esc_js(__('Total %d records', 'zongkuan')); ?>`.replace('%d', currentCount - 1);
+                                } else {
+                                    alert('<?php echo esc_js(__('Failed to delete record', 'zongkuan')); ?>: ' + response.data.message);
+                                }
+                            },
+                            error: function() {
+                                alert('<?php echo esc_js(__('An error occurred while deleting', 'zongkuan')); ?>');
+                            }
+                        });
+                    });
+                });
             });
         </script>
     </div>
     <?php
+    
+    // Restore original timezone
+    date_default_timezone_set($original_timezone);
 }
 
 function create_contact_form_table() {
@@ -922,13 +1004,24 @@ function handle_contact_form_submission() {
         $phone = sanitize_text_field($_POST['phone']);
         $time = sanitize_text_field($_POST['time']);
         $other = sanitize_textarea_field($_POST['other']);
+        
+        // Set timezone to Asia/Taipei for date storage
+        $original_timezone = date_default_timezone_get();
+        date_default_timezone_set('Asia/Taipei');
+        
+        // Get current time in MySQL format with timezone
+        $current_date = date('Y-m-d H:i:s');
+        
+        // Restore original timezone
+        date_default_timezone_set($original_timezone);
 
         $result = $wpdb->insert($table_name, [
             'name'    => $name,
             'phone'   => $phone,
             'amount'  => $amount,
             'preferred_time' => $time,
-            'message' => $other
+            'message' => $other,
+            'date'    => $current_date
         ]);
 
         if ($result) {
@@ -977,4 +1070,12 @@ add_filter('template_include', function($template) {
         }
     }
     return $template;
-}); 
+});
+
+// Set timezone to UTC+8 for admin dashboard
+function set_admin_timezone() {
+    if (is_admin()) {
+        date_default_timezone_set('Asia/Taipei');
+    }
+}
+add_action('admin_init', 'set_admin_timezone'); 

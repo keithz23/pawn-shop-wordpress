@@ -196,6 +196,12 @@ msgstr "提交表單時出現錯誤，請稍後再試。"
 msgid "Please fill in all required fields."
 msgstr "提交表單時出現錯誤，請稍後再試。"
 
+msgid "Are you sure you want to delete this record?"
+msgstr "您確定要刪除這筆資料嗎？"
+
+msgid "Delete"
+msgstr "刪除"
+
 # Original translations remain below
 msgid "Primary Menu"
 msgstr "主選單"
