@@ -906,7 +906,12 @@ add_action('manage_contact_form_posts_custom_column', 'contact_form_custom_colum
 function handle_contact_form_submission() {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!isset($_POST['contact_form_nonce']) || !wp_verify_nonce($_POST['contact_form_nonce'], 'contact_form_action')) {
-            wp_die('Nonce verification failed', 'Error', array('response' => 403));
+            if (wp_doing_ajax()) {
+                wp_send_json_error('Nonce verification failed', 403);
+            } else {
+                wp_die('Nonce verification failed', 'Error', array('response' => 403));
+            }
+            return;
         }
 
         global $wpdb;
@@ -927,9 +932,17 @@ function handle_contact_form_submission() {
         ]);
 
         if ($result) {
-            wp_safe_redirect(home_url('/contact/?success=1'));
+            if (wp_doing_ajax()) {
+                wp_send_json_success('Form submitted successfully');
+            } else {
+                wp_safe_redirect(home_url('/contact/?success=1'));
+            }
         } else {
-            wp_die('Database error', 'Error', array('response' => 500));
+            if (wp_doing_ajax()) {
+                wp_send_json_error('Database error', 500);
+            } else {
+                wp_die('Database error', 'Error', array('response' => 500));
+            }
         }
         exit;
     }
