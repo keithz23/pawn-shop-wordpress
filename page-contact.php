@@ -3,7 +3,11 @@
 Template Name: Contact Page
 */
 get_header(); 
-?>
+
+<!-- Event snippet for 表單完成 conversion page -->
+<script>
+  gtag('event', 'conversion', {'send_to': 'AW-17054481244/c31BCOnsk8MaENz2msQ_'});
+</script>
 
 <!-- Contact Banner Section -->
 <section class="banner">
@@ -145,7 +149,7 @@ get_header();
             <h3>LINE諮詢</h3>
             <p>即時對話，方便快速</p>
             <div class="category-cta">
-                <a href="<?php echo esc_url(get_theme_mod('line_id', 'https://line.me/ti/p/@599jmyld')); ?>" target="_blank" class="cta-button primary">加入LINE</a>
+                <a href="<?php echo esc_url(get_theme_mod('line_id', 'https://line.me/ti/p/@599jmyld')); ?>" target="_blank" class="cta-button primary" onclick="return gtag_report_conversion('<?php echo esc_url(get_theme_mod('line_id', 'https://line.me/ti/p/@599jmyld')); ?>');">加入LINE</a>
             </div>
         </div>
     </div>
