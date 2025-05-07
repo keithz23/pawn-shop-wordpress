@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                   .join("")}
                             </ul>
                             <div class="category-cta">
-                                <a href="https://line.me/ti/p/@599jmyld" target="_blank" class="contact-button line-button" style="color: green">
+                                <a href="https://line.me/ti/p/@599jmyld" target="_blank" class="contact-button line-button" style="color: green" onclick="return gtag_report_conversion('https://line.me/ti/p/@599jmyld');">
                                     <i class="fab fa-line" style="color: green"></i>
                                     立即LINE諮詢
                                 </a>
