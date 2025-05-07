@@ -2,7 +2,7 @@
 /*
 Template Name: Contact Page
 */
-get_header(); 
+get_header(); ?>
 
 <!-- Event snippet for 表單完成 conversion page -->
 <script>
