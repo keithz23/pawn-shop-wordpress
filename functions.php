@@ -409,41 +409,8 @@ function create_privacy_policy_page() {
 
     if (!$privacy_page) {
         $privacy_page_args = array(
-            'post_title'    => 'Privacy Policy',
-            'post_content'  => '<!-- wp:paragraph --><p>隱私權政策
-
-YES借錢網（以下簡稱「本網站」）非常重視您的隱私權，並依循《個人資料保護法》制定本隱私權保護政策。我們致力於保護您的個人資料安全，並透明說明我們的資料處理方式。
-
-1. 個人資料的安全保護
-   - 在未經您同意的情況下，本網站絕不會將您的個人資料提供給任何與本站服務無關的第三方。
-   - 請您妥善保管自己的網路密碼和個人資料，避免分享給他人。
-   - 使用本網站服務後，請務必登出帳號，以防止他人存取您的資料。
-
-2. 個人資料的蒐集、處理及利用
-   - 當您造訪本網站或使用我們的服務時，我們僅會蒐集必要的個人資料（如姓名、電子郵件、聯絡方式），並限於特定目的使用。
-   - 您的資料將僅用於相關服務，且非經書面同意，不會用於其他用途。
-   - 本網站會保留您在使用互動功能（如服務信箱或問卷）時提供的資料。
-   - 您有權隨時向我們提出請求，以更正、刪除或查詢您的帳戶及個人資料。
-   - 為保護隱私，我們不會為個人查詢其他使用者的帳號資料。
-
-3. 資料分享的例外情況
-   - 本網站絕不會提供、交換、出租或出售您的個人資料給其他個人、團體或公務機關，除下列法律依據或合約義務：
-     1. 經由您的書面同意。
-     2. 法律明文規定。
-     3. 為保護您的生命、身體、自由或財產安全。
-     4. 與公務機關或學術機構合作，基於公共利益進行統計或研究，且資料已匿名處理。
-     5. 當您的行為違反服務條款或可能損害網站或他人權益時，我們可能揭露資料以辨識、聯絡或採取法律行動。
-     6. 有利於您的權益。
-     7. 本網站委託第三方處理資料時，我們將監督他們確保資料安全。
-
-4. Cookie 的使用
-   - 為了提供您最佳的服務，本網站會在您的電腦中放置並取用 Cookie。
-   - 如果您不願接受 Cookie，您可於瀏覽器中設定隱私權等級為高，但這可能導致某些網站功能無法正常運作。
-
-5. 隱私權政策諮詢
-   - 本網站包含的外部連結，其內容和隱私政策與我們無關。
-   - 我們將使用符合產業標準的技術和程序來維護您的資料安全，請您提高警覺防範詐騙。
-   - 如果您對本隱私權政策有任何問題，請透過客服信箱與我們聯繫，我們將盡速回覆。</p><!-- /wp:paragraph -->',
+            'post_title'    => '隱私權政策',
+            'post_content'  => '<!-- wp:paragraph --><p>隱私權政策內容將由模板處理。</p><!-- /wp:paragraph -->',
             'post_status'   => 'publish',
             'post_type'     => 'page',
             'post_name'     => 'privacy-policy',
@@ -451,15 +418,17 @@ YES借錢網（以下簡稱「本網站」）非常重視您的隱私權，並�
 
         $page_id = wp_insert_post($privacy_page_args, true);
         if (!is_wp_error($page_id)) {
-            // Use a more direct approach to flushing rewrite rules
-            update_option('rewrite_rules', false);
-            flush_rewrite_rules(true); // Hard flush
+            // Assign a template if you have one specifically for privacy policy
+            update_post_meta($page_id, '_wp_page_template', 'page-privacy.php');
+            
+            // Standard way to flush rules
+            flush_rewrite_rules();
         } else {
-            error_log('Failed to create contact page: ' . $page_id->get_error_message());
+            error_log('Failed to create privacy policy page: ' . $page_id->get_error_message());
         }
     } else {
-        // Ensure the page template is set (if needed)
-        // update_post_meta($privacy_page->ID, '_wp_page_template', 'your-template.php'); // Replace 'your-template.php' if applicable
+        // Update existing page template if needed
+        update_post_meta($privacy_page->ID, '_wp_page_template', 'page-privacy.php');
     }
 }
 add_action('after_switch_theme', 'create_privacy_policy_page');
