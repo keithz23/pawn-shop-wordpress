@@ -406,7 +406,7 @@ add_action('after_switch_theme', 'create_contact_page');
 
 function create_privacy_policy_page() {
     $privacy_page = get_page_by_path('privacy-policy');
-    
+
     if (!$privacy_page) {
         $privacy_page_args = array(
             'post_title'    => 'Privacy Policy',
@@ -448,34 +448,52 @@ YES借錢網（以下簡稱「本網站」）非常重視您的隱私權，並�
             'post_type'     => 'page',
             'post_name'     => 'privacy-policy',
         );
-        
+
         $page_id = wp_insert_post($privacy_page_args, true);
         if (!is_wp_error($page_id)) {
-            flush_rewrite_rules();
+            // Use a more direct approach to flushing rewrite rules
+            update_option('rewrite_rules', false);
+            flush_rewrite_rules(true); // Hard flush
+        } else {
+            error_log('Failed to create contact page: ' . $page_id->get_error_message());
         }
+    } else {
+        // Ensure the page template is set (if needed)
+        // update_post_meta($privacy_page->ID, '_wp_page_template', 'your-template.php'); // Replace 'your-template.php' if applicable
     }
 }
 add_action('after_switch_theme', 'create_privacy_policy_page');
 
-// Function to add Privacy Policy menu item
 function add_privacy_menu_item() {
-    $menu_id = get_nav_menu_locations()['primary'];  // Get the primary menu ID
-    if ($menu_id) {
-        $menu_items = wp_get_nav_menu_items($menu_id);
-        $privacy_page = get_page_by_path('privacy-policy');
-        
-        if ($privacy_page && !has_nav_menu_item($menu_id, $privacy_page->ID)) {
-            wp_update_nav_menu_item($menu_id, 0, array(
-                'menu-item-title' => __('Privacy Policy'),
-                'menu-item-object' => 'page',
-                'menu-item-object-id' => $privacy_page->ID,
-                'menu-item-type' => 'post_type',
-                'menu-item-status' => 'publish',
-            ));
+    $menu_locations = get_nav_menu_locations();
+    if ( isset( $menu_locations['primary'] ) ) {
+        $menu_id = $menu_locations['primary'];
+        $privacy_page = get_page_by_path( 'privacy-policy' );
+
+        if ( $privacy_page ) {
+            $menu_items = wp_get_nav_menu_items( $menu_id );
+            $privacy_page_exists_in_menu = false;
+
+            foreach ( $menu_items as $menu_item ) {
+                if ( $menu_item->object == 'page' && $menu_item->object_id == $privacy_page->ID ) {
+                    $privacy_page_exists_in_menu = true;
+                    break;
+                }
+            }
+
+            if ( ! $privacy_page_exists_in_menu ) {
+                wp_update_nav_menu_item( $menu_id, 0, array(
+                    'menu-item-title'   => __( 'Privacy Policy', 'zongkuan' ),
+                    'menu-item-object'  => 'page',
+                    'menu-item-object-id' => $privacy_page->ID,
+                    'menu-item-type'    => 'post_type',
+                    'menu-item-status'  => 'publish'
+                ) );
+            }
         }
     }
 }
-add_action('after_switch_theme', 'add_privacy_menu_item');
+add_action( 'after_switch_theme', 'add_privacy_menu_item' );
 
 function register_contact_menu_page() {
     // Register Custom Post Type
@@ -724,9 +742,9 @@ function display_contact_forms() {
 
     $query = "SELECT * FROM $table_name";
     if (!empty($where_clauses)) {
-        $query .= " WHERE " . implode(' AND ', $where_clauses);
+        $query += " WHERE " . implode(' AND ', $where_clauses);
     }
-    $query .= " ORDER BY date DESC";
+    $query += " ORDER BY date DESC";
 
     $submissions = $wpdb->get_results($wpdb->prepare($query, $where_values));
 
