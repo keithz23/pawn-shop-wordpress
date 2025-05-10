@@ -457,6 +457,26 @@ YES借錢網（以下簡稱「本網站」）非常重視您的隱私權，並�
 }
 add_action('after_switch_theme', 'create_privacy_policy_page');
 
+// Function to add Privacy Policy menu item
+function add_privacy_menu_item() {
+    $menu_id = get_nav_menu_locations()['primary'];  // Get the primary menu ID
+    if ($menu_id) {
+        $menu_items = wp_get_nav_menu_items($menu_id);
+        $privacy_page = get_page_by_path('privacy-policy');
+        
+        if ($privacy_page && !has_nav_menu_item($menu_id, $privacy_page->ID)) {
+            wp_update_nav_menu_item($menu_id, 0, array(
+                'menu-item-title' => __('Privacy Policy'),
+                'menu-item-object' => 'page',
+                'menu-item-object-id' => $privacy_page->ID,
+                'menu-item-type' => 'post_type',
+                'menu-item-status' => 'publish',
+            ));
+        }
+    }
+}
+add_action('after_switch_theme', 'add_privacy_menu_item');
+
 function register_contact_menu_page() {
     // Register Custom Post Type
     $labels = array(
