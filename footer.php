@@ -11,10 +11,10 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <?php echo date('Y'); ?> <?php echo esc_html(get_bloginfo('name')); ?> <?php echo esc_html__('版權所有', 'your-theme-domain'); ?></p>
+                <p>&copy; <?php echo date('Y'); ?> <?php echo esc_html(get_bloginfo('name')); ?> <?php echo esc_html__('版權所有', 'your-theme-domain'); ?> | <a href="<?php echo esc_url(get_permalink(get_page_by_path('privacy-policy'))); ?>">Privacy Policy</a></p>
             </div>
         </div>
     </footer>
     <?php wp_footer(); ?>
 </body>
-</html> 
+</html>
