@@ -592,7 +592,11 @@ function export_contact_form_csv() {
     }
     $query .= " ORDER BY date DESC";
 
-    $submissions = $wpdb->get_results($wpdb->prepare($query, $where_values));
+    if (!empty($where_values)) {
+        $submissions = $wpdb->get_results($wpdb->prepare($query, $where_values));
+    } else {
+        $submissions = $wpdb->get_results($query);
+    }
 
     header('Content-Type: text/csv; charset=utf-8');
     header('Content-Disposition: attachment; filename="聯絡表單提交_' . date('Y-m-d_H-i-s') . '.csv"');
