@@ -312,7 +312,7 @@ msgid "24H Online Customer Service"
 msgstr "24H線上客服"
 
 msgid "Company Registration Number"
-msgstr "公司登記號碼"
+msgstr "公司統一編號"
 
 msgid "All Rights Reserved"
 msgstr "版權所有"

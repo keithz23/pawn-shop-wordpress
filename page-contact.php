@@ -119,11 +119,16 @@ get_header(); ?>
       <div class="banner-features">
         <div class="features-column">
           <span><i class="fas fa-clock"></i> <?php echo esc_html(get_theme_mod('business_days', '週一至週日')); ?>: <?php echo esc_html(get_theme_mod('business_time', '08:00 - 21:00')); ?></span>
+          <span><i class="fas fa-map-marker-alt"></i> <?php echo esc_html(get_theme_mod('company_address', '台灣台北市')); ?></span>
         </div>
         <div class="features-column">
           <span><i class="fas fa-envelope"></i> <?php echo esc_html(get_theme_mod('contact_email', 'zhongkuan001@gmail.com')); ?></span>
-          <span><i class="fab fa-line"></i> LINE ID: @599jmyld</span>
+          <span><i class="fab fa-line"></i> LINE ID: <?php echo esc_html(basename(get_theme_mod('line_url', 'https://line.me/ti/p/@599jmyld'))); ?></span>
         </div>
+      </div>
+      <div class="banner-cta">
+        <a href="<?php echo esc_url(get_theme_mod('line_url', 'https://line.me/ti/p/@599jmyld')); ?>" target="_blank" class="cta-button primary" style="background-color: #00B900 !important; border-color: #00B900 !important;" onclick="return gtag_report_conversion('<?php echo esc_url(get_theme_mod('line_url', 'https://line.me/ti/p/@599jmyld')); ?>');">LINE立即諮詢</a>
+        <a href="mailto:<?php echo esc_attr(get_theme_mod('contact_email', 'zhongkuan001@gmail.com')); ?>" class="cta-button secondary" style="background-color: #808080; color: white;">發送Email</a>
       </div>
     </div>
   </div>
@@ -163,12 +168,7 @@ get_header(); ?>
       <h3>LINE諮詢</h3>
       <p>即時對話，方便快速</p>
       <div class="category-cta">
-        <a href="<?php echo esc_url(get_theme_mod('line_url', 'https://line.me/ti/p/@599jmyld')); ?>"
-           target="_blank"
-           class="cta-button primary"
-           onclick="return gtag_report_form_conversion();">
-          加入LINE
-        </a>
+        <a href="<?php echo esc_url(get_theme_mod('line_url', 'https://line.me/ti/p/@599jmyld')); ?>" target="_blank" class="cta-button primary" style="background-color: #00B900 !important; border-color: #00B900 !important;" onclick="return gtag_report_conversion('<?php echo esc_url(get_theme_mod('line_url', 'https://line.me/ti/p/@599jmyld')); ?>');">LINE立即諮詢</a>
       </div>
     </div>
   </div>
