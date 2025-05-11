@@ -24,7 +24,7 @@
         </div>
         <p class="banner-description">快速審核 · 專業規劃 · 利率透明</p>
         <div class="banner-cta">
-            <a href="<?php echo esc_url(get_theme_mod('line_id', 'https://line.me/ti/p/@599jmyld')); ?>" target="_blank" class="cta-button primary" style="background-color: #00B900 !important; border-color: #00B900 !important;" onclick="return gtag_report_conversion('<?php echo esc_url(get_theme_mod('line_id', 'https://line.me/ti/p/@599jmyld')); ?>');">LINE立即諮詢</a>
+            <a href="<?php echo esc_url(get_theme_mod('line_url', 'https://line.me/ti/p/@599jmyld')); ?>" target="_blank" class="cta-button primary" style="background-color: #00B900 !important; border-color: #00B900 !important;" onclick="return gtag_report_conversion('<?php echo esc_url(get_theme_mod('line_url', 'https://line.me/ti/p/@599jmyld')); ?>');">LINE立即諮詢</a>
             <a href="#服務項目" class="cta-button secondary" style="background-color: #808080; color: white;">了解更多</a>
         </div>
     </div>
