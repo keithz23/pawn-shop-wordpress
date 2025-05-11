@@ -123,7 +123,7 @@ function theme_customizer_settings($wp_customize) {
     // Business Days Setting
     $wp_customize->add_setting('business_days', array(
         'label' => __('Monday to Sunday', 'zongkuan'),
-        'default' => 'Monday to Sunday',
+        'default' => __('Monday to Sunday', 'zongkuan'),
         'sanitize_callback' => 'sanitize_text_field',
     ));
 
