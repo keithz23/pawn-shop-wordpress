@@ -132,6 +132,30 @@ function theme_customizer_settings($wp_customize) {
         'type' => 'text',
     ));
 
+    // Company Registration Number Setting
+    $wp_customize->add_setting('company_registration_number', array(
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('company_registration_number', array(
+        'label' => __('Company Registration Number', 'zongkuan'),
+        'section' => 'contact_info',
+        'type' => 'text',
+    ));
+
+    // Address Setting
+    $wp_customize->add_setting('company_address', array(
+        'default' => '',
+        'sanitize_callback' => 'sanitize_textarea_field',
+    ));
+
+    $wp_customize->add_control('company_address', array(
+        'label' => __('Company Address', 'zongkuan'),
+        'section' => 'contact_info',
+        'type' => 'textarea',
+    ));
+
     // Video Section
     $wp_customize->add_section('video_settings', array(
         'title' => __('Video Settings', 'zongkuan'),
