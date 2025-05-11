@@ -114,15 +114,14 @@ get_header(); ?>
       </div>
     </div>
 
-    <div class="banner-text">
+    <div class="banner-text contact-banner-text">
       <h1>聯絡我們</h1>
       <div class="banner-features">
         <div class="features-column">
-          <span><i class="fas fa-clock"></i> 週一至週六: 09:00 - 21:00</span>
-          <span><i class="fas fa-clock"></i> 週日: 10:00 - 18:00</span>
+          <span><i class="fas fa-clock"></i> <?php echo esc_html(get_theme_mod('business_days', '週一至週日')); ?>: <?php echo esc_html(get_theme_mod('business_time', '08:00 - 21:00')); ?></span>
         </div>
         <div class="features-column">
-          <span><i class="fas fa-envelope"></i> zhongkuan001@gmail.com</span>
+          <span><i class="fas fa-envelope"></i> <?php echo esc_html(get_theme_mod('contact_email', 'zhongkuan001@gmail.com')); ?></span>
           <span><i class="fab fa-line"></i> LINE ID: @599jmyld</span>
         </div>
       </div>
