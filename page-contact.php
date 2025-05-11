@@ -164,7 +164,7 @@ get_header(); ?>
       <h3>LINE諮詢</h3>
       <p>即時對話，方便快速</p>
       <div class="category-cta">
-        <a href="<?php echo esc_url(get_theme_mod('line_id', 'https://line.me/ti/p/@599jmyld')); ?>"
+        <a href="<?php echo esc_url(get_theme_mod('line_url', 'https://line.me/ti/p/@599jmyld')); ?>"
            target="_blank"
            class="cta-button primary"
            onclick="return gtag_report_form_conversion();">
