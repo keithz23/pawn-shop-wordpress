@@ -404,31 +404,36 @@ function create_contact_page() {
 }
 add_action('after_switch_theme', 'create_contact_page');
 
+// In your theme's functions.php
 function create_privacy_policy_page() {
-    $privacy_page = get_page_by_path('privacy-policy');
+    // Check if the page already exists by slug
+    $privacy_page = get_page_by_path('privacy-policy', OBJECT, 'page');
 
-    if (!$privacy_page) {
+    if ( !$privacy_page ) {
+        // Page doesn't exist, so create it
         $privacy_page_args = array(
-            'post_title'    => '隱私權政策',
-            'post_content'  => '<!-- wp:paragraph --><p>隱私權政策內容將由模板處理。</p><!-- /wp:paragraph -->',
+            'post_title'    => '隱私權政策', // This will be the title in WP Admin
+            'post_content'  => '<!-- wp:paragraph --><p>此頁面的內容由 page-privacy.php 範本提供。您可以在 WordPress 編輯器中保留此預留位置文字，或將其刪除，因為範本會覆寫它。</p><!-- /wp:paragraph -->', // Placeholder content for the editor
             'post_status'   => 'publish',
             'post_type'     => 'page',
-            'post_name'     => 'privacy-policy',
+            'post_name'     => 'privacy-policy', // This is the slug
         );
 
-        $page_id = wp_insert_post($privacy_page_args, true);
-        if (!is_wp_error($page_id)) {
-            // Assign a template if you have one specifically for privacy policy
-            update_post_meta($page_id, '_wp_page_template', 'page-privacy.php');
-            
-            // Standard way to flush rules
+        $page_id = wp_insert_post( $privacy_page_args, true ); 
+
+        if ( !is_wp_error( $page_id ) ) {
+            update_post_meta( $page_id, '_wp_page_template', 'page-privacy.php' );
             flush_rewrite_rules();
+            error_log('Privacy Policy page created and template assigned.');
         } else {
-            error_log('Failed to create privacy policy page: ' . $page_id->get_error_message());
+            // Log an error if page creation failed
+            error_log( 'Failed to create privacy policy page: ' . $page_id->get_error_message() );
         }
     } else {
-        // Update existing page template if needed
-        update_post_meta($privacy_page->ID, '_wp_page_template', 'page-privacy.php');
+        // Page already exists, just ensure the template is assigned
+        // This is useful if the theme was switched and the template assignment was lost
+        $current_template = get_post_meta( $privacy_page->ID, '_wp_page_template', true );
+        update_post_meta( $privacy_page->ID, '_wp_page_template', 'page-privacy.php' );
     }
 }
 add_action('after_switch_theme', 'create_privacy_policy_page');

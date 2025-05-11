@@ -10,6 +10,7 @@
  */
 
 get_header();
+wp_enqueue_style('privacy-policy', get_template_directory_uri() . '/styles/privacy-policy.css', array(), '1.0.0', 'all');
 ?>
 
 <div id="primary" class="content-area">
@@ -32,7 +33,7 @@ get_header();
                 // }
                 ?>
 
-                <div class="entry-content">
+                <div class="entry-content privacy-policy-container">
                     <h1>忠款資產管理 隱私權政策</h1>
 
                     <p>忠款資產管理（以下簡稱「本公司」）為保護您的個人資料，讓您安心使用本公司提供的各項服務，特此說明本隱私權政策（以下簡稱「本政策」）。請您詳閱以下內容，以了解我們如何蒐集、使用及保護您的個人資料。</p>
@@ -82,23 +83,6 @@ get_header();
                     <p>本網站部分內容由使用者即時發表，僅代表該使用者個人觀點，與本公司立場無關。本公司不保證內容之真實性或完整性，亦不負相關法律責任。若發現違反法令、攻擊他人、誹謗、色情或暴力內容，請立即聯絡我們，我們保留刪除內容與拒絕發文之權利。</p>
 
                 </div><!-- .entry-content -->
-
-                <?php if ( get_edit_post_link() ) : ?>
-                    <footer class="entry-footer">
-                        <?php
-                        edit_post_link(
-                            sprintf(
-                                /* translators: %s: Name of current post */
-                                esc_html__( 'Edit %s', 'yourthemename' ), // Replace 'yourthemename'
-                                '<span class="screen-reader-text">' . get_the_title() . '</span>'
-                            ),
-                            '<span class="edit-link">',
-                            '</span>'
-                        );
-                        ?>
-                    </footer><!-- .entry-footer -->
-                <?php endif; ?>
-
             </article><!-- #post-## -->
 
             <?php
