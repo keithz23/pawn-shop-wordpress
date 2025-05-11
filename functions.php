@@ -757,11 +757,15 @@ function display_contact_forms() {
 
     $query = "SELECT * FROM $table_name";
     if (!empty($where_clauses)) {
-        $query += " WHERE " . implode(' AND ', $where_clauses);
+        $query .= " WHERE " . implode(' AND ', $where_clauses);
     }
-    $query += " ORDER BY date DESC";
+    $query .= " ORDER BY date DESC";
 
-    $submissions = $wpdb->get_results($wpdb->prepare($query, $where_values));
+    if (!empty($where_values)) {
+        $submissions = $wpdb->get_results($wpdb->prepare($query, $where_values));
+    } else {
+        $submissions = $wpdb->get_results($query);
+    }
 
     // Set timezone for display
     $original_timezone = date_default_timezone_get();
