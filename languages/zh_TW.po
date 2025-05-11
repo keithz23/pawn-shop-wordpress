@@ -296,8 +296,17 @@ msgstr "作者姓名："
 msgid "Business Hours"
 msgstr "營業時間"
 
-msgid "Monday to Sunday: 08:00 - 21:00"
-msgstr "週一至週日: 08:00 - 21:00"
+msgid "Business Days"
+msgstr "營業日"
+
+msgid "Monday to Sunday"
+msgstr "週一至週日"
+
+msgid "Operating Hours"
+msgstr "營業時間"
+
+msgid "08:00 - 21:00"
+msgstr "08:00 - 21:00"
 
 msgid "24H Online Customer Service"
 msgstr "24H線上客服"

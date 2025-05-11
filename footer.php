@@ -2,8 +2,9 @@
         <div class="footer-container">
             <div class="footer-content">
                 <div class="footer-info">
-                    <h3><?php echo esc_html__('Business Hours', 'zongkuan'); ?></h3>
-                    <p><?php echo esc_html(get_theme_mod('business_hours', 'Monday to Sunday: 08:00 - 21:00')); ?></p>
+                    <h3><?php echo esc_html__('Business Days', 'zongkuan'); ?></h3>
+                    <p><?php echo esc_html(get_theme_mod('business_days', 'Monday to Sunday')); ?></p>
+                    <p><?php echo esc_html__('Operating Hours', 'zongkuan'); ?>: <?php echo esc_html(get_theme_mod('business_time', '08:00 - 21:00')); ?></p>
                     <p><?php echo esc_html__('24H Online Customer Service', 'zongkuan'); ?></p>
                 </div>
                 <div class="footer-info">

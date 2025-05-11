@@ -120,14 +120,26 @@ function theme_customizer_settings($wp_customize) {
         'type' => 'url',
     ));
 
-    // Business Hours Setting
-    $wp_customize->add_setting('business_hours', array(
-        'default' => '週一至週日: 08:00 - 21:00',
+    // Business Days Setting
+    $wp_customize->add_setting('business_days', array(
+        'default' => 'Monday to Sunday',
         'sanitize_callback' => 'sanitize_text_field',
     ));
 
-    $wp_customize->add_control('business_hours', array(
-        'label' => __('Business Hours', 'zongkuan'),
+    $wp_customize->add_control('business_days', array(
+        'label' => __('Business Days', 'zongkuan'),
+        'section' => 'contact_info',
+        'type' => 'text',
+    ));
+
+    // Business Time Setting
+    $wp_customize->add_setting('business_time', array(
+        'default' => '08:00 - 21:00',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('business_time', array(
+        'label' => __('Operating Hours', 'zongkuan'),
         'section' => 'contact_info',
         'type' => 'text',
     ));
