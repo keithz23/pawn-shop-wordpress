@@ -227,9 +227,6 @@ msgstr "聯絡信箱"
 msgid "Line URL"
 msgstr "Line 連結"
 
-msgid "Business Hours"
-msgstr "營業時間"
-
 msgid "Video Settings"
 msgstr "影片設定"
 
@@ -295,39 +292,21 @@ msgstr "作者資訊"
 
 msgid "Author Name:"
 msgstr "作者姓名："
-# Translation of Zongkuan Theme in Traditional Chinese
-# This file is distributed under the same license as the Zongkuan Theme package.
-msgid ""
-msgstr ""
-"Project-Id-Version: Zongkuan Theme\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-11 00:00+0800\n"
-"PO-Revision-Date: 2025-05-11 00:00+0800\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: zh_TW\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.0\n"
 
-#: footer.php:4
 msgid "Business Hours"
 msgstr "營業時間"
 
-#: footer.php:6
+msgid "Monday to Sunday: 08:00 - 21:00"
+msgstr "週一至週日: 08:00 - 21:00"
+
 msgid "24H Online Customer Service"
 msgstr "24H線上客服"
 
-#: footer.php:10
 msgid "Company Registration Number"
 msgstr "公司登記號碼"
 
-#: footer.php:16
 msgid "All Rights Reserved"
 msgstr "版權所有"
 
-#: footer.php:18
 msgid "Privacy Policy"
 msgstr "隱私權政策"
