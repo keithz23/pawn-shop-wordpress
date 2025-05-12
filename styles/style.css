@@ -1782,7 +1782,7 @@ h2 {
 /* Warning Section */
 .warning-section {
   padding: 60px 20px;
-  background: linear-gradient(to bottom, #fff8f8, #ffe6e6);
+  background: linear-gradient(to bottom, #fff9f0, #ffefe0);
   border-top: 2px solid var(--border-color);
   border-bottom: 2px solid var(--border-color);
 }
@@ -1799,18 +1799,18 @@ h2 {
   padding: 40px;
   border-radius: 15px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  border: 1px solid var(--border-color);
+  border: 1px solid #ffdca8;
 }
 
 .warning-content i {
   font-size: 3rem;
-  color: #d32f2f;
+  color: #ff9800;
   margin-bottom: 20px;
 }
 
 .warning-content h2 {
   font-size: 1.8rem;
-  color: #d32f2f;
+  color: #ff9800;
   margin-bottom: 20px;
   font-family: "Noto Serif TC", serif;
 }

@@ -2,7 +2,7 @@
 <section class="warning-section">
     <div class="warning-container">
         <div class="warning-content">
-            <i class="fas fa-exclamation-triangle"></i>
+            <i class="fas fa-lightbulb"></i>
             <h2>借貸風險提示</h2>
             <p>借貸有風險，申辦前請謹慎評估自身還款能力及各項費用。</p>
             <p>請詳細閱讀契約內容，如有不清楚之處，務必向承辦人員詢問清楚。</p>
