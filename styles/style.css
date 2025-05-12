@@ -1782,7 +1782,7 @@ h2 {
 /* Warning Section */
 .warning-section {
   padding: 60px 20px;
-  background: linear-gradient(to bottom, #fff9f0, #ffefe0);
+  background: linear-gradient(to bottom, var(--bg-light), #fff);
   border-top: 2px solid var(--border-color);
   border-bottom: 2px solid var(--border-color);
 }
