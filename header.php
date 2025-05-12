@@ -36,7 +36,7 @@
 
 <!-- Floating Contact Button -->
 <div class="floating-contact">
-    <a href="<?php echo esc_url(get_theme_mod('line_id', 'https://line.me/ti/p/@599jmyld')); ?>" class="floating-line" target="_blank" onclick="return gtag_report_conversion('<?php echo esc_url(get_theme_mod('line_id', 'https://line.me/ti/p/@599jmyld')); ?>');">
+    <a href="<?php echo esc_url(get_theme_mod('line_url', 'https://line.me/ti/p/@599jmyld')); ?>" class="floating-line" target="_blank" onclick="return gtag_report_conversion('<?php echo esc_url(get_theme_mod('line_id', 'https://line.me/ti/p/@599jmyld')); ?>');">
         <i class="fab fa-line"></i>
     </a>
     <a href="mailto:<?php echo esc_attr(get_theme_mod('contact_email', 'zhongkuan001@gmail.com')); ?>" class="floating-phone">
@@ -52,7 +52,7 @@
                     <i class="fas fa-envelope"></i> Email
                 </a>
                 |
-                <a href="<?php echo esc_url(get_theme_mod('line_id', 'https://line.me/ti/p/@599jmyld')); ?>" target="_blank" class="top-bar-link">
+                <a href="<?php echo esc_url(get_theme_mod('line_url', 'https://line.me/ti/p/@599jmyld')); ?>" target="_blank" class="top-bar-link">
                     <i class="fa-brands fa-line"></i> Line
                 </a>
             </p>

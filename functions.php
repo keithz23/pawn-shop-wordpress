@@ -120,16 +120,53 @@ function theme_customizer_settings($wp_customize) {
         'type' => 'url',
     ));
 
-    // Business Hours Setting
-    $wp_customize->add_setting('business_hours', array(
-        'default' => '週一至週日: 08:00 - 21:00',
+    // Business Days Setting
+    $wp_customize->add_setting('business_days', array(
+        'label' => __('Monday to Sunday', 'zongkuan'),
+        'default' => __('Monday to Sunday', 'zongkuan'),
         'sanitize_callback' => 'sanitize_text_field',
     ));
 
-    $wp_customize->add_control('business_hours', array(
-        'label' => __('Business Hours', 'zongkuan'),
+    $wp_customize->add_control('business_days', array(
+        'label' => __('Business Days', 'zongkuan'),
         'section' => 'contact_info',
         'type' => 'text',
+    ));
+
+    // Business Time Setting
+    $wp_customize->add_setting('business_time', array(
+        'default' => '08:00 - 21:00',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('business_time', array(
+        'label' => __('Operating Hours', 'zongkuan'),
+        'section' => 'contact_info',
+        'type' => 'text',
+    ));
+
+    // Company Registration Number Setting
+    $wp_customize->add_setting('company_registration_number', array(
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('company_registration_number', array(
+        'label' => __('Company Registration Number', 'zongkuan'),
+        'section' => 'contact_info',
+        'type' => 'text',
+    ));
+
+    // Address Setting
+    $wp_customize->add_setting('company_address', array(
+        'default' => '',
+        'sanitize_callback' => 'sanitize_textarea_field',
+    ));
+
+    $wp_customize->add_control('company_address', array(
+        'label' => __('Company Address', 'zongkuan'),
+        'section' => 'contact_info',
+        'type' => 'textarea',
     ));
 
     // Video Section
@@ -404,6 +441,71 @@ function create_contact_page() {
 }
 add_action('after_switch_theme', 'create_contact_page');
 
+// In your theme's functions.php
+function create_privacy_policy_page() {
+    // Check if the page already exists by slug
+    $privacy_page = get_page_by_path('privacy-policy', OBJECT, 'page');
+
+    if ( !$privacy_page ) {
+        // Page doesn't exist, so create it
+        $privacy_page_args = array(
+            'post_title'    => '隱私權政策', // This will be the title in WP Admin
+            'post_content'  => '<!-- wp:paragraph --><p>此頁面的內容由 page-privacy.php 範本提供。您可以在 WordPress 編輯器中保留此預留位置文字，或將其刪除，因為範本會覆寫它。</p><!-- /wp:paragraph -->', // Placeholder content for the editor
+            'post_status'   => 'publish',
+            'post_type'     => 'page',
+            'post_name'     => 'privacy-policy', // This is the slug
+        );
+
+        $page_id = wp_insert_post( $privacy_page_args, true ); 
+
+        if ( !is_wp_error( $page_id ) ) {
+            update_post_meta( $page_id, '_wp_page_template', 'page-privacy.php' );
+            flush_rewrite_rules();
+            error_log('Privacy Policy page created and template assigned.');
+        } else {
+            // Log an error if page creation failed
+            error_log( 'Failed to create privacy policy page: ' . $page_id->get_error_message() );
+        }
+    } else {
+        // Page already exists, just ensure the template is assigned
+        // This is useful if the theme was switched and the template assignment was lost
+        $current_template = get_post_meta( $privacy_page->ID, '_wp_page_template', true );
+        update_post_meta( $privacy_page->ID, '_wp_page_template', 'page-privacy.php' );
+    }
+}
+add_action('after_switch_theme', 'create_privacy_policy_page');
+
+function add_privacy_menu_item() {
+    $menu_locations = get_nav_menu_locations();
+    if ( isset( $menu_locations['primary'] ) ) {
+        $menu_id = $menu_locations['primary'];
+        $privacy_page = get_page_by_path( 'privacy-policy' );
+
+        if ( $privacy_page ) {
+            $menu_items = wp_get_nav_menu_items( $menu_id );
+            $privacy_page_exists_in_menu = false;
+
+            foreach ( $menu_items as $menu_item ) {
+                if ( $menu_item->object == 'page' && $menu_item->object_id == $privacy_page->ID ) {
+                    $privacy_page_exists_in_menu = true;
+                    break;
+                }
+            }
+
+            if ( ! $privacy_page_exists_in_menu ) {
+                wp_update_nav_menu_item( $menu_id, 0, array(
+                    'menu-item-title'   => __( 'Privacy Policy', 'zongkuan' ),
+                    'menu-item-object'  => 'page',
+                    'menu-item-object-id' => $privacy_page->ID,
+                    'menu-item-type'    => 'post_type',
+                    'menu-item-status'  => 'publish'
+                ) );
+            }
+        }
+    }
+}
+add_action( 'after_switch_theme', 'add_privacy_menu_item' );
+
 function register_contact_menu_page() {
     // Register Custom Post Type
     $labels = array(
@@ -490,7 +592,11 @@ function export_contact_form_csv() {
     }
     $query .= " ORDER BY date DESC";
 
-    $submissions = $wpdb->get_results($wpdb->prepare($query, $where_values));
+    if (!empty($where_values)) {
+        $submissions = $wpdb->get_results($wpdb->prepare($query, $where_values));
+    } else {
+        $submissions = $wpdb->get_results($query);
+    }
 
     header('Content-Type: text/csv; charset=utf-8');
     header('Content-Disposition: attachment; filename="聯絡表單提交_' . date('Y-m-d_H-i-s') . '.csv"');
@@ -655,7 +761,11 @@ function display_contact_forms() {
     }
     $query .= " ORDER BY date DESC";
 
-    $submissions = $wpdb->get_results($wpdb->prepare($query, $where_values));
+    if (!empty($where_values)) {
+        $submissions = $wpdb->get_results($wpdb->prepare($query, $where_values));
+    } else {
+        $submissions = $wpdb->get_results($query);
+    }
 
     // Set timezone for display
     $original_timezone = date_default_timezone_get();
@@ -1078,4 +1188,4 @@ function set_admin_timezone() {
         date_default_timezone_set('Asia/Taipei');
     }
 }
-add_action('admin_init', 'set_admin_timezone'); 
+add_action('admin_init', 'set_admin_timezone');
