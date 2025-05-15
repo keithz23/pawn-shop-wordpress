@@ -136,8 +136,6 @@ get_header(); ?>
 
 <!-- Contact Information Section -->
 <section class="contact-section">
-  <h2 style="text-align: center;">立即諮詢</h2>
-  <div class="underline"></div>
   <div class="social-proof">
     <div class="proof-item">
       <span class="proof-number">全國服務</span>
