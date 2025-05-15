@@ -136,20 +136,18 @@ get_header(); ?>
 
 <!-- Contact Information Section -->
 <section class="contact-section">
-  <h2>立即諮詢</h2>
-  <div class="underline"></div>
   <div class="social-proof">
     <div class="proof-item">
-      <span class="proof-number"><?php echo esc_html(get_theme_mod('success_cases', '5000+')); ?></span>
-      <p>成功案例</p>
+      <span class="proof-number">全國服務</span>
+      <p>覆蓋全台灣</p>
     </div>
     <div class="proof-item">
-      <span class="proof-number"><?php echo esc_html(get_theme_mod('satisfaction_rate', '98%')); ?></span>
-      <p>客戶滿意度</p>
+      <span class="proof-number">多項服務</span>
+      <p>多樣化選擇</p>
     </div>
     <div class="proof-item">
-      <span class="proof-number"><?php echo esc_html(get_theme_mod('years_experience', '20+')); ?></span>
-      <p>年專業經驗</p>
+      <span class="proof-number">24/7</span>
+      <p>客戶服務</p>
     </div>
   </div>
 
@@ -262,4 +260,3 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
-

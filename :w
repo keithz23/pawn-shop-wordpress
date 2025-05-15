@@ -1568,7 +1568,6 @@ h2 {
 }
 
 .proof-item {
-  text-align: center;
   border: 1px solid var(--border-color);
 }
 
