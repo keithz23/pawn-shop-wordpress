@@ -10,8 +10,8 @@
         <p class="proof-text"><?php echo esc_html__('成功案例', 'your-theme-domain'); ?></p>
       </div>
       <div class="proof-item">
-        <span class="proof-number"><?php echo esc_html(get_theme_mod('satisfaction_rate', '98%')); ?></span>
-        <p class="proof-text"><?php echo esc_html__('客戶滿意度', 'your-theme-domain'); ?></p>
+        <span class="proof-number"><?php echo esc_html(get_theme_mod('loan_options', '10+')); ?></span>
+        <p class="proof-text"><?php echo esc_html__('貸款選擇', 'your-theme-domain'); ?></p>
       </div>
       <div class="proof-item">
         <span class="proof-number"><?php echo esc_html(get_theme_mod('years_experience', '20+')); ?></span>
@@ -32,4 +32,4 @@
       </a>
     </div>
   </div>
-</section> 
+</section>
