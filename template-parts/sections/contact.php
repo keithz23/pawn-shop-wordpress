@@ -10,7 +10,7 @@
         <p class="proof-text"><?php echo esc_html__('服務範圍', 'your-theme-domain'); ?></p>
       </div>
       <div class="proof-item">
-        <span class="proof-number"><?php echo esc_html(get_theme_mod('loan_options', '10+')); ?></span>
+        <span class="proof-number"><?php echo esc_html(get_theme_mod('loan_options', '5+')); ?></span>
         <p class="proof-text"><?php echo esc_html__('貸款選擇', 'your-theme-domain'); ?></p>
       </div>
       <div class="proof-item">
