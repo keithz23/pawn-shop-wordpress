@@ -14,8 +14,8 @@
         <p class="proof-text"><?php echo esc_html__('貸款選擇', 'your-theme-domain'); ?></p>
       </div>
       <div class="proof-item">
-        <span class="proof-number"><?php echo esc_html(get_theme_mod('years_experience', '20+')); ?></span>
-        <p class="proof-text"><?php echo esc_html__('年專業經驗', 'your-theme-domain'); ?></p>
+        <span class="proof-number"><?php echo esc_html(get_theme_mod('fast_approval', '24小時')); ?></span>
+        <p class="proof-text"><?php echo esc_html__('快速審核', 'your-theme-domain'); ?></p>
       </div>
     </div>
 
