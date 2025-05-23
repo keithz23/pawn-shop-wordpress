@@ -103,6 +103,13 @@
     </div>
 </section>
 
+<!-- Interest Rate Section -->
+<section class="interest-rate-section">
+    <div class="container">
+        <p style="text-align: center; margin: 20px 0; font-size: 1.1em; color: #333;">年利率 2.4%起～16%，借款年限最低2個月、最高84個月</p>
+    </div>
+</section>
+
 <!-- Category Section -->
 <section class="category-section" id="服務項目">
     <h2>服務項目</h2>
