@@ -6,16 +6,16 @@
     
     <div class="social-proof">
       <div class="proof-item">
-        <span class="proof-number"><?php echo esc_html(get_theme_mod('success_cases', '2000+')); ?></span>
-        <p class="proof-text"><?php echo esc_html__('成功案例', 'your-theme-domain'); ?></p>
+        <span class="proof-number"><?php echo esc_html(get_theme_mod('service_coverage', '全國')); ?></span>
+        <p class="proof-text"><?php echo esc_html__('服務範圍', 'your-theme-domain'); ?></p>
       </div>
       <div class="proof-item">
-        <span class="proof-number"><?php echo esc_html(get_theme_mod('satisfaction_rate', '98%')); ?></span>
-        <p class="proof-text"><?php echo esc_html__('客戶滿意度', 'your-theme-domain'); ?></p>
+        <span class="proof-number"><?php echo esc_html(get_theme_mod('loan_options', '5+')); ?></span>
+        <p class="proof-text"><?php echo esc_html__('貸款選擇', 'your-theme-domain'); ?></p>
       </div>
       <div class="proof-item">
-        <span class="proof-number"><?php echo esc_html(get_theme_mod('years_experience', '20+')); ?></span>
-        <p class="proof-text"><?php echo esc_html__('年專業經驗', 'your-theme-domain'); ?></p>
+        <span class="proof-number"><?php echo esc_html(get_theme_mod('online_service', '24/7')); ?></span>
+        <p class="proof-text"><?php echo esc_html__('線上客服', 'your-theme-domain'); ?></p>
       </div>
     </div>
 
@@ -32,4 +32,4 @@
       </a>
     </div>
   </div>
-</section> 
+</section>
